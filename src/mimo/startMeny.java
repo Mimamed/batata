@@ -4,6 +4,6 @@ public class startMeny
 {
 	startMeny()
 	{
-		
+		System.out.print("nob");
 	}
 }
