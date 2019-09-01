@@ -1,4 +1,4 @@
-package kak;
+package mimo;
 
 public class tes 
 {
