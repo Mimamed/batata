@@ -1,6 +1,9 @@
 package mimo;
 
-public class startMeny 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+public class startMeny extends JPanel
 {
 	startMeny()
 	{

@@ -9,7 +9,7 @@ public class start
 	
 	public static void main(String[] Args)
 	{
-		
+		fönster.add(meny);
 		
 	}
 }
