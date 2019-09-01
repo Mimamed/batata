@@ -8,6 +8,7 @@ public class start
 {
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
+	static spelMenu spelSidan = new spelMenu();
 	static JPanel gamlaPanelen = new JPanel();
 	
 	public static void main(String[] Args)
@@ -18,10 +19,13 @@ public class start
 		fönster.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
 		fönster.add(meny);
 		gamlaPanelen = meny;
+		Byta(spelSidan);
 	}
 	
 	public static void Byta(JPanel panel)
 	{
 		fönster.remove(gamlaPanelen);
+		fönster.add(panel);
+		gamlaPanelen = panel;
 	}
 }
