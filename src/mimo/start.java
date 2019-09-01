@@ -1,5 +1,6 @@
 package mimo;
 
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -11,9 +12,12 @@ public class start
 	
 	public static void main(String[] Args)
 	{
+		fönster.setUndecorated(true);
+		fönster.setVisible(true);
+		fönster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fönster.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
 		fönster.add(meny);
 		gamlaPanelen = meny;
-		
 	}
 	
 	public static void Byta(JPanel panel)

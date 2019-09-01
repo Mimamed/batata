@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 public class startMeny extends JPanel
 {
-	static JFrame win = new JFrame();
+	/*static JFrame win = new JFrame();
 	static JButton button = new JButton();
 	static JPanel pan = new JPanel();
 	
@@ -16,5 +16,5 @@ public class startMeny extends JPanel
 		win.setUndecorated(true);
 		win.setVisible(true);
 		
-	}
+	}*/
 }
