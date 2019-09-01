@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 public class start 
 {
-	static JFrame fönster = new JFrame();
+	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
 	static JPanel gamlaPanelen = new JPanel();
 	
