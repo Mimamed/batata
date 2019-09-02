@@ -16,7 +16,7 @@ public class startMeny extends JPanel
 		gui();
 	}
 	
-	void gui()
+	public void gui()
 	{
 		Image startMenu = new ImageIcon(this.getClass().getResource("/startMeny.pdf")).getImage();
 		lab.setIcon(new ImageIcon(startMenu));
