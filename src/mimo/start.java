@@ -22,6 +22,7 @@ public class start
 		Byta(spelSidan);
 	}
 	
+	//Metod som byter ut panelen i fönstret
 	public static void Byta(JPanel panel)
 	{
 		fönster.remove(gamlaPanelen);
