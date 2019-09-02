@@ -4,7 +4,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class start
+public class start 
 {
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
