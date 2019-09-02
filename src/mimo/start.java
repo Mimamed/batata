@@ -19,7 +19,6 @@ public class start
 		fönster.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
 		fönster.add(meny);
 		gamlaPanelen = meny;
-		Byta(spelSidan);
 	}
 	
 	//Metod som byter ut panelen i fönstret
