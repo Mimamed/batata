@@ -13,7 +13,7 @@ public class startMeny extends JPanel
 	startMeny()
 	{
 		gui(); // kallar på gui metod
-	}
+	} //lol
 	
 	public void gui()
 	{
