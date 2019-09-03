@@ -19,30 +19,23 @@ public class startMeny extends JPanel
 	
 	startMeny()
 	{
-		gui(); // kallar på gui metod
-		try
-		{
-			pic = ImageIO.read(fil);
-		}
-		
-		catch(Exception e)
-		{
-			System.out.print("ndmkaj");
-		}
-	} //lol
+		checkup();
+	}
 	
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 	
-	public void gui()
+	public void checkup()
 	{
-		
-		/*lab.setIcon(new ImageIcon(/startMeny.pdf)); // placerar bilden i min label
-		pan.add(lab); // placerar min label i min panel
-		add(pan); // placerar min panel i min frame
-		
-		validate(); // uppdaterar bilden
-*/	}
+		try
+		{
+			pic = ImageIO.read(fil);
+		}
+		catch(Exception e)
+		{
+			System.out.print("Error.");
+		}
+	}
 }
