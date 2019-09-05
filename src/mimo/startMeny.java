@@ -13,7 +13,7 @@ public class startMeny extends JPanel
 	static private JPanel pan = new JPanel(); // förkortning för panel
 	static private JLabel lab = new JLabel(); // förkortning för label
 	static  BufferedImage pic; // förkortning för picture
-	static private File fil = new File("images\\Bild.jpg"); // förkortning för file
+	static private File fil = new File("images\\menu.jpg"); // förkortning för file
 	
 	startMeny()
 	{
@@ -23,6 +23,7 @@ public class startMeny extends JPanel
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
+		g.drawRect(1, 1, 500, 500);
 	}
 	
 	public void checkup()
