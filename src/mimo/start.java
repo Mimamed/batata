@@ -28,6 +28,6 @@ public class start
 		fönster.remove(gamlaPanelen);
 		fönster.add(panel);
 		gamlaPanelen = panel;
-		fönster.repaint();
+		fönster.validate();
 	}
 }

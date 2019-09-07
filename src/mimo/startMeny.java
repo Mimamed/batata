@@ -23,7 +23,6 @@ public class startMeny extends JPanel
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
-		g.drawRect(1, 1, 500, 500);
 	}
 	
 	public void checkup()
