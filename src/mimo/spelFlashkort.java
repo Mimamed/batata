@@ -8,31 +8,31 @@ import java.util.ArrayList;
 public class spelFlashkort {
 	//SKAPA LISTA, DATUM | ORD | SVÅRIGHET
 	static Scanner scan = new Scanner(System.in);
+	static List<WordListClass> words = new ArrayList<WordListClass>();
+	
 	
 	public static void main(String args[]) {
-		boolean menyLoop = true;
+		boolean menuLoop = true;
+		WordListClass word = new WordListClass("Du", "You (singular)", 3);
+		words.add(words.size(), word);
 		
 		//startmeny
-		while(menyLoop) {
-			System.out.println("Welcome to the flashcard section");
-			System.out.println("You have 'x' words left that need practice");
-			System.out.println("1. Start practice");
-			System.out.println("2. Wordlist");
-			System.out.println("3. Quit");
-			String svar = scan.next();
+		while(menuLoop) {
+			showMenu();
+			String answer = scan.next();
 			
-			switch(svar) {
+			switch(answer) {
 				case "1":
 				System.out.println("No words to practice, come back later");
 				break;
 			
 				case "2":
-				System.out.println("No words saved, save some dude.");
+				showWordList();
 				break;
 				
 				case "3":
 				System.out.println("Leaving flashcards, byebye.");
-				menyLoop = false;
+				menuLoop = false;
 				break;
 				
 				default:
@@ -41,35 +41,69 @@ public class spelFlashkort {
 			}
 		}
 	}
+	
+	public static void showMenu() {
+		System.out.println("Welcome to the flashcard section");
+		System.out.println("You have 'x' words left that need practice");
+		System.out.println("1. Start practice");
+		System.out.println("2. Wordlist");
+		System.out.println("3. Quit");
+	}
+	
+	public static void showWordList() {
+		if (words.size() == 0)
+        {
+            System.out.println("No words saved, save some dude.");
+            System.out.println("---");
+        }
+		else {
+            for (int i = 0; i < words.size(); i++)
+            {
+                System.out.println("Word " + (i + 1) + ":");
+                System.out.println("Word: " + words.get(i).getTerm());
+                System.out.println("Translation: " + words.get(i).getTranslation());
+                System.out.println("Difficulty: " + words.get(i).getDifficulty() + "/5");
+                System.out.println("Time saved: oops...");
+                System.out.println("---");
+            }
+        }
+	}
 }
 
 class WordListClass {
-	/* private X datum;
-	private String ord;
-	private int svarighet
+	/* private X date; */
+	private String term;
+	private String translation;
+	private int difficulty;
 	
-	public WordListClass(X datum, String ord, int svarighet) {
-		this.datum = datum;
-		this.ord = ord;
-		this.svarighet = svarighet;
+	public WordListClass(/*X date,*/ String term, String translation, int difficulty) {
+		//this.date = date;
+		this.term = term;
+		this.translation = translation;
+		this.difficulty = difficulty;
 	}
 	
-	public void setDatum(X datum) {
-		this.datum = datum;
+	/*public void setDate(X date) {
+		this.date = date;
+	}*/
+	
+	public void setTerm(String term) {
+		this.term = term;
 	}
 	
-	public void setOrd(String ord) {
-		this.ord = ord;
+	public void setTranslation(String translation) {
+		this.translation = translation;
 	}
 	
-	public void setSvarighet(int svarighet) {
-		this.svarighet = svarighet;
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
 	}
 	
-	public X getDatum() { return datum; }
+	//public X getDate() { return date; }
 	
-	public String getOrd() { return ord; }
+	public String getTerm() { return term; }
 	
-	public int getSvarighet() { return svarighet; }
-	*/
+	public String getTranslation() { return translation; }
+	
+	public int getDifficulty() { return difficulty; }
 }
