@@ -23,7 +23,7 @@ public class spelFlashkort {
 			
 			switch(answer) {
 				case "1":
-				System.out.println("No words to practice, come back later");
+				playFlashcards();
 				break;
 			
 				case "2":
@@ -51,14 +51,12 @@ public class spelFlashkort {
 	}
 	
 	public static void showWordList() {
-		if (words.size() == 0)
-        {
+		if (words.size() == 0) {
             System.out.println("No words saved, save some dude.");
             System.out.println("---");
         }
 		else {
-            for (int i = 0; i < words.size(); i++)
-            {
+            for (int i = 0; i < words.size(); i++) {
                 System.out.println("Word " + (i + 1) + ":");
                 System.out.println("Word: " + words.get(i).getTerm());
                 System.out.println("Translation: " + words.get(i).getTranslation());
@@ -67,6 +65,41 @@ public class spelFlashkort {
                 System.out.println("---");
             }
         }
+	}
+	public static void playFlashcards() {
+		/*
+		algoritm
+		kollar främst efter svårighetsgrad
+		
+		*/
+		System.out.println("Word: " + words.get(0).getTerm());
+		System.out.println("1. Show translation");
+		System.out.println("2. Show example");
+		System.out.println("3. Set how well you remember the word from 0 - 5 \n0: no memory at all | 5: remember clearly");
+		
+		String answer = scan.next();
+		switch(answer) {
+			case "1":
+			System.out.println("Translation: " + words.get(0).getTranslation());
+			break;
+			
+			case "2":
+			System.out.println("NO EXAMPLES AVAILABLE");
+			break;
+			
+			case "3":
+			System.out.println("No. \nIt shall remain 0");
+			break;
+			
+			default:
+			System.out.println("Enter a single integer from 1 to 3.");
+			break;
+		}
+		
+		
+		//if (wordNeedPractice) {
+		System.out.println("No words to practice, come back later \n");
+		//}
 	}
 }
 
