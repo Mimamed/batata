@@ -12,9 +12,8 @@ import java.awt.event.ActionListener;
 public class startMeny extends JPanel
 {
 	static private JButton startButton = new JButton(), profilButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton();
-	static private JPanel pan = new JPanel(); // förkortning för panel
 	static private BufferedImage pic; // förkortning för picture
-	static private File file = new File("images\\startMeny.jpg");
+	static private File file = new File("images\\startMenu.jpg");
 	
 	startMeny()
 	{
