@@ -39,7 +39,7 @@ public class spelMenu extends JPanel
 		this.add(knapp4);
 		
 		//sätter upp knapparna
-		knapp.setBounds(127 * start.widthSize / 2, 12 * start.heightSize/2, 278 * start.widthSize/2, 76 * start.heightSize/2);
+		knapp.setBounds((int) (127 * start.widthSize), (int) (12 * start.heightSize), (int) (278 * start.widthSize), (int) (76 * start.heightSize));//(int) (127 * start.widthSize), (int) (12 * start.heightSize), (int) (278 * start.widthSize), (int) (76 * start.heightSize)
 		knapp.addActionListener(new knapp1());
 		knapp.setContentAreaFilled(false);
 

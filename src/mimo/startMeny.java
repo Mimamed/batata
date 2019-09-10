@@ -21,9 +21,9 @@ public class startMeny extends JPanel
 		this.setLayout(null);
 		
 		this.add(startButton);
-		startButton.setBounds(710, 355, 463, 143);
+		startButton.setBounds((int) (710 * start.widthSize), (int) (355 * start.heightSize), 463, 143);
 		startButton.addActionListener(new button1());
-		startButton.setContentAreaFilled(false);
+		startButton.setContentAreaFilled(true);
 		startButton.setBorderPainted(false);
 		
 		this.add(profilButton);

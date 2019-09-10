@@ -6,11 +6,12 @@ import javax.swing.JPanel;
 
 public class start 
 {
+	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
 	static spelMenu spelSidan = new spelMenu();
 	static JPanel gamlaPanelen = new JPanel();
-	static int widthSize = (int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366), heightSize = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
+	
 	
 	public static void main(String[] Args)
 	{
@@ -21,7 +22,7 @@ public class start
 		fönster.add(meny);
 		gamlaPanelen = meny;
 		
-		System.out.print(Toolkit.getDefaultToolkit().getScreenSize().getWidth() + "  -  " + Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+		System.out.print(widthSize);
 		
 	}
 	
