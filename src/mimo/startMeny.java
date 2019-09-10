@@ -11,38 +11,39 @@ import java.awt.event.ActionListener;
 
 public class startMeny extends JPanel
 {
-	static private JButton startButton = new JButton(), profilButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton();
+	static private JButton button1 = new JButton(), button2 = new JButton(), button3 = new JButton(), button4 = new JButton();
+	static private JPanel pan = new JPanel(); // förkortning för panel
 	static private BufferedImage pic; // förkortning för picture
-	static private File file = new File("images\\startMenu.jpg");
+	static private File file = new File("images\\startMeny.jpg");
 	
 	startMeny()
 	{
 		checkup();
 		this.setLayout(null);
 		
-		this.add(startButton);
-		startButton.setBounds(710, 355, 463, 143);
-		startButton.addActionListener(new button1());
-		startButton.setContentAreaFilled(false);
-		startButton.setBorderPainted(false);
+		this.add(button1);
+		button1.setBounds(710, 355, 463, 143);
+		button1.addActionListener(new button1());
+		button1.setContentAreaFilled(false);
+		button1.setBorderPainted(false);
 		
-		this.add(profilButton);
-		profilButton.setBounds(761, 520, 371, 115);
-		profilButton.addActionListener(new button2());
-		profilButton.setContentAreaFilled(false);
-		profilButton.setBorderPainted(false);
+		this.add(button2);
+		button2.setBounds(761, 520, 371, 115);
+		button2.addActionListener(new button2());
+		button2.setContentAreaFilled(false);
+		button2.setBorderPainted(false);
 		
-		this.add(settingsButton);
-		settingsButton.setBounds(761, 657, 371, 115);
-		settingsButton.addActionListener(new button3());
-		settingsButton.setContentAreaFilled(false);
-		settingsButton.setBorderPainted(false);
+		this.add(button3);
+		button3.setBounds(761, 657, 371, 115);
+		button3.addActionListener(new button3());
+		button3.setContentAreaFilled(false);
+		button3.setBorderPainted(false);
 		
-		this.add(quitButton);
-		quitButton.setBounds(761, 794, 371, 115);
-		quitButton.addActionListener(new button4());
-		quitButton.setContentAreaFilled(false);
-		quitButton.setBorderPainted(false);
+		this.add(button4);
+		button4.setBounds(761, 794, 371, 115);
+		button4.addActionListener(new button4());
+		button4.setContentAreaFilled(false);
+		button4.setBorderPainted(false);
 		
 		this.repaint();
 	}

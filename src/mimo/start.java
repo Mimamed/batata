@@ -20,9 +20,6 @@ public class start
 		fönster.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
 		fönster.add(meny);
 		gamlaPanelen = meny;
-		
-		System.out.print(Toolkit.getDefaultToolkit().getScreenSize().getWidth() + "  -  " + Toolkit.getDefaultToolkit().getScreenSize().getHeight());
-		
 	}
 	
 	//Metod som byter ut panelen i fönstret
