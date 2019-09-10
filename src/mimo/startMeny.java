@@ -21,11 +21,11 @@ public class startMeny extends JPanel
 		checkup();
 		this.setLayout(null);
 		
-		this.add(button1);
-		button1.setBounds(710, 355, 463, 143);
-		button1.addActionListener(new button1());
-		button1.setContentAreaFilled(false);
-		button1.setBorderPainted(false);
+		this.add(startButton);
+		startButton.setBounds((int) (710 * start.widthSize), (int) (355 * start.heightSize), 463, 143);
+		startButton.addActionListener(new button1());
+		startButton.setContentAreaFilled(true);
+		startButton.setBorderPainted(false);
 		
 		this.add(button2);
 		button2.setBounds(761, 520, 371, 115);
