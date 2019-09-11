@@ -11,10 +11,10 @@ import java.awt.event.ActionListener;
 
 public class startMeny extends JPanel
 {
-	static private JButton button1 = new JButton(), button2 = new JButton(), button3 = new JButton(), button4 = new JButton();
+	static private JButton startButton = new JButton(), profileButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton();
 	static private JPanel pan = new JPanel(); // förkortning för panel
 	static private BufferedImage pic; // förkortning för picture
-	static private File file = new File("images\\startMeny.jpg");
+	static private File file = new File("images\\startMenu.jpg");
 	
 	startMeny()
 	{
@@ -27,23 +27,23 @@ public class startMeny extends JPanel
 		startButton.setContentAreaFilled(true);
 		startButton.setBorderPainted(false);
 		
-		this.add(button2);
-		button2.setBounds(761, 520, 371, 115);
-		button2.addActionListener(new button2());
-		button2.setContentAreaFilled(false);
-		button2.setBorderPainted(false);
+		this.add(profileButton);
+		profileButton.setBounds(761, 520, 371, 115);
+		profileButton.addActionListener(new button2());
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorderPainted(false);
 		
-		this.add(button3);
-		button3.setBounds(761, 657, 371, 115);
-		button3.addActionListener(new button3());
-		button3.setContentAreaFilled(false);
-		button3.setBorderPainted(false);
+		this.add(settingsButton);
+		settingsButton.setBounds(761, 657, 371, 115);
+		settingsButton.addActionListener(new button3());
+		settingsButton.setContentAreaFilled(false);
+		settingsButton.setBorderPainted(false);
 		
-		this.add(button4);
-		button4.setBounds(761, 794, 371, 115);
-		button4.addActionListener(new button4());
-		button4.setContentAreaFilled(false);
-		button4.setBorderPainted(false);
+		this.add(quitButton);
+		quitButton.setBounds(761, 794, 371, 115);
+		quitButton.addActionListener(new button4());
+		quitButton.setContentAreaFilled(false);
+		quitButton.setBorderPainted(false);
 		
 		this.repaint();
 	}
@@ -93,7 +93,7 @@ public class startMeny extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			start.fönster.dispose();
 		}
 	}
 }
