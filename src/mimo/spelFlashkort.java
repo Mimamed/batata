@@ -2,16 +2,19 @@ package mimo;
 //DETTA ÄR BARA FÖR SJÄLVASTE KODEN, INTE FÖNSTRET
 
 import java.util.Scanner;
+
+import javax.swing.JPanel;
+
 import java.util.List;
 import java.util.ArrayList;
 
-public class spelFlashkort {
+public class spelFlashkort extends JPanel {
 	//SKAPA LISTA, DATUM | ORD | SVÅRIGHET
 	static Scanner scan = new Scanner(System.in);
 	static List<WordListClass> words = new ArrayList<WordListClass>();
 	
 	
-	public static void main(String args[]) {
+	spelFlashkort() {
 		boolean menuLoop = true;
 		WordListClass word = new WordListClass("Du", "You (singular)", 3);
 		words.add(words.size(), word);
