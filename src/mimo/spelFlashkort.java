@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class spelFlashkort extends JPanel {
-	//SKAPA LISTA, DATUM | ORD | SVÅRIGHET
+	//SKAPA LISTA, DATUM | ORD | ÖVERSÄTTNING | SVÅRIGHET
 	static Scanner scan = new Scanner(System.in);
 	static List<WordListClass> words = new ArrayList<WordListClass>();
 	
@@ -75,6 +75,8 @@ public class spelFlashkort extends JPanel {
 		kollar främst efter svårighetsgrad
 		
 		*/
+		//Random rand = new Random();
+		//en variabel som ser till att index, osv är alla = rand.nextInt(words.length)
 		System.out.println("Word: " + words.get(0).getTerm());
 		System.out.println("1. Show translation");
 		System.out.println("2. Show example");
@@ -91,7 +93,11 @@ public class spelFlashkort extends JPanel {
 			break;
 			
 			case "3":
-			System.out.println("No. \nIt shall remain 0");
+			//man skriver in nummer 0-5
+			//words.get(INDEXET).setDifficulty(noll till fem);
+			
+			//om man skriver in annat, bör loopas tills rätt nummer eller avbrytning
+			System.out.println("No. \nIt shall remain [ORIGINAL NUMBER]");
 			break;
 			
 			default:
