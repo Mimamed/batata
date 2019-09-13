@@ -18,7 +18,7 @@ public class spelMenu extends JPanel
 	
 	static File bakgrundFil = new File("images\\tabmenu.jpg");
 	static BufferedImage bakgrund;
-	static JButton knapp = new JButton(), knapp2 = new JButton(), knapp3 = new JButton(), knapp4 = new JButton();
+	static JButton knapp = new JButton(), knapp2 = new JButton(), knapp3 = new JButton(), knapp4 = new JButton(), knapp5 = new JButton();
 	
 	spelMenu()
 	{
@@ -37,17 +37,29 @@ public class spelMenu extends JPanel
 		this.add(knapp2);
 		this.add(knapp3);
 		this.add(knapp4);
+		this.add(knapp5);
 		
 		//sätter upp knapparna
 
-		knapp.setBounds((int) (127 * start.widthSize), (int) (12 * start.heightSize), (int) (278 * start.widthSize), (int) (76 * start.heightSize));
+		knapp.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		knapp.addActionListener(new knapp1());
 		knapp.setContentAreaFilled(false);
 
-		knapp2.setBounds(406, 12, 278, 76);
+		knapp2.setBounds((int) Math.round(406 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		knapp2.addActionListener(new knapp2());
 		knapp2.setContentAreaFilled(false);
-		this.repaint();
+		
+		knapp3.setBounds((int) Math.round(685 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		knapp3.addActionListener(new knapp3());
+		knapp3.setContentAreaFilled(false);
+		
+		knapp4.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		knapp4.addActionListener(new knapp4());
+		knapp4.setContentAreaFilled(false);
+		
+		knapp5.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		knapp5.addActionListener(new knapp5());
+		knapp5.setContentAreaFilled(false);
 	}
 	
 	public void paintComponent(Graphics g)
@@ -66,6 +78,33 @@ public class spelMenu extends JPanel
 	}
 	
 	static class knapp2 implements ActionListener
+	{
+		
+		public void actionPerformed(ActionEvent e)
+		{
+			start.Byta(start.meny);
+		}
+	}
+	
+	static class knapp3 implements ActionListener
+	{
+		
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+
+	static class knapp4 implements ActionListener
+	{
+		
+		public void actionPerformed(ActionEvent e)
+		{
+			start.Byta(start.meny);
+		}
+	}
+
+	static class knapp5 implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)

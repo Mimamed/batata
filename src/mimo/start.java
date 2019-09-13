@@ -33,5 +33,6 @@ public class start
 		fönster.add(panel);
 		gamlaPanelen = panel;
 		fönster.validate();
+		fönster.repaint();
 	}
 }
