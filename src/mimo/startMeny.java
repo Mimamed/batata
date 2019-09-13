@@ -6,12 +6,15 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import mimo.spelMenu.knapp5;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class startMeny extends JPanel
 {
-	static private JButton startButton = new JButton(), profileButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton();
+	static private JButton startButton = new JButton(), profileButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton(), menuButton = new JButton();
 	static private JPanel pan = new JPanel(); // förkortning för panel
 	static private BufferedImage pic; // förkortning för picture
 	static private File file = new File("images\\startMenu.jpg");
@@ -47,7 +50,10 @@ public class startMeny extends JPanel
 		quitButton.setContentAreaFilled(false);
 		quitButton.setBorderPainted(synns);
 		
-		this.repaint();
+		this.add(menuButton);
+		menuButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		menuButton.addActionListener(new MenuButton());
+		menuButton.setContentAreaFilled(false);
 	}
 	
 	public void paintComponent(Graphics g)
@@ -96,6 +102,15 @@ public class startMeny extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			start.fönster.dispose();
+		}
+	}
+	
+	static class MenuButton implements ActionListener
+	{
+		
+		public void actionPerformed(ActionEvent e)
+		{
+			start.Byta(start.meny);
 		}
 	}
 }
