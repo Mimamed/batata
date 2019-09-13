@@ -145,7 +145,7 @@ class WordListClass {
 	
 	public String getTerm() { return term; }
 	
-	public String getTranslation() { return translation; }
+	public String getTranslation() { return translation; }	
 	
 	public int getDifficulty() { return difficulty; }
 }

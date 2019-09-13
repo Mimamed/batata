@@ -23,25 +23,26 @@ public class startMeny extends JPanel
 		
 		this.add(startButton);
 		startButton.setBounds((int) (710 * start.widthSize), (int) (355 * start.heightSize), 463, 143);
-		startButton.addActionListener(new button1());
+		startButton.addActionListener(new startButton());
 		startButton.setContentAreaFilled(true);
 		startButton.setBorderPainted(false);
 		
 		this.add(profileButton);
 		profileButton.setBounds(761, 520, 371, 115);
-		profileButton.addActionListener(new button2());
+		
+		profileButton.addActionListener(new profileButton());
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorderPainted(false);
 		
 		this.add(settingsButton);
 		settingsButton.setBounds(761, 657, 371, 115);
-		settingsButton.addActionListener(new button3());
+		settingsButton.addActionListener(new settingsButton());
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorderPainted(false);
 		
 		this.add(quitButton);
 		quitButton.setBounds(761, 794, 371, 115);
-		quitButton.addActionListener(new button4());
+		quitButton.addActionListener(new quitButton());
 		quitButton.setContentAreaFilled(false);
 		quitButton.setBorderPainted(false);
 		
@@ -65,7 +66,7 @@ public class startMeny extends JPanel
 		}
 	}
 	
-	static class button1 implements ActionListener
+	static class startButton implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
@@ -73,7 +74,15 @@ public class startMeny extends JPanel
 		}
 	}
 	
-	static class button2 implements ActionListener
+	static class profileButton implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			start.Byta(start.flashkort);
+		}
+	}
+	
+	static class settingsButton implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
@@ -81,15 +90,7 @@ public class startMeny extends JPanel
 		}
 	}
 	
-	static class button3 implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e)
-		{
-			
-		}
-	}
-	
-	static class button4 implements ActionListener
+	static class quitButton implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
