@@ -22,26 +22,26 @@ public class startMeny extends JPanel
 		this.setLayout(null);
 		
 		this.add(startButton);
-		startButton.setBounds((int) (710 * start.widthSize), (int) (355 * start.heightSize), 463, 143);
+		startButton.setBounds((int) Math.round(505 * start.widthSize), (int) Math.round(250 * start.heightSize), (int) Math.round(330 * start.widthSize), (int) Math.round(105 * start.heightSize));
 		startButton.addActionListener(new startButton());
-		startButton.setContentAreaFilled(true);
+		startButton.setContentAreaFilled(false);
 		startButton.setBorderPainted(false);
 		
 		this.add(profileButton);
-		profileButton.setBounds(761, 520, 371, 115);
+		profileButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(370 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		
 		profileButton.addActionListener(new profileButton());
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorderPainted(false);
 		
 		this.add(settingsButton);
-		settingsButton.setBounds(761, 657, 371, 115);
+		settingsButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(466 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(85 * start.heightSize));
 		settingsButton.addActionListener(new settingsButton());
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorderPainted(false);
 		
 		this.add(quitButton);
-		quitButton.setBounds(761, 794, 371, 115);
+		quitButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(564 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(82 * start.heightSize));
 		quitButton.addActionListener(new quitButton());
 		quitButton.setContentAreaFilled(false);
 		quitButton.setBorderPainted(false);

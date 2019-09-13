@@ -11,7 +11,7 @@ public class start
 	static startMeny meny = new startMeny();
 	static spelMenu spelSidan = new spelMenu();
 	static JPanel gamlaPanelen = new JPanel();
-	static spelFlashkort flashkort = new spelFlashkort();
+	//static spelFlashkort flashkort = new spelFlashkort();
 	
 	
 	public static void main(String[] Args)
