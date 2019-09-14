@@ -18,7 +18,7 @@ public class startMeny extends JPanel
 	static private JPanel pan = new JPanel(); // förkortning för panel
 	static private BufferedImage pic; // förkortning för picture
 	static private File file = new File("images\\startMenu.jpg");
-	static boolean synns = true;
+	static boolean syns = true;
 	
 	startMeny()
 	{
@@ -29,26 +29,26 @@ public class startMeny extends JPanel
 		startButton.setBounds((int) Math.round(505 * start.widthSize), (int) Math.round(250 * start.heightSize), (int) Math.round(330 * start.widthSize), (int) Math.round(105 * start.heightSize));
 		startButton.addActionListener(new startButton());
 		startButton.setContentAreaFilled(false);
-		startButton.setBorderPainted(synns);
+		startButton.setBorderPainted(syns);
 		
 		this.add(profileButton);
 		profileButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(370 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		
 		profileButton.addActionListener(new profileButton());
 		profileButton.setContentAreaFilled(false);
-		profileButton.setBorderPainted(synns);
+		profileButton.setBorderPainted(syns);
 		
 		this.add(settingsButton);
 		settingsButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(466 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(85 * start.heightSize));
 		settingsButton.addActionListener(new settingsButton());
 		settingsButton.setContentAreaFilled(false);
-		settingsButton.setBorderPainted(synns);
+		settingsButton.setBorderPainted(syns);
 		
 		this.add(quitButton);
 		quitButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(564 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(82 * start.heightSize));
 		quitButton.addActionListener(new quitButton());
 		quitButton.setContentAreaFilled(false);
-		quitButton.setBorderPainted(synns);
+		quitButton.setBorderPainted(syns);
 		
 		this.add(menuButton);
 		menuButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
