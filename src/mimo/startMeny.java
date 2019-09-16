@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import mimo.spelMenu.menyButton;
+import mimo.tabMeny.menyButton;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

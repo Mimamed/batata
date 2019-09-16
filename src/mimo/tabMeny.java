@@ -15,14 +15,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-public class spelMenu extends JPanel
+public class tabMeny extends JPanel
 {
 	
 	static BufferedImage bakgrund;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), Button = new JButton(), menyButton = new JButton();
 	
 	
-	spelMenu()
+	tabMeny()
 	{
 		try
 		{
