@@ -3,24 +3,39 @@ package mimo;
 
 import java.util.Scanner;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import java.util.List;
+import java.awt.Graphics;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class spelFlashkort extends JPanel {
 	//SKAPA LISTA, DATUM | ORD | ÖVERSÄTTNING | SVÅRIGHET
 	static Scanner scan = new Scanner(System.in);
 	static List<WordListClass> words = new ArrayList<WordListClass>();
+	static BufferedImage pic;
 	
 	
-	spelFlashkort() {
+	spelFlashkort() 
+	{
+		
+		try
+		{
+			pic = ImageIO.read(start.filer[2]);
+		}catch (Exception e)
+		{
+			
+		}
+		
 		boolean menuLoop = true;
 		WordListClass word = new WordListClass("Du", "You (singular)", 3);
 		words.add(words.size(), word);
 		
 		//startmeny
-		while(menuLoop) {
+		while(menuLoop) {//loopen ska ersättas med riktiga knappar och actionlisteners men även paneler!
 			showMenu();
 			String answer = scan.next();
 			
@@ -43,6 +58,11 @@ public class spelFlashkort extends JPanel {
 				break;
 			}
 		}
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 	
 	public static void showMenu() {

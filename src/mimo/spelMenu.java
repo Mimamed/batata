@@ -18,16 +18,15 @@ import javax.swing.JPanel;
 public class spelMenu extends JPanel
 {
 	
-	static File bakgrundFil = new File("images\\tabmenu.jpg");
 	static BufferedImage bakgrund;
-	static JButton knapp = new JButton(), knapp2 = new JButton(), knapp3 = new JButton(), knapp4 = new JButton(), knapp5 = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), Button = new JButton(), menyButton = new JButton();
 	
 	
 	spelMenu()
 	{
 		try
 		{
-			bakgrund = ImageIO.read(bakgrundFil);
+			bakgrund = ImageIO.read(start.filer[1]);
 		}catch(Exception e)
 		{
 			System.out.print("fel men uppladning");
@@ -37,41 +36,51 @@ public class spelMenu extends JPanel
 		
 		//addar grejer
 		
-		this.add(knapp);
-		this.add(knapp2);
-		this.add(knapp3);
-		this.add(knapp4);
-		this.add(knapp5);
+		this.add(lessonButton);
+		this.add(flashcardButton);
+		this.add(readingButton);
+		this.add(Button);
+		this.add(menyButton);
 		
 		//sätter upp knapparna
 		
-		knapp.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		knapp.addActionListener(new knapp1());
-		knapp.setContentAreaFilled(false);
-		knapp.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		knapp.setText("Lessons");
+		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		lessonButton.addActionListener(new knapp1());
+		lessonButton.setContentAreaFilled(false);
+		lessonButton.setBorderPainted(false);
+		lessonButton.setFocusPainted(false);
+		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		lessonButton.setText("Lessons");
 
-		knapp2.setBounds((int) Math.round(406 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		knapp2.addActionListener(new knapp2());
-		knapp2.setContentAreaFilled(false);
-		knapp2.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		knapp2.setText("Flashcards");
+		flashcardButton.setBounds((int) Math.round(406 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		flashcardButton.addActionListener(new knapp2());
+		flashcardButton.setContentAreaFilled(false);
+		flashcardButton.setBorderPainted(false);
+		flashcardButton.setFocusPainted(false);
+		flashcardButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		flashcardButton.setText("Flashcards");
 		
-		knapp3.setBounds((int) Math.round(685 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		knapp3.addActionListener(new knapp3());
-		knapp3.setContentAreaFilled(false);
-		knapp3.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		knapp3.setText("Reading");
+		readingButton.setBounds((int) Math.round(685 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		readingButton.addActionListener(new knapp3());
+		readingButton.setContentAreaFilled(false);
+		readingButton.setBorderPainted(false);
+		readingButton.setFocusPainted(false);
+		readingButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		readingButton.setText("Reading");
 		
-		knapp4.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		knapp4.addActionListener(new knapp4());
-		knapp4.setContentAreaFilled(false);
-		knapp4.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		knapp4.setText("???");
+		Button.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		Button.addActionListener(new knapp4());
+		Button.setContentAreaFilled(false);
+		Button.setBorderPainted(false);
+		Button.setFocusPainted(false);
+		Button.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		Button.setText("???");
 		
-		knapp5.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		knapp5.addActionListener(new knapp5());
-		knapp5.setContentAreaFilled(false);
+		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		menyButton.addActionListener(new knapp5());
+		menyButton.setContentAreaFilled(false);
+		menyButton.setBorderPainted(false);
+		menyButton.setFocusPainted(false);
 	}
 	
 	public void paintComponent(Graphics g)
@@ -93,6 +102,7 @@ public class spelMenu extends JPanel
 		
 		public void actionPerformed(ActionEvent e)
 		{
+			start.Byta(start.flashkort);
 		}
 	}
 	
@@ -118,6 +128,7 @@ public class spelMenu extends JPanel
 		
 		public void actionPerformed(ActionEvent e)
 		{
+			start.Byta(start.meny);
 		}
 	}
 }
