@@ -92,7 +92,7 @@ public class spelFlashkort extends JPanel {
 		menyButton.setBorderPainted(false);
 		menyButton.setFocusPainted(false);
 		
-
+		/*
 		boolean menuLoop = true;
 		WordListClass word = new WordListClass("Du", "You (singular)", 3);
 		words.add(words.size(), word);
@@ -121,6 +121,7 @@ public class spelFlashkort extends JPanel {
 				break;
 			}
 		}
+		*/
 	}
 	
 	public void paintComponent(Graphics g)

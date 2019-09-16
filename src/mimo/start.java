@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 public class start 
 {
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static File[] filer = { new File("images\\startMenu.jpg"), new File("images\\tabmenu.jpg"), new File("src\\images\\flashcardMenu.jpg")};
+	static File[] filer = { new File("images\\startMenu.jpg"), new File("images\\tabmenu.jpg"), new File("images\\flashcardMenu.jpg")};
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
 	static spelMenu spelSidan = new spelMenu();
