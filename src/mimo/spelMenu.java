@@ -85,8 +85,7 @@ public class spelMenu extends JPanel
 	
 	public void paintComponent(Graphics g)
 	{
-		Graphics2D g2 = (Graphics2D) g;
-		g2.drawImage(bakgrund, 0, 0, this.getWidth(), this.getHeight(), null);
+		g.drawImage(bakgrund, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 	
 	static class knapp1 implements ActionListener

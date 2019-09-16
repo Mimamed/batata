@@ -17,7 +17,7 @@ public class startMeny extends JPanel
 	static private JButton startButton = new JButton(), profileButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton(), menuButton = new JButton();
 	static private JPanel pan = new JPanel(); // förkortning för panel
 	static private BufferedImage pic; // förkortning för picture
-	static boolean synns = true;
+	static boolean syns = false;
 	
 	startMeny()
 	{
@@ -27,38 +27,38 @@ public class startMeny extends JPanel
 		this.add(startButton);
 		startButton.setBounds((int) Math.round(505 * start.widthSize), (int) Math.round(250 * start.heightSize), (int) Math.round(330 * start.widthSize), (int) Math.round(105 * start.heightSize));
 		startButton.addActionListener(new startButton());
-		startButton.setContentAreaFilled(synns);
-		startButton.setFocusPainted(synns);
-		startButton.setBorderPainted(synns);
+		startButton.setContentAreaFilled(syns);
+		startButton.setFocusPainted(syns);
+		startButton.setBorderPainted(syns);
 		
 		this.add(profileButton);
 		profileButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(370 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		
 		profileButton.addActionListener(new profileButton());
-		profileButton.setContentAreaFilled(synns);
-		profileButton.setFocusPainted(synns);
-		profileButton.setBorderPainted(synns);
+		profileButton.setContentAreaFilled(syns);
+		profileButton.setFocusPainted(syns);
+		profileButton.setBorderPainted(syns);
 		
 		this.add(settingsButton);
 		settingsButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(466 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(85 * start.heightSize));
 		settingsButton.addActionListener(new settingsButton());
-		settingsButton.setContentAreaFilled(synns);
-		settingsButton.setFocusPainted(synns);
-		settingsButton.setBorderPainted(synns);
+		settingsButton.setContentAreaFilled(syns);
+		settingsButton.setFocusPainted(syns);
+		settingsButton.setBorderPainted(syns);
 		
 		this.add(quitButton);
 		quitButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(564 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(82 * start.heightSize));
 		quitButton.addActionListener(new quitButton());
-		quitButton.setContentAreaFilled(synns);
-		quitButton.setFocusPainted(synns);
-		quitButton.setBorderPainted(synns);
+		quitButton.setContentAreaFilled(syns);
+		quitButton.setFocusPainted(syns);
+		quitButton.setBorderPainted(syns);
 		
 		this.add(menuButton);
 		menuButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		menuButton.addActionListener(new MenuButton());
-		menuButton.setContentAreaFilled(synns);
-		menuButton.setBorderPainted(synns);
-		menuButton.setFocusPainted(synns);
+		menuButton.setContentAreaFilled(syns);
+		menuButton.setBorderPainted(syns);
+		menuButton.setFocusPainted(syns);
 	}
 	
 	public void paintComponent(Graphics g)
