@@ -45,7 +45,7 @@ public class spelMenu extends JPanel
 		//sätter upp knapparna
 		
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		lessonButton.addActionListener(new knapp1());
+		lessonButton.addActionListener(new lessonButton());
 		lessonButton.setContentAreaFilled(false);
 		lessonButton.setBorderPainted(false);
 		lessonButton.setFocusPainted(false);
@@ -53,7 +53,7 @@ public class spelMenu extends JPanel
 		lessonButton.setText("Lessons");
 
 		flashcardButton.setBounds((int) Math.round(406 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		flashcardButton.addActionListener(new knapp2());
+		flashcardButton.addActionListener(new flashcardButton());
 		flashcardButton.setContentAreaFilled(false);
 		flashcardButton.setBorderPainted(false);
 		flashcardButton.setFocusPainted(false);
@@ -61,7 +61,7 @@ public class spelMenu extends JPanel
 		flashcardButton.setText("Flashcards");
 		
 		readingButton.setBounds((int) Math.round(685 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		readingButton.addActionListener(new knapp3());
+		readingButton.addActionListener(new readingButton());
 		readingButton.setContentAreaFilled(false);
 		readingButton.setBorderPainted(false);
 		readingButton.setFocusPainted(false);
@@ -69,7 +69,7 @@ public class spelMenu extends JPanel
 		readingButton.setText("Reading");
 		
 		Button.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		Button.addActionListener(new knapp4());
+		Button.addActionListener(new button());
 		Button.setContentAreaFilled(false);
 		Button.setBorderPainted(false);
 		Button.setFocusPainted(false);
@@ -77,7 +77,7 @@ public class spelMenu extends JPanel
 		Button.setText("???");
 		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		menyButton.addActionListener(new knapp5());
+		menyButton.addActionListener(new menyButton());
 		menyButton.setContentAreaFilled(false);
 		menyButton.setBorderPainted(false);
 		menyButton.setFocusPainted(false);
@@ -88,7 +88,7 @@ public class spelMenu extends JPanel
 		g.drawImage(bakgrund, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 	
-	static class knapp1 implements ActionListener
+	static class lessonButton implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
@@ -96,7 +96,7 @@ public class spelMenu extends JPanel
 		}
 	}
 	
-	static class knapp2 implements ActionListener
+	static class flashcardButton implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
@@ -105,7 +105,7 @@ public class spelMenu extends JPanel
 		}
 	}
 	
-	static class knapp3 implements ActionListener
+	static class readingButton implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
@@ -114,7 +114,7 @@ public class spelMenu extends JPanel
 		}
 	}
 
-	static class knapp4 implements ActionListener
+	static class button implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
@@ -122,7 +122,7 @@ public class spelMenu extends JPanel
 		}
 	}
 
-	static class knapp5 implements ActionListener
+	static class menyButton implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)

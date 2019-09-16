@@ -7,11 +7,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import mimo.spelMenu.knapp1;
-import mimo.spelMenu.knapp2;
-import mimo.spelMenu.knapp3;
-import mimo.spelMenu.knapp4;
-import mimo.spelMenu.knapp5;
+import mimo.spelMenu.lessonButton;
+import mimo.spelMenu.flashcardButton;
+import mimo.spelMenu.readingButton;
+import mimo.spelMenu.button;
+import mimo.spelMenu.menyButton;
 
 import java.util.List;
 import java.awt.Font;
