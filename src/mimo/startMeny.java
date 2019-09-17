@@ -1,5 +1,6 @@
 package mimo;
 
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -30,14 +31,17 @@ public class startMeny extends JPanel
 		startButton.setContentAreaFilled(syns);
 		startButton.setFocusPainted(syns);
 		startButton.setBorderPainted(syns);
+		startButton.setFont(new Font("comic sans ms", Font.BOLD, 50));
+		startButton.setText("Start");
 		
 		this.add(profileButton);
 		profileButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(370 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		
 		profileButton.addActionListener(new profileButton());
 		profileButton.setContentAreaFilled(syns);
 		profileButton.setFocusPainted(syns);
 		profileButton.setBorderPainted(syns);
+		profileButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		profileButton.setText("Profile");
 		
 		this.add(settingsButton);
 		settingsButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(466 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(85 * start.heightSize));
@@ -45,6 +49,8 @@ public class startMeny extends JPanel
 		settingsButton.setContentAreaFilled(syns);
 		settingsButton.setFocusPainted(syns);
 		settingsButton.setBorderPainted(syns);
+		settingsButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		settingsButton.setText("Settings");
 		
 		this.add(quitButton);
 		quitButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(564 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(82 * start.heightSize));
@@ -52,6 +58,8 @@ public class startMeny extends JPanel
 		quitButton.setContentAreaFilled(syns);
 		quitButton.setFocusPainted(syns);
 		quitButton.setBorderPainted(syns);
+		quitButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		quitButton.setText("Quit");
 		
 		this.add(menuButton);
 		menuButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));

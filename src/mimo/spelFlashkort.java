@@ -27,7 +27,7 @@ public class spelFlashkort extends JPanel {
 	static Scanner scan = new Scanner(System.in);
 	static List<WordListClass> words = new ArrayList<WordListClass>();
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), Button = new JButton(), menyButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton();
 	
 	
 	spelFlashkort() 
@@ -48,7 +48,7 @@ public class spelFlashkort extends JPanel {
 		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);
-		this.add(Button);
+		this.add(listeningButton);
 		this.add(menyButton);
 		
 		//sätter upp knapparna
@@ -78,13 +78,13 @@ public class spelFlashkort extends JPanel {
 		readingButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		readingButton.setText("Reading");
 		
-		Button.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		Button.addActionListener(new knapp4());
-		Button.setContentAreaFilled(false);
-		Button.setBorderPainted(false);
-		Button.setFocusPainted(false);
-		Button.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		Button.setText("???");
+		listeningButton.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		listeningButton.addActionListener(new knapp4());
+		listeningButton.setContentAreaFilled(false);
+		listeningButton.setBorderPainted(false);
+		listeningButton.setFocusPainted(false);
+		listeningButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		listeningButton.setText("Listening");
 		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		menyButton.addActionListener(new knapp5());
