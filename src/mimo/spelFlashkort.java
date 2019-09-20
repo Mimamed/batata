@@ -27,7 +27,7 @@ public class spelFlashkort extends JPanel {
 	static Scanner scan = new Scanner(System.in);
 	static List<WordListClass> words = new ArrayList<WordListClass>();
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton(), practiceButton = new JButton(), wordListButton = new JButton();
 	
 	
 	spelFlashkort() 
@@ -50,6 +50,8 @@ public class spelFlashkort extends JPanel {
 		this.add(readingButton);
 		this.add(listeningButton);
 		this.add(menyButton);
+		this.add(practiceButton);
+		this.add(wordListButton);
 		
 		//sätter upp knapparna
 		
@@ -91,6 +93,19 @@ public class spelFlashkort extends JPanel {
 		menyButton.setContentAreaFilled(false);
 		menyButton.setBorderPainted(false);
 		menyButton.setFocusPainted(false);
+		
+		practiceButton.setBounds((int) Math.round(30 * start.widthSize), (int) Math.round(30 * start.heightSize), (int) Math.round(150 * start.widthSize), (int) Math.round(150 * start.heightSize));
+		practiceButton.addActionListener(new knapp6());
+		practiceButton.setContentAreaFilled(true);
+		practiceButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		practiceButton.setText("Practice");
+		
+		wordListButton.setBounds((int) Math.round(90 * start.widthSize), (int) Math.round(90 * start.heightSize), (int) Math.round(200 * start.widthSize), (int) Math.round(200 * start.heightSize));
+		wordListButton.addActionListener(new knapp6());
+		wordListButton.setContentAreaFilled(true);
+		wordListButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		wordListButton.setText("Word list");
+		
 		
 		/*
 		boolean menuLoop = true;
@@ -194,6 +209,22 @@ public class spelFlashkort extends JPanel {
 			public void actionPerformed(ActionEvent e)
 			{
 				start.Byta(start.meny);
+			}
+		}
+		
+		static class knapp6 implements ActionListener
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
+			}
+		}
+		
+		static class knapp7 implements ActionListener
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
 			}
 		}
 		
