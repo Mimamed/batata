@@ -94,13 +94,13 @@ public class spelFlashkort extends JPanel {
 		menyButton.setBorderPainted(false);
 		menyButton.setFocusPainted(false);
 		
-		practiceButton.setBounds((int) Math.round(30 * start.widthSize), (int) Math.round(30 * start.heightSize), (int) Math.round(150 * start.widthSize), (int) Math.round(150 * start.heightSize));
+		practiceButton.setBounds((int) Math.round(360 * start.widthSize), (int) Math.round(531 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(107 * start.heightSize));
 		practiceButton.addActionListener(new knapp6());
 		practiceButton.setContentAreaFilled(true);
 		practiceButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		practiceButton.setText("Practice");
 		
-		wordListButton.setBounds((int) Math.round(90 * start.widthSize), (int) Math.round(90 * start.heightSize), (int) Math.round(200 * start.widthSize), (int) Math.round(200 * start.heightSize));
+		wordListButton.setBounds((int) Math.round(710 * start.widthSize), (int) Math.round(531 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(107 * start.heightSize));
 		wordListButton.addActionListener(new knapp6());
 		wordListButton.setContentAreaFilled(true);
 		wordListButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
