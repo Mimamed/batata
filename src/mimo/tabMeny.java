@@ -46,41 +46,41 @@ public class tabMeny extends JPanel
 		
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		lessonButton.addActionListener(new lessonButton());
-		lessonButton.setContentAreaFilled(false);
-		lessonButton.setBorderPainted(false);
-		lessonButton.setFocusPainted(false);
+		lessonButton.setContentAreaFilled(start.synligaKnappar);
+		lessonButton.setBorderPainted(start.synligaKnappar);
+		lessonButton.setFocusPainted(start.synligaKnappar);
 		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		lessonButton.setText("Lessons");
 
 		flashcardButton.setBounds((int) Math.round(406 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		flashcardButton.addActionListener(new flashcardButton());
-		flashcardButton.setContentAreaFilled(false);
-		flashcardButton.setBorderPainted(false);
-		flashcardButton.setFocusPainted(false);
+		flashcardButton.setContentAreaFilled(start.synligaKnappar);
+		flashcardButton.setBorderPainted(start.synligaKnappar);
+		flashcardButton.setFocusPainted(start.synligaKnappar);
 		flashcardButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		flashcardButton.setText("Flashcards");
 		
 		readingButton.setBounds((int) Math.round(685 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		readingButton.addActionListener(new readingButton());
-		readingButton.setContentAreaFilled(false);
-		readingButton.setBorderPainted(false);
-		readingButton.setFocusPainted(false);
+		readingButton.setContentAreaFilled(start.synligaKnappar);
+		readingButton.setBorderPainted(start.synligaKnappar);
+		readingButton.setFocusPainted(start.synligaKnappar);
 		readingButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		readingButton.setText("Reading");
 		
 		listeningButton.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		listeningButton.addActionListener(new button());
-		listeningButton.setContentAreaFilled(false);
-		listeningButton.setBorderPainted(false);
-		listeningButton.setFocusPainted(false);
+		listeningButton.setContentAreaFilled(start.synligaKnappar);
+		listeningButton.setBorderPainted(start.synligaKnappar);
+		listeningButton.setFocusPainted(start.synligaKnappar);
 		listeningButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		listeningButton.setText("Listening");
 		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		menyButton.addActionListener(new menyButton());
-		menyButton.setContentAreaFilled(false);
-		menyButton.setBorderPainted(false);
-		menyButton.setFocusPainted(false);
+		menyButton.setContentAreaFilled(start.synligaKnappar);
+		menyButton.setBorderPainted(start.synligaKnappar);
+		menyButton.setFocusPainted(start.synligaKnappar);
 	}
 	
 	public void paintComponent(Graphics g)

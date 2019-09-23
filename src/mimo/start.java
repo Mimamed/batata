@@ -8,13 +8,15 @@ import javax.swing.JPanel;
 
 public class start 
 {
+	static boolean synligaKnappar = false;
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static File[] filer = { new File("images\\startMenu.jpg"), new File("images\\tabmenu.jpg"), new File("images\\flashcardMenu.jpg")};
+	static File[] filer = { new File("images\\startMenu.jpg"), new File("images\\tabmenu.jpg"), new File("images\\flashcardMenu.jpg"), new File("images\\flashcardGame.jpg")};
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
 	static tabMeny spelSidan = new tabMeny();
 	static JPanel gamlaPanelen = new JPanel();
 	static spelFlashkort flashkort = new spelFlashkort();
+	static flashcardsGame flashkortspelen = new flashcardsGame();
 	
 	
 	public static void main(String[] Args)
@@ -25,9 +27,11 @@ public class start
 		fönster.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
 		fönster.add(meny);
 		gamlaPanelen = meny;
-		start.fönster.invalidate();
-		start.fönster.validate();
-		start.fönster.repaint();
+		Byta(flashkortspelen);
+		
+		fönster.invalidate();
+		fönster.validate();
+		fönster.repaint();
 		
 		System.out.print(widthSize);
 	}
@@ -41,4 +45,5 @@ public class start
 		fönster.validate();
 		fönster.repaint();
 	}
+
 }

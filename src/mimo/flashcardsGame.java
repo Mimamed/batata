@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import mimo.tabMeny.lessonButton;
@@ -14,10 +15,12 @@ import mimo.spelFlashkort.knapp2;
 import mimo.spelFlashkort.knapp3;
 import mimo.spelFlashkort.knapp4;
 import mimo.spelFlashkort.knapp5;
+import mimo.spelFlashkort.knapp7;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
 
 import java.util.List;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Toolkit;
@@ -29,13 +32,16 @@ import java.util.ArrayList;
 public class flashcardsGame extends JPanel {
 	static Scanner scan = new Scanner(System.in);
 	static List<WordListClass> words = new ArrayList<WordListClass>();
+	
+//static List<String>[] allText = {new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>()};
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton();
+	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
 	
 	flashcardsGame() {
 		try
 		{
-			pic = ImageIO.read(start.filer[2]);
+			pic = ImageIO.read(start.filer[3]);
 		}catch (Exception e)
 		{
 			System.out.print("fel men uppladning");
@@ -43,12 +49,19 @@ public class flashcardsGame extends JPanel {
 		
 		this.setLayout(null);
 		
+		//Sätter in alla componenter
 		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);
 		this.add(listeningButton);
 		this.add(menyButton);
+		this.add(exampleButton);
+		this.add(answerButton);
+		this.add(word);
+		this.add(example);
+		this.add(meaning);
 		
+		//Fixar kanpparna nedan
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		lessonButton.addActionListener(new knapp1());
 		lessonButton.setContentAreaFilled(false);
@@ -87,6 +100,23 @@ public class flashcardsGame extends JPanel {
 		menyButton.setContentAreaFilled(false);
 		menyButton.setBorderPainted(false);
 		menyButton.setFocusPainted(false);
+		
+		exampleButton.setBounds((int) Math.round(537 * start.widthSize), (int) Math.round(385 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(105 * start.heightSize));
+		exampleButton.addActionListener(new knapp6());
+		exampleButton.setContentAreaFilled(start.synligaKnappar);
+		exampleButton.setFocusPainted(start.synligaKnappar);
+		exampleButton.setForeground(new Color(140, 198, 58));
+		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		exampleButton.setText("Show example");
+		
+		answerButton.setBounds((int) Math.round(537 * start.widthSize), (int) Math.round(247 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(105 * start.heightSize));
+		answerButton.addActionListener(new knapp7());
+		answerButton.setContentAreaFilled(start.synligaKnappar);
+		answerButton.setFocusPainted(start.synligaKnappar);
+		answerButton.setForeground(new Color(140, 198, 58));
+		answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		answerButton.setText("Show meaning");
+		
 		
 		/*
 		boolean menuLoop = true;
@@ -188,6 +218,22 @@ public class flashcardsGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			start.Byta(start.meny);
+		}
+	}
+	
+	static class knapp6 implements ActionListener
+	{
+		
+		public void actionPerformed(ActionEvent e)
+		{
+		}
+	}
+
+	static class knapp7 implements ActionListener
+	{
+		
+		public void actionPerformed(ActionEvent e)
+		{
 		}
 	}
 	public static void playFlashcards() {
