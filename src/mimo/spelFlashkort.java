@@ -27,7 +27,7 @@ public class spelFlashkort extends JPanel {
 	static Scanner scan = new Scanner(System.in);
 	static List<WordListClass> words = new ArrayList<WordListClass>();
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton();
 	
 	
 	spelFlashkort() 
@@ -50,6 +50,8 @@ public class spelFlashkort extends JPanel {
 		this.add(readingButton);
 		this.add(listeningButton);
 		this.add(menyButton);
+		this.add(practiseButton);
+		this.add(wordlistButton);
 		
 		//sätter upp knapparna
 		
@@ -92,6 +94,7 @@ public class spelFlashkort extends JPanel {
 		menyButton.setBorderPainted(false);
 		menyButton.setFocusPainted(false);
 		
+		practiseButton.setBounds((int) Math.round());
 		/*
 		boolean menuLoop = true;
 		WordListClass word = new WordListClass("Du", "You (singular)", 3);
@@ -129,7 +132,8 @@ public class spelFlashkort extends JPanel {
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 	
-	public static void showMenu() {
+	public static void showMenu() 
+	{
 		System.out.println("Welcome to the flashcard section");
 		System.out.println("You have 'x' words left that need practice");
 		System.out.println("1. Start practice");
@@ -142,8 +146,10 @@ public class spelFlashkort extends JPanel {
             System.out.println("No words saved, save some dude.");
             System.out.println("---");
         }
-		else {
-            for (int i = 0; i < words.size(); i++) {
+		else 
+		{
+            for (int i = 0; i < words.size(); i++) 
+            {
                 System.out.println("Word " + (i + 1) + ":");
                 System.out.println("Word: " + words.get(i).getTerm());
                 System.out.println("Translation: " + words.get(i).getTranslation());
