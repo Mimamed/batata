@@ -96,7 +96,7 @@ public class startMeny extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//start.Byta(start.flashkort);
+			
 		}
 	}
 	

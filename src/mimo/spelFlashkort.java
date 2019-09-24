@@ -27,7 +27,7 @@ public class spelFlashkort extends JPanel {
 	static Scanner scan = new Scanner(System.in);
 	static List<WordListClass> words = new ArrayList<WordListClass>();
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton();
 	
 	
 	spelFlashkort() 
@@ -48,7 +48,6 @@ public class spelFlashkort extends JPanel {
 		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);
-		this.add(listeningButton);
 		this.add(menyButton);
 		this.add(practiseButton);
 		this.add(wordlistButton);
@@ -80,29 +79,21 @@ public class spelFlashkort extends JPanel {
 		readingButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		readingButton.setText("Reading");
 		
-		listeningButton.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		listeningButton.addActionListener(new knapp4());
-		listeningButton.setContentAreaFilled(start.synligaKnappar);
-		listeningButton.setBorderPainted(start.synligaKnappar);
-		listeningButton.setFocusPainted(start.synligaKnappar);
-		listeningButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		listeningButton.setText("Listening");
-		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		menyButton.addActionListener(new knapp5());
+		menyButton.addActionListener(new knapp4());
 		menyButton.setContentAreaFilled(start.synligaKnappar);
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
 		practiseButton.setBounds((int) Math.round(360 * start.widthSize), (int) Math.round(531 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(107 * start.heightSize));
-		practiseButton.addActionListener(new knapp6());
+		practiseButton.addActionListener(new knapp5());
 		practiseButton.setContentAreaFilled(start.synligaKnappar);
 		practiseButton.setFocusPainted(start.synligaKnappar);
 		practiseButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		practiseButton.setText("Practice");
 		
 		wordlistButton.setBounds((int) Math.round(710 * start.widthSize), (int) Math.round(531 * start.heightSize), (int) Math.round(295 * start.widthSize), (int) Math.round(107 * start.heightSize));
-		wordlistButton.addActionListener(new knapp7());
+		wordlistButton.addActionListener(new knapp6());
 		wordlistButton.setContentAreaFilled(start.synligaKnappar);
 		wordlistButton.setFocusPainted(start.synligaKnappar);
 		wordlistButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
@@ -119,6 +110,7 @@ public class spelFlashkort extends JPanel {
 			
 			public void actionPerformed(ActionEvent e)
 			{
+				
 			}
 		}
 		
@@ -145,19 +137,11 @@ public class spelFlashkort extends JPanel {
 			
 			public void actionPerformed(ActionEvent e)
 			{
-			}
-		}
-
-		static class knapp5 implements ActionListener
-		{
-			
-			public void actionPerformed(ActionEvent e)
-			{
 				start.Byta(start.meny);
 			}
 		}
 		
-		static class knapp6 implements ActionListener
+		static class knapp5 implements ActionListener
 		{
 			
 			public void actionPerformed(ActionEvent e)
@@ -166,11 +150,12 @@ public class spelFlashkort extends JPanel {
 			}
 		}
 		
-		static class knapp7 implements ActionListener
+		static class knapp6 implements ActionListener
 		{
 			
 			public void actionPerformed(ActionEvent e)
 			{
+				
 			}
 		}
 }
