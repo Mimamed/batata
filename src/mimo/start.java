@@ -17,6 +17,7 @@ public class start
 	static JPanel gamlaPanelen = new JPanel();
 	static spelFlashkort flashkort = new spelFlashkort();
 	static flashcardsGame flashkortspelen = new flashcardsGame();
+	static readingMenu readingMenyn = new readingMenu();
 	
 	
 	public static void main(String[] Args)
