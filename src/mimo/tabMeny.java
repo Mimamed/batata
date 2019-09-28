@@ -19,7 +19,7 @@ public class tabMeny extends JPanel
 {
 	
 	static BufferedImage bakgrund;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), listeningButton = new JButton(), menyButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
 	
 	
 	tabMeny()
@@ -39,7 +39,6 @@ public class tabMeny extends JPanel
 		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);
-		this.add(listeningButton);
 		this.add(menyButton);
 		
 		//sätter upp knapparna
@@ -67,14 +66,6 @@ public class tabMeny extends JPanel
 		readingButton.setFocusPainted(start.synligaKnappar);
 		readingButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		readingButton.setText("Reading");
-		
-		listeningButton.setBounds((int) Math.round(963 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		listeningButton.addActionListener(new button());
-		listeningButton.setContentAreaFilled(start.synligaKnappar);
-		listeningButton.setBorderPainted(start.synligaKnappar);
-		listeningButton.setFocusPainted(start.synligaKnappar);
-		listeningButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		listeningButton.setText("Listening");
 		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		menyButton.addActionListener(new menyButton());
