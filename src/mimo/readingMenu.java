@@ -40,7 +40,7 @@ public class readingMenu extends JPanel
 		this.setLayout(null);
 		
 		//addar grejer
-		
+		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);
 		this.add(menyButton);
@@ -49,7 +49,7 @@ public class readingMenu extends JPanel
 		
 		//sätter upp knapparna
 		
-		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		lessonButton.addActionListener(new knapp1());
 		lessonButton.setContentAreaFilled(start.synligaKnappar);
 		lessonButton.setBorderPainted(start.synligaKnappar);
@@ -58,7 +58,7 @@ public class readingMenu extends JPanel
 		lessonButton.setText("Lessons");
 		
 		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
-		flashcardButton.setBounds((int) Math.round(406 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		flashcardButton.addActionListener(new knapp2());
 		flashcardButton.setContentAreaFilled(start.synligaKnappar);
 		flashcardButton.setBorderPainted(start.synligaKnappar);
@@ -66,7 +66,7 @@ public class readingMenu extends JPanel
 		flashcardButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		flashcardButton.setText("Flashcards");
 		
-		readingButton.setBounds((int) Math.round(685 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		readingButton.addActionListener(new knapp3());
 		readingButton.setContentAreaFilled(start.synligaKnappar);
 		readingButton.setBorderPainted(start.synligaKnappar);

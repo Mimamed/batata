@@ -43,7 +43,7 @@ public class tabMeny extends JPanel
 		
 		//sätter upp knapparna
 		
-		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		lessonButton.addActionListener(new lessonButton());
 		lessonButton.setContentAreaFilled(start.synligaKnappar);
 		lessonButton.setBorderPainted(start.synligaKnappar);
@@ -51,7 +51,7 @@ public class tabMeny extends JPanel
 		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		lessonButton.setText("Lessons");
 
-		flashcardButton.setBounds((int) Math.round(406 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		flashcardButton.addActionListener(new flashcardButton());
 		flashcardButton.setContentAreaFilled(start.synligaKnappar);
 		flashcardButton.setBorderPainted(start.synligaKnappar);
@@ -59,7 +59,7 @@ public class tabMeny extends JPanel
 		flashcardButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		flashcardButton.setText("Flashcards");
 		
-		readingButton.setBounds((int) Math.round(685 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		readingButton.addActionListener(new readingButton());
 		readingButton.setContentAreaFilled(start.synligaKnappar);
 		readingButton.setBorderPainted(start.synligaKnappar);
@@ -101,7 +101,7 @@ public class tabMeny extends JPanel
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			start.Byta(start.readingMenyn);
 		}
 	}
 

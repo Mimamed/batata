@@ -18,6 +18,7 @@ public class start
 	static spelFlashkort flashkort = new spelFlashkort();
 	static flashcardsGame flashkortspelen = new flashcardsGame();
 	static readingMenu readingMenyn = new readingMenu();
+	static readingGame readingSpel = new readingGame();
 	
 	
 	public static void main(String[] Args)

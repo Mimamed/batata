@@ -60,7 +60,7 @@ public class flashcardsGame extends JPanel {
 		this.add(meaning);
 		
 		//Fixar kanpparna nedan
-		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		lessonButton.addActionListener(new knapp1());
 		lessonButton.setContentAreaFilled(false);
 		lessonButton.setBorderPainted(false);
@@ -69,7 +69,7 @@ public class flashcardsGame extends JPanel {
 		lessonButton.setText("Lessons");
 		
 		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
-		flashcardButton.setBounds((int) Math.round(406 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		flashcardButton.addActionListener(new knapp2());
 		flashcardButton.setContentAreaFilled(false);
 		flashcardButton.setBorderPainted(false);
@@ -77,7 +77,7 @@ public class flashcardsGame extends JPanel {
 		flashcardButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		flashcardButton.setText("Flashcards");
 		
-		readingButton.setBounds((int) Math.round(685 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(278 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		readingButton.addActionListener(new knapp3());
 		readingButton.setContentAreaFilled(false);
 		readingButton.setBorderPainted(false);
@@ -91,7 +91,7 @@ public class flashcardsGame extends JPanel {
 		menyButton.setBorderPainted(false);
 		menyButton.setFocusPainted(false);
 		
-		exampleButton.setBounds((int) Math.round(537 * start.widthSize), (int) Math.round(385 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(105 * start.heightSize));
+		exampleButton.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(443 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		exampleButton.addActionListener(new knapp5());
 		exampleButton.setContentAreaFilled(start.synligaKnappar);
 		exampleButton.setFocusPainted(start.synligaKnappar);
@@ -99,7 +99,7 @@ public class flashcardsGame extends JPanel {
 		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		exampleButton.setText("Show example");
 		
-		answerButton.setBounds((int) Math.round(537 * start.widthSize), (int) Math.round(247 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(105 * start.heightSize));
+		answerButton.setBounds((int) Math.round(537 * start.widthSize), (int) Math.round(305 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		answerButton.addActionListener(new knapp6());
 		answerButton.setContentAreaFilled(start.synligaKnappar);
 		answerButton.setFocusPainted(start.synligaKnappar);
@@ -190,7 +190,7 @@ public class flashcardsGame extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			start.Byta(start.readingMenyn);
 		}
 	}
 
