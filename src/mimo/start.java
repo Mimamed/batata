@@ -10,13 +10,14 @@ public class start
 {
 	static boolean synligaKnappar = false;
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static File[] filer = { new File("images\\startMenu.jpg"), new File("images\\tabmenu.jpg"), new File("images\\flashcardMenu.jpg"), new File("images\\flashcardGame.jpg"), new File("images\\readingMenu.jpg")};
+	static File[] filer = { new File("images\\startMenu.jpg"), new File("images\\tabmenu.jpg"), new File("images\\flashcardMenu.jpg"), new File("images\\flashcardGame.jpg"), new File("images\\readingMenu.jpg"), new File("images\\flashcardList.jpg")};
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
 	static tabMeny spelSidan = new tabMeny();
 	static JPanel gamlaPanelen = new JPanel();
 	static spelFlashkort flashkort = new spelFlashkort();
 	static flashcardsGame flashkortspelen = new flashcardsGame();
+	static flashcardsWordList fkOrdlista = new flashcardsWordList();
 	static readingMenu readingMenyn = new readingMenu();
 	static readingGame readingSpel = new readingGame();
 	
