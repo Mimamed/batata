@@ -26,7 +26,8 @@ public class flashcardsWordList extends JPanel {
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
 	
-	flashcardsWordList() {
+	flashcardsWordList() 
+	{
 		try
 		{
 			pic = ImageIO.read(start.filer[5]);
@@ -34,6 +35,8 @@ public class flashcardsWordList extends JPanel {
 		{
 			System.out.print("fel men uppladning");
 		}
+		
+		this.setLayout(null);
 		
 		this.add(lessonButton);
 		this.add(flashcardButton);
