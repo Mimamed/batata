@@ -2,6 +2,7 @@ package mimo;
 
 import java.awt.Toolkit;
 import java.io.File;
+import java.net.URL;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,7 +11,7 @@ public class start
 {
 	static boolean synligaKnappar = false;
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static File[] filer = { new File("images\\startMenu.jpg"), new File("images\\tabmenu.jpg"), new File("images\\flashcardMenu.jpg"), new File("images\\flashcardGame.jpg"), new File("images\\readingMenu.jpg"), new File("images\\flashcardList.jpg"), new File("images\\readingGame.jpg")};
+	static File[] filer = { new File(("src\\Bilder\\startMenu.jpg")), new File("src\\Bilder\\stabmenu.jpg"), new File("src\\Bilder\\flashcardMenu.jpg"), new File("src\\Bilder\\flashcardGame.jpg"), new File("src\\Bilder\\readingMenu.jpg"), new File("src\\Bilder\\flashcardList.jpg"), new File("src\\Bilder\\readingGame.jpg")};
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
 	static tabMeny spelSidan = new tabMeny();
