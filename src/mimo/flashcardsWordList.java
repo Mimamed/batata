@@ -7,6 +7,9 @@ import javax.swing.JPanel;
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
+import mimo.flashcardsGame.knapp1;
+import mimo.flashcardsGame.knapp2;
+import mimo.flashcardsGame.knapp3;
 import mimo.spelFlashkort.knapp4;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
@@ -22,6 +25,7 @@ import java.awt.image.BufferedImage;
 public class flashcardsWordList extends JPanel {
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
+	
 	flashcardsWordList() {
 		try
 		{
@@ -31,7 +35,36 @@ public class flashcardsWordList extends JPanel {
 			System.out.print("fel men uppladning");
 		}
 		
+		this.add(lessonButton);
+		this.add(flashcardButton);
+		this.add(readingButton);
 		this.add(menyButton);
+		
+		//Fixar kanpparna nedan DE SKITER TILL SIG
+		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		lessonButton.addActionListener(new knapp1());
+		lessonButton.setContentAreaFilled(false);
+		lessonButton.setBorderPainted(false);
+		lessonButton.setFocusPainted(false);
+		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		lessonButton.setText("Lessons");
+		
+		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
+		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		flashcardButton.addActionListener(new knapp2());
+		flashcardButton.setContentAreaFilled(false);
+		flashcardButton.setBorderPainted(false);
+		flashcardButton.setFocusPainted(false);
+		flashcardButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		flashcardButton.setText("Flashcards");
+		
+		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
+		readingButton.addActionListener(new knapp3());
+		readingButton.setContentAreaFilled(false);
+		readingButton.setBorderPainted(false);
+		readingButton.setFocusPainted(false);
+		readingButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		readingButton.setText("Reading");
 		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		menyButton.addActionListener(new menyButton());
