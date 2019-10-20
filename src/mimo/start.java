@@ -11,7 +11,7 @@ public class start
 {
 	static boolean synligaKnappar = false;
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static File[] filer = { new File(("src\\Bilder\\startMenu.jpg")), new File("src\\Bilder\\stabmenu.jpg"), new File("src\\Bilder\\flashcardMenu.jpg"), new File("src\\Bilder\\flashcardGame.jpg"), new File("src\\Bilder\\readingMenu.jpg"), new File("src\\Bilder\\flashcardList.jpg"), new File("src\\Bilder\\readingGame.jpg")};
+	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabmenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg")};
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
 	static tabMeny spelSidan = new tabMeny();
@@ -31,7 +31,6 @@ public class start
 		fönster.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
 		fönster.add(meny);
 		gamlaPanelen = meny;
-		Byta(fkOrdlista);
 		
 		fönster.invalidate();
 		fönster.validate();

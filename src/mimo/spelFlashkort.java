@@ -38,7 +38,7 @@ public class spelFlashkort extends JPanel {
 			pic = ImageIO.read(start.filer[2]);
 		}catch (Exception e)
 		{
-			System.out.print("fel men uppladning");
+			System.out.print("fel men uppladning2");
 		}
 		
 		this.setLayout(null);

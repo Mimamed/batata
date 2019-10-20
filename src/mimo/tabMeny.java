@@ -29,7 +29,7 @@ public class tabMeny extends JPanel
 			bakgrund = ImageIO.read(start.filer[1]);
 		}catch(Exception e)
 		{
-			System.out.print("fel men uppladning");
+			System.out.print("fel men uppladning3");
 		}
 		
 		this.setLayout(null);

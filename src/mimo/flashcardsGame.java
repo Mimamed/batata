@@ -43,7 +43,7 @@ public class flashcardsGame extends JPanel {
 			pic = ImageIO.read(start.filer[3]);
 		}catch (Exception e)
 		{
-			System.out.print("fel men uppladning");
+			System.out.print("fel men uppladning4");
 		}
 		
 		this.setLayout(null);
