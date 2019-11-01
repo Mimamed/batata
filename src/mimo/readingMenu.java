@@ -86,57 +86,57 @@ public class readingMenu extends JPanel
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 		
-		static class knapp1 implements ActionListener
+	static class knapp1 implements ActionListener
+	{
+	
+		public void actionPerformed(ActionEvent e)
 		{
 			
-			public void actionPerformed(ActionEvent e)
-			{
-				
-			}
 		}
+	}
+	
+	static class knapp2 implements ActionListener
+	{
+	
+		public void actionPerformed(ActionEvent e)
+		{
+			start.Byta(start.flashkort);
+		}
+	}
+	
+	static class knapp3 implements ActionListener
+	{
+	
+		public void actionPerformed(ActionEvent e)
+		{
 		
-		static class knapp2 implements ActionListener
-		{
-			
-			public void actionPerformed(ActionEvent e)
-			{
-				start.Byta(start.flashkort);
-			}
 		}
-		
-		static class knapp3 implements ActionListener
-		{
-			
-			public void actionPerformed(ActionEvent e)
-			{
-				
-			}
-		}
+	}
 
-		static class knapp4 implements ActionListener
+	static class knapp4 implements ActionListener
+	{
+	
+		public void actionPerformed(ActionEvent e)
+		{
+			start.Byta(start.meny);
+		}
+	}
+	
+	static class knapp5 implements ActionListener
+	{
+	
+		public void actionPerformed(ActionEvent e)
+		{
+			start.Byta(start.flashkortspelen);
+		}
+	}
+	
+	static class knapp6 implements ActionListener
+	{
+	
+		public void actionPerformed(ActionEvent e)
 		{
 			
-			public void actionPerformed(ActionEvent e)
-			{
-				start.Byta(start.meny);
-			}
 		}
-		
-		static class knapp5 implements ActionListener
-		{
-			
-			public void actionPerformed(ActionEvent e)
-			{
-				start.Byta(start.flashkortspelen);
-			}
-		}
-		
-		static class knapp6 implements ActionListener
-		{
-			
-			public void actionPerformed(ActionEvent e)
-			{
-				
-			}
-		}
+	}
 }
