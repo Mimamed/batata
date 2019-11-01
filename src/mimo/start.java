@@ -21,6 +21,8 @@ public class start
 	static flashcardsWordList fkOrdlista = new flashcardsWordList();
 	static readingMenu readingMenyn = new readingMenu();
 	static readingGame readingSpel = new readingGame();
+	static profileMenu profil = new profileMenu();
+	static settingsMenu inställningar = new settingsMenu();
 	
 	
 	public static void main(String[] Args)
