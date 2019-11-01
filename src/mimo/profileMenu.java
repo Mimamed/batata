@@ -55,7 +55,6 @@ public class profileMenu extends JPanel {
 		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		lessonButton.setText("Lessons");
 		
-		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		flashcardButton.addActionListener(new knapp2());
 		flashcardButton.setContentAreaFilled(start.synligaKnappar);
