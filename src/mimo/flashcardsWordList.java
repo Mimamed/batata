@@ -33,7 +33,7 @@ public class flashcardsWordList extends JPanel {
 			pic = ImageIO.read(start.filer[5]);
 		}catch (Exception e)
 		{
-			System.out.print("fel men uppladning");
+			System.out.print("fel men uppladning5");
 		}
 		
 		this.setLayout(null);

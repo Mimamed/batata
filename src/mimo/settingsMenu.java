@@ -32,7 +32,7 @@ public class settingsMenu extends JPanel {
 			pic = ImageIO.read(start.filer[8]);
 		} catch (Exception e)
 		{
-			System.out.print("fel men uppladning");
+			System.out.print("fel men uppladning6");
 		}
 		
 		this.setLayout(null);

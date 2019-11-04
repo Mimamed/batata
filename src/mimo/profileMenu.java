@@ -32,7 +32,7 @@ public class profileMenu extends JPanel {
 			pic = ImageIO.read(start.filer[7]);
 		} catch (Exception e)
 		{
-			System.out.print("fel men uppladning");
+			System.out.print("fel men uppladning7");
 		}
 		
 		this.setLayout(null);
