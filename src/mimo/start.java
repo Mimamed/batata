@@ -36,7 +36,19 @@ public class start
 		/*----------------Fixar Textfil-------------------*/
 		try
 		{
-			filskapare = new Formatter("C:\\Users\\Public\\Downloads\\wordList.txt");
+			File fil = new File("C:\\Users\\Public\\Downloads\\wordList.txt");
+			System.out.print("\nfinnns = " + fil.exists());
+			if (!fil.exists())
+			{
+				filskapare = new Formatter("C:\\Users\\Public\\Downloads\\wordList.txt");
+				
+				for(int i = 0; i < defaultWordList.length; i++)
+				{
+					filskapare.format(defaultWordList[i] + "\n");
+				}
+				
+				filskapare.close();
+			}
 		} catch(Exception e)
 		{
 		}
@@ -54,7 +66,7 @@ public class start
 		fönster.validate();
 		fönster.repaint();
 		
-		System.out.print(widthSize);
+		//System.out.print(widthSize);
 	}
 	
 	//Metod som byter ut panelen i fönstret
