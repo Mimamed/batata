@@ -1,5 +1,4 @@
 package mimo;
-//DETTA ÄR BARA FÖR SJÄLVASTE KODEN, INTE FÖNSTRET
 
 import java.util.Scanner;
 
@@ -25,7 +24,7 @@ import java.util.ArrayList;
 public class spelFlashkort extends JPanel {
 	//SKAPA LISTA, DATUM | ORD | ÖVERSÄTTNING | SVÅRIGHET
 	static Scanner scan = new Scanner(System.in);
-	static List<WordListClass> words = new ArrayList<WordListClass>();
+	//static List<WordListClass> words = new ArrayList<WordListClass>();
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton();
 	
@@ -158,4 +157,6 @@ public class spelFlashkort extends JPanel {
 				start.Byta(start.fkOrdlista);
 			}
 		}
+		
+		
 }
