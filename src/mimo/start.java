@@ -16,7 +16,7 @@ public class start
 {
 	static boolean synligaKnappar = false;
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg")};
+	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settingsMenu.jpg")};
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
 	static int radnummer = -1;
@@ -31,7 +31,6 @@ public class start
 	static flashcardsWordList fkOrdlista = new flashcardsWordList();
 	static readingMenu readingMenyn = new readingMenu();
 	static readingGame readingSpel = new readingGame();
-	static profileMenu profil = new profileMenu();
 	static settingsMenu inställningar = new settingsMenu();
 	
 	
@@ -101,32 +100,36 @@ public class start
 			textList.add(filläsare.nextLine());
 		}
 		
-		
-		for(int i = 0; i < textList.size(); i++)
+		if (textList.get(0).indexOf(":") != -1)
 		{
-			
-			if(textList.get(i).indexOf("-") != -1)
+			for(int i = 0; i < textList.size(); i++)
 			{
-				break;
+				
+				if(textList.get(i).indexOf("-") != -1)
+				{
+					break;
+				}
+				
+				int slut = textList.get(i).indexOf(";");
+				
+				if (textList.get(i).indexOf(":") != -1)
+				{
+					int start = textList.get(i).indexOf(":") + 1;
+					wordList.get(0).add(textList.get(i).substring(start, slut));
+					wordList.add(new ArrayList<String>());
+					wordList.add(new ArrayList<String>());
+					radnummer+=2;
+				}else
+				{
+					int mitten = textList.get(i).indexOf("=");
+					wordList.get(radnummer).add(textList.get(i).substring(0, mitten));
+					wordList.get(radnummer + 1).add(textList.get(i).substring(mitten + 1, slut));
+				}
+				
 			}
-			
-			int slut = textList.get(i).indexOf(";");
-			
-			if (textList.get(i).indexOf(":") != -1)
-			{
-				int start = textList.get(i).indexOf(":") + 1;
-				wordList.get(0).add(textList.get(i).substring(start, slut));
-				wordList.add(new ArrayList<String>());
-				wordList.add(new ArrayList<String>());
-				radnummer+=2;
-			}else
-			{
-				int mitten = textList.get(i).indexOf("=");
-				wordList.get(radnummer).add(textList.get(i).substring(0, mitten));
-				wordList.get(radnummer + 1).add(textList.get(i).substring(mitten + 1, slut));
-			}
-			
 		}
+		
+		
 	}
 	
 	public static void checkaLista()

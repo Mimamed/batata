@@ -29,10 +29,10 @@ public class settingsMenu extends JPanel {
 	settingsMenu() {
 		try
 		{
-			pic = ImageIO.read(start.filer[8]);
+			pic = ImageIO.read(start.filer[7]);
 		} catch (Exception e)
 		{
-			System.out.print("fel men uppladning6");
+			System.out.print("fel men uppladning7");
 		}
 		
 		this.setLayout(null);
