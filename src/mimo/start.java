@@ -74,6 +74,8 @@ public class start
 		fönster.repaint();
 		
 		//System.out.print(widthSize);
+		
+		flashkortspelen.flashcardWriteWord();
 	}
 	
 	//Metod som byter ut panelen i fönstret

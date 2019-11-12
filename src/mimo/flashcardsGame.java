@@ -32,13 +32,6 @@ import java.util.ArrayList;
 
 public class flashcardsGame extends JPanel {
 	
-	//TAR ORD FRÅN LISTAN OCH FÖRBREDER DET FÖR "WORD"
-	/* fungerar inte
-	try {
-		Scanner insertWord = new Scanner(new File("C:\\Users\\Public\\Downloads\\wordList.txt"));
-	} catch (FileNotFoundException e) {
-	} */
-	
 	//static List<WordListClass> words = new ArrayList<WordListClass>();
 	
 	//static List<String>[] allText = {new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>()};
@@ -106,7 +99,7 @@ public class flashcardsGame extends JPanel {
 		word.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(200 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		word.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		//fixa V
-		word.setText("WORD");
+		
 		
 		exampleButton.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(443 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		exampleButton.addActionListener(new knapp5());
@@ -124,6 +117,12 @@ public class flashcardsGame extends JPanel {
 		answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		answerButton.setText("Show meaning");
 	}
+	
+	public static void flashcardWriteWord()
+	{
+		word.setText(start.textList.get(0));
+	}
+	
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
