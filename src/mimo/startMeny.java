@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 
 public class startMeny extends JPanel
 {
-	static private JButton startButton = new JButton(), profileButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton(), menuButton = new JButton();
+	static private JButton startButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton(), menuButton = new JButton();
 	static private JPanel pan = new JPanel(); // förkortning för panel
 	static private BufferedImage pic; // förkortning för picture
 	startMeny()
@@ -31,15 +31,6 @@ public class startMeny extends JPanel
 		startButton.setBorderPainted(start.synligaKnappar);
 		startButton.setFont(new Font("comic sans ms", Font.BOLD, 50));
 		startButton.setText("Start");
-		
-		this.add(profileButton);
-		profileButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(370 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		profileButton.addActionListener(new profileButton());
-		profileButton.setContentAreaFilled(start.synligaKnappar);
-		profileButton.setFocusPainted(start.synligaKnappar);
-		profileButton.setBorderPainted(start.synligaKnappar);
-		profileButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		profileButton.setText("Profile");
 		
 		this.add(settingsButton);
 		settingsButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(466 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(85 * start.heightSize));
@@ -89,14 +80,6 @@ public class startMeny extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			start.Byta(start.spelSidan);
-		}
-	}
-	
-	static class profileButton implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e)
-		{
-			start.Byta(start.profil);
 		}
 	}
 	
