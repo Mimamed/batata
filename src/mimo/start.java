@@ -20,7 +20,7 @@ public class start
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
 	static int radnummer = -1;
-	static String[] defaultWordList = {":substantiv;", "word=ord;", "bil=car;", ":verb;", "prata=speak,talk,discuss;", "hoppa=jump,hop;", ":function?;", ":describer?;", ":meningar;", "-"};//82601895623013
+	static String[] defaultWordList = {":substantiv;", "ord=word<0;", "bil=car<0;", ":verb;", "prata=speak,talk,discuss<0;", "hoppa=jump,hop<0;", ":function?;", ":describer?;", ":meningar;", "-"};//82601895623013
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
@@ -75,6 +75,8 @@ public class start
 		//System.out.print(widthSize);
 		
 		flashkortspelen.flashcardWriteWord();
+		
+		checkaLista();
 	}
 	
 	//Metod som byter ut panelen i fönstret
@@ -118,12 +120,14 @@ public class start
 					wordList.get(0).add(textList.get(i).substring(start, slut));
 					wordList.add(new ArrayList<String>());
 					wordList.add(new ArrayList<String>());
-					radnummer+=2;
+					wordList.add(new ArrayList<String>());
+					radnummer+=3;
 				}else
 				{
 					int mitten = textList.get(i).indexOf("=");
 					wordList.get(radnummer).add(textList.get(i).substring(0, mitten));
-					wordList.get(radnummer + 1).add(textList.get(i).substring(mitten + 1, slut));
+					wordList.get(radnummer + 1).add(textList.get(i).substring(mitten + 1, textList.get(i).indexOf("<")));
+					wordList.get(radnummer + 2).add(textList.get(i).substring(textList.get(i).indexOf("<") + 1, slut));
 				}
 				
 			}
