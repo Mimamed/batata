@@ -117,7 +117,7 @@ public class flashcardsGame extends JPanel {
 	public static void flashcardWriteWord()
 	{
 		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
-		word.setText(start.wordList.get(1).get(1));
+		word.setText(start.wordList.get(0).get(0));
 	}
 	
 	public void paintComponent(Graphics g)

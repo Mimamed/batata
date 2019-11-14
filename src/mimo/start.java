@@ -19,7 +19,7 @@ public class start
 	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settingsMenu.jpg")};
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
-	static int radnummer = -1;
+	static int radnummer = -3;
 	static String[] defaultWordList = {":substantiv;", "ord=word<0;", "bil=car<0;", ":verb;", "prata=speak,talk,discuss<0;", "hoppa=jump,hop<0;", ":function?;", ":describer?;", ":meningar;", "-"};//82601895623013
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
@@ -40,7 +40,7 @@ public class start
 		try
 		{
 			File fil = new File("C:\\Users\\Public\\Downloads\\wordList.txt");
-			System.out.print("\nfinnns = " + fil.exists());
+			System.out.println("\nfinnns = " + fil.exists());
 			if (!fil.exists())
 			{
 				filskapare = new Formatter("C:\\Users\\Public\\Downloads\\wordList.txt");
@@ -73,10 +73,10 @@ public class start
 		fönster.repaint();
 		
 		//System.out.print(widthSize);
+
+		System.out.print("\n test: " + wordList.get(0).get(1));
+		//flashkortspelen.flashcardWriteWord();
 		
-		flashkortspelen.flashcardWriteWord();
-		
-		checkaLista();
 	}
 	
 	//Metod som byter ut panelen i fönstret
@@ -116,6 +116,7 @@ public class start
 				
 				if (textList.get(i).indexOf(":") != -1)
 				{
+					System.out.println("\n en kategori! : " + i + " ordet :" + textList.get(i));
 					int start = textList.get(i).indexOf(":") + 1;
 					wordList.get(0).add(textList.get(i).substring(start, slut));
 					wordList.add(new ArrayList<String>());
@@ -125,9 +126,10 @@ public class start
 				}else
 				{
 					int mitten = textList.get(i).indexOf("=");
-					wordList.get(radnummer).add(textList.get(i).substring(0, mitten));
-					wordList.get(radnummer + 1).add(textList.get(i).substring(mitten + 1, textList.get(i).indexOf("<")));
-					wordList.get(radnummer + 2).add(textList.get(i).substring(textList.get(i).indexOf("<") + 1, slut));
+					wordList.get(radnummer + 1).add(textList.get(i).substring(0, mitten));
+					wordList.get(radnummer + 2).add(textList.get(i).substring(mitten + 1, textList.get(i).indexOf("<")));
+					wordList.get(radnummer + 3).add(textList.get(i).substring(textList.get(i).indexOf("<") + 1, slut));
+					System.out.println("\nen ord klar");
 				}
 				
 			}
