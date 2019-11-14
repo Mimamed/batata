@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
-import mimo.spelFlashkort.knapp1;
+import mimo.spelFlashkort.lessonButtonAct;
 import mimo.spelFlashkort.knapp2;
 import mimo.spelFlashkort.knapp3;
 import mimo.spelFlashkort.knapp4;

@@ -52,9 +52,8 @@ public class spelFlashkort extends JPanel {
 		this.add(wordlistButton);
 		
 		//sätter upp knapparna
-		
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		lessonButton.addActionListener(new knapp1());
+		lessonButton.addActionListener(new lessonButtonAct());
 		lessonButton.setContentAreaFilled(start.synligaKnappar);
 		lessonButton.setBorderPainted(start.synligaKnappar);
 		lessonButton.setFocusPainted(start.synligaKnappar);
@@ -104,7 +103,7 @@ public class spelFlashkort extends JPanel {
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 		
-		static class knapp1 implements ActionListener
+		static class lessonButtonAct implements ActionListener
 		{
 			
 			public void actionPerformed(ActionEvent e)
@@ -157,6 +156,4 @@ public class spelFlashkort extends JPanel {
 				start.Byta(start.fkOrdlista);
 			}
 		}
-		
-		
 }

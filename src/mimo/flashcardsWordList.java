@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
-import mimo.flashcardsGame.knapp1;
+import mimo.flashcardsGame.lessonButtonAct;
 import mimo.flashcardsGame.knapp2;
 import mimo.flashcardsGame.knapp3;
 import mimo.spelFlashkort.knapp4;
@@ -45,7 +45,7 @@ public class flashcardsWordList extends JPanel {
 		
 		//Fixar kanpparna nedan DE SKITER TILL SIG
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		lessonButton.addActionListener(new knapp1());
+		lessonButton.addActionListener(new lessonButtonAct());
 		lessonButton.setContentAreaFilled(false);
 		lessonButton.setBorderPainted(false);
 		lessonButton.setFocusPainted(false);

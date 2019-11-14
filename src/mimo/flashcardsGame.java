@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
-import mimo.spelFlashkort.knapp1;
+import mimo.spelFlashkort.lessonButtonAct;
 import mimo.spelFlashkort.knapp2;
 import mimo.spelFlashkort.knapp3;
 import mimo.spelFlashkort.knapp4;
@@ -64,14 +64,13 @@ public class flashcardsGame extends JPanel {
 		
 		//Fixar kanpparna nedan
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		lessonButton.addActionListener(new knapp1());
+		lessonButton.addActionListener(new lessonButtonAct());
 		lessonButton.setContentAreaFilled(false);
 		lessonButton.setBorderPainted(false);
 		lessonButton.setFocusPainted(false);
 		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		lessonButton.setText("Lessons");
 		
-		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		flashcardButton.addActionListener(new knapp2());
 		flashcardButton.setContentAreaFilled(false);
@@ -94,12 +93,9 @@ public class flashcardsGame extends JPanel {
 		menyButton.setBorderPainted(false);
 		menyButton.setFocusPainted(false);
 		
-		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
 		//fixa V
 		word.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(200 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		word.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		//fixa V
-		
 		
 		exampleButton.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(443 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		exampleButton.addActionListener(new knapp5());
@@ -120,17 +116,22 @@ public class flashcardsGame extends JPanel {
 	
 	public static void flashcardWriteWord()
 	{
+		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
 		word.setText(start.textList.get(0));
 	}
+	public static void flashcardWriteTranslation()
+	{
+		
+	}
+	
 	
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 	
-	static class knapp1 implements ActionListener
+	static class lessonButtonAct implements ActionListener
 	{
-		
 		public void actionPerformed(ActionEvent e)
 		{
 			
@@ -180,16 +181,5 @@ public class flashcardsGame extends JPanel {
 		{
 			
 		}
-	}
-	
-	public static void playFlashcards() {
-		/*
-		algoritm
-		kollar främst efter svårighetsgrad
-		*/
-		//System.out.println("3. Set how well you remember the word from 0 - 5 \n0: no memory at all | 5: remember clearly");
-		
-			//words.get(INDEXET).setDifficulty(noll till fem);
-		//System.out.println("No words to practice, come back later \n");
 	}
 }
