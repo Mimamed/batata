@@ -97,21 +97,21 @@ public class flashcardsGame extends JPanel {
 		word.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(200 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		word.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		
-		exampleButton.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(443 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
-		exampleButton.addActionListener(new knapp5());
-		exampleButton.setContentAreaFilled(start.synligaKnappar);
-		exampleButton.setFocusPainted(start.synligaKnappar);
-		exampleButton.setForeground(new Color(140, 198, 58));
-		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		exampleButton.setText("Show example");
-		
 		answerButton.setBounds((int) Math.round(537 * start.widthSize), (int) Math.round(305 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(106 * start.heightSize));
-		answerButton.addActionListener(new knapp6());
+		answerButton.addActionListener(new answerButtonAct());
 		answerButton.setContentAreaFilled(start.synligaKnappar);
 		answerButton.setFocusPainted(start.synligaKnappar);
 		answerButton.setForeground(new Color(140, 198, 58));
 		answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		answerButton.setText("Show meaning");
+		
+		exampleButton.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(443 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
+		exampleButton.addActionListener(new exampleButtonAct());
+		exampleButton.setContentAreaFilled(start.synligaKnappar);
+		exampleButton.setFocusPainted(start.synligaKnappar);
+		exampleButton.setForeground(new Color(140, 198, 58));
+		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		exampleButton.setText("Show example");
 	}
 	
 	public static void flashcardWriteWord()
@@ -119,11 +119,6 @@ public class flashcardsGame extends JPanel {
 		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
 		word.setText(start.textList.get(0));
 	}
-	public static void flashcardWriteTranslation()
-	{
-		
-	}
-	
 	
 	public void paintComponent(Graphics g)
 	{
@@ -165,21 +160,19 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 	
-	static class knapp5 implements ActionListener
+	static class answerButtonAct implements ActionListener
 	{
-		
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			answerButton.setText("fepoj");
 		}
 	}
-
-	static class knapp6 implements ActionListener
+	
+	static class exampleButtonAct implements ActionListener
 	{
-		
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			exampleButton.setText("Fepoj är en bra pojke");
 		}
 	}
 }
