@@ -8,9 +8,9 @@ import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
 import mimo.spelFlashkort.lessonButtonAct;
-import mimo.spelFlashkort.knapp2;
-import mimo.spelFlashkort.knapp3;
-import mimo.spelFlashkort.knapp4;
+import mimo.spelFlashkort.flashcardButtonAct;
+import mimo.spelFlashkort.readingButtonAct;
+import mimo.spelFlashkort.menyButtonAct;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
 
@@ -50,7 +50,7 @@ public class readingMenu extends JPanel
 		//sätter upp knapparna
 		
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		lessonButton.addActionListener(new knapp1());
+		lessonButton.addActionListener(new lessonButtonAct());
 		lessonButton.setContentAreaFilled(start.synligaKnappar);
 		lessonButton.setBorderPainted(start.synligaKnappar);
 		lessonButton.setFocusPainted(start.synligaKnappar);
@@ -59,7 +59,7 @@ public class readingMenu extends JPanel
 		
 		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		flashcardButton.addActionListener(new knapp2());
+		flashcardButton.addActionListener(new flashcardButtonAct());
 		flashcardButton.setContentAreaFilled(start.synligaKnappar);
 		flashcardButton.setBorderPainted(start.synligaKnappar);
 		flashcardButton.setFocusPainted(start.synligaKnappar);
@@ -67,7 +67,7 @@ public class readingMenu extends JPanel
 		flashcardButton.setText("Flashcards");
 		
 		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		readingButton.addActionListener(new knapp3());
+		readingButton.addActionListener(new readingButtonAct());
 		readingButton.setContentAreaFilled(start.synligaKnappar);
 		readingButton.setBorderPainted(start.synligaKnappar);
 		readingButton.setFocusPainted(start.synligaKnappar);
@@ -86,7 +86,7 @@ public class readingMenu extends JPanel
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 		
-	static class knapp1 implements ActionListener
+	static class lessonButtonAct implements ActionListener
 	{
 	
 		public void actionPerformed(ActionEvent e)
@@ -95,7 +95,7 @@ public class readingMenu extends JPanel
 		}
 	}
 	
-	static class knapp2 implements ActionListener
+	static class flashcardButtonAct implements ActionListener
 	{
 	
 		public void actionPerformed(ActionEvent e)
@@ -104,7 +104,7 @@ public class readingMenu extends JPanel
 		}
 	}
 	
-	static class knapp3 implements ActionListener
+	static class readingButtonAct implements ActionListener
 	{
 	
 		public void actionPerformed(ActionEvent e)

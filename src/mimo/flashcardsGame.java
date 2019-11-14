@@ -11,9 +11,9 @@ import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
 import mimo.spelFlashkort.lessonButtonAct;
-import mimo.spelFlashkort.knapp2;
-import mimo.spelFlashkort.knapp3;
-import mimo.spelFlashkort.knapp4;
+import mimo.spelFlashkort.flashcardButtonAct;
+import mimo.spelFlashkort.readingButtonAct;
+import mimo.spelFlashkort.menyButtonAct;
 import mimo.spelFlashkort.knapp5;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
@@ -65,33 +65,33 @@ public class flashcardsGame extends JPanel {
 		//Fixar kanpparna nedan
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		lessonButton.addActionListener(new lessonButtonAct());
-		lessonButton.setContentAreaFilled(false);
-		lessonButton.setBorderPainted(false);
-		lessonButton.setFocusPainted(false);
+		lessonButton.setContentAreaFilled(start.synligaKnappar);
+		lessonButton.setBorderPainted(start.synligaKnappar);
+		lessonButton.setFocusPainted(start.synligaKnappar);
 		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		lessonButton.setText("Lessons");
 		
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		flashcardButton.addActionListener(new knapp2());
-		flashcardButton.setContentAreaFilled(false);
-		flashcardButton.setBorderPainted(false);
-		flashcardButton.setFocusPainted(false);
+		flashcardButton.addActionListener(new flashcardButtonAct());
+		flashcardButton.setContentAreaFilled(start.synligaKnappar);
+		flashcardButton.setBorderPainted(start.synligaKnappar);
+		flashcardButton.setFocusPainted(start.synligaKnappar);
 		flashcardButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		flashcardButton.setText("Flashcards");
 		
 		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		readingButton.addActionListener(new knapp3());
-		readingButton.setContentAreaFilled(false);
-		readingButton.setBorderPainted(false);
-		readingButton.setFocusPainted(false);
+		readingButton.addActionListener(new readingButtonAct());
+		readingButton.setContentAreaFilled(start.synligaKnappar);
+		readingButton.setBorderPainted(start.synligaKnappar);
+		readingButton.setFocusPainted(start.synligaKnappar);
 		readingButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		readingButton.setText("Reading");
 		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		menyButton.addActionListener(new knapp4());
-		menyButton.setContentAreaFilled(false);
-		menyButton.setBorderPainted(false);
-		menyButton.setFocusPainted(false);
+		menyButton.addActionListener(new menyButtonAct());
+		menyButton.setContentAreaFilled(start.synligaKnappar);
+		menyButton.setBorderPainted(start.synligaKnappar);
+		menyButton.setFocusPainted(start.synligaKnappar);
 		
 		//fixa V
 		word.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(200 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
@@ -138,7 +138,7 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 	
-	static class knapp2 implements ActionListener
+	static class flashcardButtonAct implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
@@ -147,7 +147,7 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 	
-	static class knapp3 implements ActionListener
+	static class readingButtonAct implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
@@ -156,7 +156,7 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 
-	static class knapp4 implements ActionListener
+	static class menyButtonAct implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)

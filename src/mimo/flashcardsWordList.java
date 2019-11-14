@@ -8,9 +8,9 @@ import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
 import mimo.flashcardsGame.lessonButtonAct;
-import mimo.flashcardsGame.knapp2;
-import mimo.flashcardsGame.knapp3;
-import mimo.spelFlashkort.knapp4;
+import mimo.flashcardsGame.flashcardButtonAct;
+import mimo.flashcardsGame.readingButtonAct;
+import mimo.spelFlashkort.menyButtonAct;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
 
@@ -54,7 +54,7 @@ public class flashcardsWordList extends JPanel {
 		
 		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		flashcardButton.addActionListener(new knapp2());
+		flashcardButton.addActionListener(new flashcardButtonAct());
 		flashcardButton.setContentAreaFilled(false);
 		flashcardButton.setBorderPainted(false);
 		flashcardButton.setFocusPainted(false);
@@ -62,7 +62,7 @@ public class flashcardsWordList extends JPanel {
 		flashcardButton.setText("Flashcards");
 		
 		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		readingButton.addActionListener(new knapp3());
+		readingButton.addActionListener(new readingButtonAct());
 		readingButton.setContentAreaFilled(false);
 		readingButton.setBorderPainted(false);
 		readingButton.setFocusPainted(false);

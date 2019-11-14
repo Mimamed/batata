@@ -62,7 +62,7 @@ public class spelFlashkort extends JPanel {
 		
 		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		flashcardButton.addActionListener(new knapp2());
+		flashcardButton.addActionListener(new flashcardButtonAct());
 		flashcardButton.setContentAreaFilled(start.synligaKnappar);
 		flashcardButton.setBorderPainted(start.synligaKnappar);
 		flashcardButton.setFocusPainted(start.synligaKnappar);
@@ -70,7 +70,7 @@ public class spelFlashkort extends JPanel {
 		flashcardButton.setText("Flashcards");
 		
 		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		readingButton.addActionListener(new knapp3());
+		readingButton.addActionListener(new readingButtonAct());
 		readingButton.setContentAreaFilled(start.synligaKnappar);
 		readingButton.setBorderPainted(start.synligaKnappar);
 		readingButton.setFocusPainted(start.synligaKnappar);
@@ -78,7 +78,7 @@ public class spelFlashkort extends JPanel {
 		readingButton.setText("Reading");
 		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		menyButton.addActionListener(new knapp4());
+		menyButton.addActionListener(new menyButtonAct());
 		menyButton.setContentAreaFilled(start.synligaKnappar);
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
@@ -112,7 +112,7 @@ public class spelFlashkort extends JPanel {
 			}
 		}
 		
-		static class knapp2 implements ActionListener
+		static class flashcardButtonAct implements ActionListener
 		{
 			
 			public void actionPerformed(ActionEvent e)
@@ -121,7 +121,7 @@ public class spelFlashkort extends JPanel {
 			}
 		}
 		
-		static class knapp3 implements ActionListener
+		static class readingButtonAct implements ActionListener
 		{
 			
 			public void actionPerformed(ActionEvent e)
@@ -130,7 +130,7 @@ public class spelFlashkort extends JPanel {
 			}
 		}
 
-		static class knapp4 implements ActionListener
+		static class menyButtonAct implements ActionListener
 		{
 			
 			public void actionPerformed(ActionEvent e)
