@@ -3,6 +3,7 @@ package mimo;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
@@ -25,6 +26,7 @@ import java.awt.image.BufferedImage;
 public class flashcardsWordList extends JPanel {
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
+	static JTextField ordet = new JTextField(), översättning = new JTextField();
 	
 	flashcardsWordList() 
 	{
