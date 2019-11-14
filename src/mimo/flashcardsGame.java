@@ -33,7 +33,7 @@ import java.util.ArrayList;
 public class flashcardsGame extends JPanel {
 	
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), oneButton = new JButton(), twoButton = new JButton(), threeButton = new JButton(), fourButton = new JButton(), fiveButton = new JButton();
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
 	
 	
@@ -58,6 +58,11 @@ public class flashcardsGame extends JPanel {
 		this.add(word);
 		this.add(example);
 		this.add(meaning);
+		this.add(oneButton);
+		this.add(twoButton);
+		this.add(threeButton);
+		this.add(fourButton);
+		this.add(fiveButton);
 		
 		//Fixar kanpparna nedan
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
@@ -90,7 +95,7 @@ public class flashcardsGame extends JPanel {
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
-		//fixa V
+		//FIXA PLACERING
 		word.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(200 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		word.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		word.setText("test");
@@ -110,12 +115,25 @@ public class flashcardsGame extends JPanel {
 		exampleButton.setForeground(new Color(140, 198, 58));
 		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		exampleButton.setText("Show example");
+		
+		oneButton.setBounds((int) Math.round(250 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		oneButton.addActionListener(new oneButtonAct());
+		oneButton.setContentAreaFilled(true);
+		oneButton.setBorderPainted(true);
+		oneButton.setFocusPainted(true);
+		oneButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		oneButton.setText("1");
+		//twoButton
+		//threeButton
+		//fourButton
+		//fiveButton
 	}
 	
 	public static void flashcardWriteWord()
 	{
 		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
 		word.setText(start.wordList.get(1).get(0));
+		//get(1).get(x), x ska vara slumpat
 	}
 	
 	public void paintComponent(Graphics g)
@@ -163,6 +181,7 @@ public class flashcardsGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			answerButton.setText(start.wordList.get(2).get(0));
+			//get(2).get(x) = get(1).get(x)
 		}
 	}
 	
@@ -171,6 +190,14 @@ public class flashcardsGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			exampleButton.setText("Fepoj är en bra pojke");
+		}
+	}
+	
+	static class oneButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			
 		}
 	}
 }
