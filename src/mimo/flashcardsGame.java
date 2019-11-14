@@ -32,9 +32,6 @@ import java.util.ArrayList;
 
 public class flashcardsGame extends JPanel {
 	
-	//static List<WordListClass> words = new ArrayList<WordListClass>();
-	
-	//static List<String>[] allText = {new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>()};
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton();
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
@@ -96,6 +93,7 @@ public class flashcardsGame extends JPanel {
 		//fixa V
 		word.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(200 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		word.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		word.setText("test");
 		
 		answerButton.setBounds((int) Math.round(537 * start.widthSize), (int) Math.round(305 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		answerButton.addActionListener(new answerButtonAct());
@@ -117,7 +115,7 @@ public class flashcardsGame extends JPanel {
 	public static void flashcardWriteWord()
 	{
 		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
-		word.setText(start.wordList.get(0).get(0));
+		word.setText(start.wordList.get(1).get(0));
 	}
 	
 	public void paintComponent(Graphics g)
@@ -164,7 +162,7 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			answerButton.setText("fepoj");
+			answerButton.setText(start.wordList.get(2).get(0));
 		}
 	}
 	
