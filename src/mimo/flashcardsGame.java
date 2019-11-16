@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
@@ -90,8 +91,9 @@ public class flashcardsGame extends JPanel {
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
-		//FIXA PLACERING
 		word.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(200 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
+		word.setHorizontalAlignment(SwingConstants.CENTER);
+		word.setVerticalAlignment(SwingConstants.CENTER);
 		word.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		word.setText("test");
 		
