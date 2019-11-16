@@ -1,7 +1,5 @@
 package mimo;
 
-import java.util.Scanner;
-
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -18,24 +16,20 @@ import mimo.spelFlashkort.knapp5;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
 
-import java.util.List;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class flashcardsGame extends JPanel {
 	
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), zeroButton = new JButton(), oneButton = new JButton(), twoButton = new JButton(), threeButton = new JButton(), fourButton = new JButton(), fiveButton = new JButton();
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
-	
+	static int wordNumber = 0;
 	
 	flashcardsGame() {
 		try
@@ -164,7 +158,7 @@ public class flashcardsGame extends JPanel {
 	public static void flashcardWriteWord()
 	{
 		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
-		word.setText(start.wordList.get(1).get(0));
+		word.setText(start.wordList.get(1).get(wordNumber));
 		//get(1).get(x), x ska vara slumpat
 	}
 	
@@ -212,7 +206,7 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			answerButton.setText(start.wordList.get(2).get(0));
+			answerButton.setText(start.wordList.get(2).get(wordNumber));
 			//get(2).get(x) = get(1).get(x)
 		}
 	}
@@ -229,7 +223,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			wordNumber++;
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
 		}
 	}
 	
@@ -237,7 +233,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			wordNumber++;
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
 		}
 	}
 	
@@ -245,7 +243,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			wordNumber++;
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
 		}
 	}
 	
@@ -253,7 +253,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			wordNumber++;
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
 		}
 	}
 	
@@ -261,7 +263,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			wordNumber++;
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
 		}
 	}
 	
@@ -269,7 +273,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			wordNumber++;
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
 		}
 	}
 }
