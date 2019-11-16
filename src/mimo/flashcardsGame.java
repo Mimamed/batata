@@ -33,7 +33,7 @@ import java.util.ArrayList;
 public class flashcardsGame extends JPanel {
 	
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), oneButton = new JButton(), twoButton = new JButton(), threeButton = new JButton(), fourButton = new JButton(), fiveButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), zeroButton = new JButton(), oneButton = new JButton(), twoButton = new JButton(), threeButton = new JButton(), fourButton = new JButton(), fiveButton = new JButton();
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
 	
 	
@@ -58,6 +58,7 @@ public class flashcardsGame extends JPanel {
 		this.add(word);
 		this.add(example);
 		this.add(meaning);
+		this.add(zeroButton);
 		this.add(oneButton);
 		this.add(twoButton);
 		this.add(threeButton);
@@ -116,17 +117,48 @@ public class flashcardsGame extends JPanel {
 		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		exampleButton.setText("Show example");
 		
-		oneButton.setBounds((int) Math.round(250 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		zeroButton.setBounds((int) Math.round(649 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		zeroButton.addActionListener(new zeroButtonAct());
+		zeroButton.setContentAreaFilled(start.synligaKnappar);
+		zeroButton.setFocusPainted(start.synligaKnappar);
+		zeroButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		zeroButton.setText("0");
+		
+		oneButton.setBounds((int) Math.round(735 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
 		oneButton.addActionListener(new oneButtonAct());
-		oneButton.setContentAreaFilled(true);
-		oneButton.setBorderPainted(true);
-		oneButton.setFocusPainted(true);
+		oneButton.setContentAreaFilled(start.synligaKnappar);
+		oneButton.setFocusPainted(start.synligaKnappar);
 		oneButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		oneButton.setText("1");
-		//twoButton
-		//threeButton
-		//fourButton
-		//fiveButton
+		
+		twoButton.setBounds((int) Math.round(821 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		twoButton.addActionListener(new twoButtonAct());
+		twoButton.setContentAreaFilled(start.synligaKnappar);
+		twoButton.setFocusPainted(start.synligaKnappar);
+		twoButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		twoButton.setText("2");
+		
+		threeButton.setBounds((int) Math.round(907 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		threeButton.addActionListener(new threeButtonAct());
+		threeButton.setContentAreaFilled(start.synligaKnappar);
+		threeButton.setFocusPainted(start.synligaKnappar);
+		threeButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		threeButton.setText("3");
+		
+		fourButton.setBounds((int) Math.round(993 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		fourButton.addActionListener(new fourButtonAct());
+		fourButton.setContentAreaFilled(start.synligaKnappar);
+		fourButton.setFocusPainted(start.synligaKnappar);
+		fourButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		fourButton.setText("4");
+		
+		fiveButton.setBounds((int) Math.round(1079 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		fiveButton.addActionListener(new fiveButtonAct());
+		fiveButton.setContentAreaFilled(start.synligaKnappar);
+		fiveButton.setFocusPainted(start.synligaKnappar);
+		fiveButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		fiveButton.setText("5");
+		
 	}
 	
 	public static void flashcardWriteWord()
@@ -193,7 +225,47 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 	
+	static class zeroButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+	
 	static class oneButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+	
+	static class twoButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+	
+	static class threeButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+	
+	static class fourButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+	
+	static class fiveButtonAct implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
