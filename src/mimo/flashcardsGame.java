@@ -1,5 +1,7 @@
 package mimo;
 
+import java.util.Random;
+
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -31,6 +33,8 @@ public class flashcardsGame extends JPanel {
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), zeroButton = new JButton(), oneButton = new JButton(), twoButton = new JButton(), threeButton = new JButton(), fourButton = new JButton(), fiveButton = new JButton();
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
 	static int wordNumber = 0;
+	static int categoryNumber = 1;
+	static Random randomNumber = new Random();
 	
 	flashcardsGame() {
 		try
@@ -160,8 +164,8 @@ public class flashcardsGame extends JPanel {
 	public static void flashcardWriteWord()
 	{
 		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
-		word.setText(start.wordList.get(1).get(wordNumber));
-		//get(1).get(x), x ska vara slumpat
+		word.setText(start.wordList.get(categoryNumber).get(wordNumber));
+		//get(y).get(x), y och x ska vara slumpade
 	}
 	
 	public void paintComponent(Graphics g)
@@ -208,8 +212,7 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			answerButton.setText(start.wordList.get(2).get(wordNumber));
-			//get(2).get(x) = get(1).get(x)
+			answerButton.setText(start.wordList.get(categoryNumber + 1).get(wordNumber));
 		}
 	}
 	
@@ -225,7 +228,15 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			wordNumber++;
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
 			answerButton.setText("Show meaning");
 			flashcardWriteWord();
 		}
@@ -235,7 +246,15 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			wordNumber++;
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
 			answerButton.setText("Show meaning");
 			flashcardWriteWord();
 		}
@@ -245,7 +264,15 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			wordNumber++;
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
 			answerButton.setText("Show meaning");
 			flashcardWriteWord();
 		}
@@ -255,7 +282,15 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			wordNumber++;
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
 			answerButton.setText("Show meaning");
 			flashcardWriteWord();
 		}
@@ -265,7 +300,15 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			wordNumber++;
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
 			answerButton.setText("Show meaning");
 			flashcardWriteWord();
 		}
@@ -275,7 +318,15 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			wordNumber++;
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
 			answerButton.setText("Show meaning");
 			flashcardWriteWord();
 		}
