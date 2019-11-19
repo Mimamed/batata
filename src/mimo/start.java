@@ -20,7 +20,7 @@ public class start
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
 	static int radnummer = -3;
-	static String[] defaultWordList = {":substantiv;", "ord=word<0;", "bil=car<0;", ":verb;", "prata=speak,talk,discuss<0;", "hoppa=jump,hop<0;", ":function?;", ":describer?;", ":meningar;", "-"};//82601895623013
+	static String[] defaultWordList = {":substantiv;", "ord=word<0;", "bil=car<0;", ":verb;", "prata=speak,talk<0;", "hoppa=jump,hop<0;", ":function?;", ":describer?;", ":meningar;", "-"};//82601895623013
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();

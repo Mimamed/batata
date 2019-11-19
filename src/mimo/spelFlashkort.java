@@ -1,7 +1,5 @@
 package mimo;
 
-import java.util.Scanner;
-
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -12,30 +10,24 @@ import mimo.tabMeny.readingButton;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
 
-import java.util.List;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class spelFlashkort extends JPanel {
-	//SKAPA LISTA, DATUM | ORD | ÖVERSÄTTNING | SVÅRIGHET
-	static Scanner scan = new Scanner(System.in);
-	//static List<WordListClass> words = new ArrayList<WordListClass>();
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton();
 	
 	
 	spelFlashkort() 
 	{
-		
 		try
 		{
 			pic = ImageIO.read(start.filer[2]);
-		}catch (Exception e)
+		} catch (Exception e)
 		{
 			System.out.print("fel men uppladning2");
 		}
@@ -43,7 +35,6 @@ public class spelFlashkort extends JPanel {
 		this.setLayout(null);
 		
 		//addar grejer
-		
 		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);

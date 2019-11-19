@@ -1,11 +1,12 @@
 package mimo;
 
-import java.util.Scanner;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
@@ -18,27 +19,22 @@ import mimo.spelFlashkort.knapp5;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
 
-import java.util.List;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class flashcardsGame extends JPanel {
 	
-	//static List<WordListClass> words = new ArrayList<WordListClass>();
-	
-	//static List<String>[] allText = {new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>()};
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), zeroButton = new JButton(), oneButton = new JButton(), twoButton = new JButton(), threeButton = new JButton(), fourButton = new JButton(), fiveButton = new JButton();
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
-	
+	static int wordNumber = 0;
+	static int categoryNumber = 1;
+	static Random randomNumber = new Random();
 	
 	flashcardsGame() {
 		try
@@ -61,6 +57,12 @@ public class flashcardsGame extends JPanel {
 		this.add(word);
 		this.add(example);
 		this.add(meaning);
+		this.add(zeroButton);
+		this.add(oneButton);
+		this.add(twoButton);
+		this.add(threeButton);
+		this.add(fourButton);
+		this.add(fiveButton);
 		
 		//Fixar kanpparna nedan
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
@@ -93,9 +95,11 @@ public class flashcardsGame extends JPanel {
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
-		//fixa V
 		word.setBounds((int) Math.round(535 * start.widthSize), (int) Math.round(200 * start.heightSize), (int) Math.round(293 * start.widthSize), (int) Math.round(106 * start.heightSize));
+		word.setHorizontalAlignment(SwingConstants.CENTER);
+		word.setVerticalAlignment(SwingConstants.CENTER);
 		word.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		word.setText("test");
 		
 		answerButton.setBounds((int) Math.round(537 * start.widthSize), (int) Math.round(305 * start.heightSize), (int) Math.round(294 * start.widthSize), (int) Math.round(106 * start.heightSize));
 		answerButton.addActionListener(new answerButtonAct());
@@ -112,12 +116,56 @@ public class flashcardsGame extends JPanel {
 		exampleButton.setForeground(new Color(140, 198, 58));
 		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		exampleButton.setText("Show example");
+		
+		zeroButton.setBounds((int) Math.round(649 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		zeroButton.addActionListener(new zeroButtonAct());
+		zeroButton.setContentAreaFilled(start.synligaKnappar);
+		zeroButton.setFocusPainted(start.synligaKnappar);
+		zeroButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		zeroButton.setText("0");
+		
+		oneButton.setBounds((int) Math.round(735 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		oneButton.addActionListener(new oneButtonAct());
+		oneButton.setContentAreaFilled(start.synligaKnappar);
+		oneButton.setFocusPainted(start.synligaKnappar);
+		oneButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		oneButton.setText("1");
+		
+		twoButton.setBounds((int) Math.round(821 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		twoButton.addActionListener(new twoButtonAct());
+		twoButton.setContentAreaFilled(start.synligaKnappar);
+		twoButton.setFocusPainted(start.synligaKnappar);
+		twoButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		twoButton.setText("2");
+		
+		threeButton.setBounds((int) Math.round(907 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		threeButton.addActionListener(new threeButtonAct());
+		threeButton.setContentAreaFilled(start.synligaKnappar);
+		threeButton.setFocusPainted(start.synligaKnappar);
+		threeButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		threeButton.setText("3");
+		
+		fourButton.setBounds((int) Math.round(993 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		fourButton.addActionListener(new fourButtonAct());
+		fourButton.setContentAreaFilled(start.synligaKnappar);
+		fourButton.setFocusPainted(start.synligaKnappar);
+		fourButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		fourButton.setText("4");
+		
+		fiveButton.setBounds((int) Math.round(1079 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		fiveButton.addActionListener(new fiveButtonAct());
+		fiveButton.setContentAreaFilled(start.synligaKnappar);
+		fiveButton.setFocusPainted(start.synligaKnappar);
+		fiveButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		fiveButton.setText("5");
+		
 	}
 	
 	public static void flashcardWriteWord()
 	{
 		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
-		word.setText(start.wordList.get(0).get(0));
+		word.setText(start.wordList.get(categoryNumber).get(wordNumber));
+		//get(y).get(x), y och x ska vara slumpade
 	}
 	
 	public void paintComponent(Graphics g)
@@ -164,7 +212,7 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			answerButton.setText("fepoj");
+			answerButton.setText(start.wordList.get(categoryNumber + 1).get(wordNumber));
 		}
 	}
 	
@@ -173,6 +221,114 @@ public class flashcardsGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			exampleButton.setText("Fepoj är en bra pojke");
+		}
+	}
+	
+	static class zeroButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
+		}
+	}
+	
+	static class oneButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
+		}
+	}
+	
+	static class twoButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
+		}
+	}
+	
+	static class threeButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
+		}
+	}
+	
+	static class fourButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
+		}
+	}
+	
+	static class fiveButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			wordNumber = randomNumber.nextInt(2);
+			if(randomNumber.nextInt(2) == 0)
+			{
+				categoryNumber = 1;
+			}
+			else
+			{
+				categoryNumber = 4;
+			}
+			answerButton.setText("Show meaning");
+			flashcardWriteWord();
 		}
 	}
 }
