@@ -16,6 +16,7 @@ import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
 
 import java.util.List;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Toolkit;
@@ -26,7 +27,7 @@ import java.awt.image.BufferedImage;
 public class flashcardsWordList extends JPanel {
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
-	static JTextField ordFällten = new JTextField(), översättningsFällten = new JTextField();
+	static JTextField ordFältetet = new JTextField(), översättningsFällten = new JTextField();
 	
 	flashcardsWordList() 
 	{
@@ -78,13 +79,17 @@ public class flashcardsWordList extends JPanel {
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
 		//Fixar Text Fältena
-		this.add(ordFällten);
-		ordFällten.setBounds((int) Math.round(200 * start.widthSize), (int) Math.round(156 * start.heightSize), (int) Math.round(365 * start.widthSize), (int) Math.round(77 * start.heightSize));
-		ordFällten.setEditable(true);
-		ordFällten.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		ordFällten.setHorizontalAlignment(WIDTH/2);
-		ordFällten.sets
-		ordFällten.setAlignmentY(HEIGHT/2);
+		this.add(ordFältetet);
+		ordFältetet.setBounds((int) Math.round(200 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(366 * start.widthSize), (int) Math.round(78 * start.heightSize));
+		ordFältetet.setEditable(true);
+		ordFältetet.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		ordFältetet.setHorizontalAlignment(WIDTH/2);
+		ordFältetet.setBorder(null);
+		ordFältetet.setBackground(new Color(77,77,77));
+		
+		this.add(översättningsFällten);
+		//översättningsFällten.
+		//översättnings
 		}
 		
 	public void paintComponent(Graphics g)
