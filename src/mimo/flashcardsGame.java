@@ -228,7 +228,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//start.wordList.get(categoryNumber + 2).get(wordNumber).set(0);
+			start.wordList.get(categoryNumber + 2).set(wordNumber, "0");
+			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
 			{
@@ -248,7 +250,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//start.wordList.get(categoryNumber + 2).get(wordNumber).set(1);
+			start.wordList.get(categoryNumber + 2).set(wordNumber, "1");
+			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
 			{
@@ -268,7 +272,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//start.wordList.get(categoryNumber + 2).get(wordNumber).set(2);
+			start.wordList.get(categoryNumber + 2).set(wordNumber, "2");
+			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
 			{
@@ -288,7 +294,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//start.wordList.get(categoryNumber + 2).get(wordNumber).set(3);
+			start.wordList.get(categoryNumber + 2).set(wordNumber, "3");
+			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
 			{
@@ -308,7 +316,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//start.wordList.get(categoryNumber + 2).get(wordNumber).set(4);
+			start.wordList.get(categoryNumber + 2).set(wordNumber, "4");
+			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
 			{
@@ -328,7 +338,9 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//start.wordList.get(categoryNumber + 2).get(wordNumber).set(5);
+			start.wordList.get(categoryNumber + 2).set(wordNumber, "5");
+			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
 			{
