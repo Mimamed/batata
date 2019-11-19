@@ -38,7 +38,7 @@ public class start
 	{
 		/*----------------Fixar Textfil-------------------*/
 		try
-		{
+		{//ss
 			File fil = new File("C:\\Users\\Public\\Downloads\\wordList.txt");
 			System.out.println("\nfinnns = " + fil.exists());
 			if (!fil.exists())
