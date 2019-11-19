@@ -136,6 +136,8 @@ public class spelFlashkort extends JPanel {
 			public void actionPerformed(ActionEvent e)
 			{
 				start.Byta(start.flashkortspelen);
+				flashcardsGame.answerButton.setText("Show meaning");
+				flashcardsGame.exampleButton.setText("Show example");
 			}
 		}
 		
