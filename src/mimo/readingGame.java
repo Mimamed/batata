@@ -28,6 +28,5 @@ public class readingGame extends JPanel {
 		{
 			System.out.print("fel men uppladning");
 		}
-		
 	}
 }
