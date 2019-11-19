@@ -85,7 +85,7 @@ public class flashcardsWordList extends JPanel {
 		ordFältetet.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		ordFältetet.setHorizontalAlignment(WIDTH/2);
 		ordFältetet.setBorder(null);
-		ordFältetet.setBackground(new Color(77,77,77));
+		ordFältetet.setBackground(new Color(77,77,77));//kkk
 		
 		this.add(översättningsFällten);
 		//översättningsFällten.
