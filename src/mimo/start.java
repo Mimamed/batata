@@ -123,7 +123,7 @@ public class start
 					wordList.add(new ArrayList<String>());
 					wordList.add(new ArrayList<String>());
 					radnummer+=3;
-				}else
+				}else//-
 				{
 					int mitten = textList.get(i).indexOf("=");
 					wordList.get(radnummer + 1).add(textList.get(i).substring(0, mitten));
