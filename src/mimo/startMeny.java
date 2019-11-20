@@ -24,7 +24,7 @@ public class startMeny extends JPanel
 		this.setLayout(null);
 		
 		this.add(startButton);
-		startButton.setBounds((int) Math.round(505 * start.widthSize), (int) Math.round(250 * start.heightSize), (int) Math.round(330 * start.widthSize), (int) Math.round(105 * start.heightSize));
+		startButton.setBounds((int) Math.round(478 * start.widthSize), (int) Math.round(228 * start.heightSize), (int) Math.round(410 * start.widthSize), (int) Math.round(126 * start.heightSize));
 		startButton.addActionListener(new startButton());
 		startButton.setContentAreaFilled(start.synligaKnappar);
 		startButton.setFocusPainted(start.synligaKnappar);
@@ -33,7 +33,7 @@ public class startMeny extends JPanel
 		startButton.setText("Start");
 		
 		this.add(settingsButton);
-		settingsButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(466 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		settingsButton.setBounds((int) Math.round(520 * start.widthSize), (int) Math.round(384 * start.heightSize), (int) Math.round(327 * start.widthSize), (int) Math.round(104 * start.heightSize));
 		settingsButton.addActionListener(new settingsButton());
 		settingsButton.setContentAreaFilled(start.synligaKnappar);
 		settingsButton.setFocusPainted(start.synligaKnappar);
@@ -42,7 +42,7 @@ public class startMeny extends JPanel
 		settingsButton.setText("Settings");
 		
 		this.add(quitButton);
-		quitButton.setBounds((int) Math.round(540 * start.widthSize), (int) Math.round(564 * start.heightSize), (int) Math.round(265 * start.widthSize), (int) Math.round(82 * start.heightSize));
+		quitButton.setBounds((int) Math.round(520 * start.widthSize), (int) Math.round(521 * start.heightSize), (int) Math.round(327 * start.widthSize), (int) Math.round(103 * start.heightSize));
 		quitButton.addActionListener(new quitButton());
 		quitButton.setContentAreaFilled(start.synligaKnappar);
 		quitButton.setFocusPainted(start.synligaKnappar);

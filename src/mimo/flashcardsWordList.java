@@ -26,7 +26,7 @@ import java.awt.image.BufferedImage;
 
 public class flashcardsWordList extends JPanel {
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton();
 	static JTextField ordFältetet = new JTextField(), översättningsFällten = new JTextField();
 	
 	flashcardsWordList() 
@@ -78,6 +78,8 @@ public class flashcardsWordList extends JPanel {
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
+		
+		
 		//Fixar Text Fältena
 		this.add(ordFältetet);
 		ordFältetet.setBounds((int) Math.round(200 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(366 * start.widthSize), (int) Math.round(78 * start.heightSize));
@@ -85,10 +87,14 @@ public class flashcardsWordList extends JPanel {
 		ordFältetet.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		ordFältetet.setHorizontalAlignment(WIDTH/2);
 		ordFältetet.setBorder(null);
-		ordFältetet.setBackground(new Color(77,77,77));//kkk
+		ordFältetet.setBackground(new Color(77, 77, 77));//kkk
 		
 		this.add(översättningsFällten);
-		//översättningsFällten.
+		översättningsFällten.setBounds((int) Math.round(568 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(366 * start.widthSize), (int) Math.round(78 * start.heightSize));
+		översättningsFällten.setBorder(null);
+		översättningsFällten.setBackground(new Color(77, 77, 77));
+		översättningsFällten.setHorizontalAlignment(WIDTH/2);
+		översättningsFällten.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		//översättnings
 		}
 		

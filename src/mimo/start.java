@@ -1,4 +1,4 @@
-package mimo;//l
+package mimo;
 
 import java.awt.Toolkit;
 import java.io.File;
@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class start 
 {
-	static boolean synligaKnappar = true;
+	static boolean synligaKnappar = false;
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
 	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settingsMenu.jpg")};
 	static Formatter filskapare;
