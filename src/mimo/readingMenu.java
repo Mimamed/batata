@@ -9,11 +9,11 @@ import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
 import mimo.spelFlashkort.lessonButtonAct;
 import mimo.spelFlashkort.flashcardButtonAct;
-import mimo.spelFlashkort.readingButtonAct;
+import mimo.spelFlashkort.readingButtonAct;//jj
 import mimo.spelFlashkort.menyButtonAct;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
-
+//-jaf dum
 import java.util.List;
 import java.awt.Font;
 import java.awt.Graphics;
