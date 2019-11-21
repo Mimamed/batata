@@ -30,10 +30,11 @@ import java.awt.image.BufferedImage;
 public class flashcardsGame extends JPanel {
 	
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), zeroButton = new JButton(), oneButton = new JButton(), twoButton = new JButton(), threeButton = new JButton(), fourButton = new JButton(), fiveButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), noButton = new JButton(), yesButton = new JButton();
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
 	static int wordNumber = 0;
 	static int categoryNumber = 1;
+	//BEHÖVER: hur många försök
 	static Random randomNumber = new Random();
 	
 	flashcardsGame() {
@@ -57,12 +58,8 @@ public class flashcardsGame extends JPanel {
 		this.add(word);
 		this.add(example);
 		this.add(meaning);
-		this.add(zeroButton);
-		this.add(oneButton);
-		this.add(twoButton);
-		this.add(threeButton);
-		this.add(fourButton);
-		this.add(fiveButton);
+		this.add(noButton);
+		this.add(yesButton);
 		
 		//Fixar kanpparna nedan
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
@@ -117,34 +114,19 @@ public class flashcardsGame extends JPanel {
 		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		exampleButton.setText("Show example");
 		
-		zeroButton.setBounds((int) Math.round(649 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(257 * start.widthSize), (int) Math.round(85 * start.heightSize));
-		zeroButton.addActionListener(new zeroButtonAct());
-		zeroButton.setContentAreaFilled(start.synligaKnappar);
-		zeroButton.setFocusPainted(start.synligaKnappar);
-		zeroButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		zeroButton.setText("0");
+		noButton.setBounds((int) Math.round(649 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(257 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		noButton.addActionListener(new noButtonAct());
+		noButton.setContentAreaFilled(start.synligaKnappar);
+		noButton.setFocusPainted(start.synligaKnappar);
+		noButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		noButton.setText("No");
 		
-		threeButton.setBounds((int) Math.round(907 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
-		threeButton.addActionListener(new threeButtonAct());
-		threeButton.setContentAreaFilled(start.synligaKnappar);
-		threeButton.setFocusPainted(start.synligaKnappar);
-		threeButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		threeButton.setText("3");
-		
-		fourButton.setBounds((int) Math.round(993 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
-		fourButton.addActionListener(new fourButtonAct());
-		fourButton.setContentAreaFilled(start.synligaKnappar);
-		fourButton.setFocusPainted(start.synligaKnappar);
-		fourButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		fourButton.setText("4");
-		
-		fiveButton.setBounds((int) Math.round(1079 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
-		fiveButton.addActionListener(new fiveButtonAct());
-		fiveButton.setContentAreaFilled(start.synligaKnappar);
-		fiveButton.setFocusPainted(start.synligaKnappar);
-		fiveButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		fiveButton.setText("5");
-		
+		yesButton.setBounds((int) Math.round(907 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(257 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		yesButton.addActionListener(new yesButtonAct());
+		yesButton.setContentAreaFilled(start.synligaKnappar);
+		yesButton.setFocusPainted(start.synligaKnappar);
+		yesButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		yesButton.setText("Yes");
 	}
 	
 	public static void flashcardWriteWord()
@@ -210,12 +192,13 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 	
-	static class zeroButtonAct implements ActionListener
+	static class noButtonAct implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			start.wordList.get(categoryNumber + 2).set(wordNumber, "0");
+			//.get(RÄKNARE) och LÄGG TILL 1+
 			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": inga extra poäng");
 			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
@@ -232,56 +215,14 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 	
-	static class threeButtonAct implements ActionListener
+	static class yesButtonAct implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			start.wordList.get(categoryNumber + 2).set(wordNumber, "3");
+			//start.wordList.get(categoryNumber + 2).set(wordNumber, "100"); HÄMTA POÄNGEN I STRING, BYT TILL INTEGER, LÄGG TILL 100 POÄNG, ÄNDRA TILL STRING IGEN
+			//.get(RÄKNARE) och LÄGG TILL 1+
 			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
-			
-			wordNumber = randomNumber.nextInt(2);
-			if(randomNumber.nextInt(2) == 0)
-			{
-				categoryNumber = 1;
-			}
-			else
-			{
-				categoryNumber = 4;
-			}
-			answerButton.setText("Show meaning");
-			exampleButton.setText("Show example");
-			flashcardWriteWord();
-		}
-	}
-	
-	static class fourButtonAct implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e)
-		{
-			start.wordList.get(categoryNumber + 2).set(wordNumber, "4");
-			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
-			
-			wordNumber = randomNumber.nextInt(2);
-			if(randomNumber.nextInt(2) == 0)
-			{
-				categoryNumber = 1;
-			}
-			else
-			{
-				categoryNumber = 4;
-			}
-			answerButton.setText("Show meaning");
-			exampleButton.setText("Show example");
-			flashcardWriteWord();
-		}
-	}
-	
-	static class fiveButtonAct implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e)
-		{
-			start.wordList.get(categoryNumber + 2).set(wordNumber, "5");
-			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 100 extra poäng");
 			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
