@@ -117,26 +117,12 @@ public class flashcardsGame extends JPanel {
 		exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		exampleButton.setText("Show example");
 		
-		zeroButton.setBounds((int) Math.round(649 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
+		zeroButton.setBounds((int) Math.round(649 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(257 * start.widthSize), (int) Math.round(85 * start.heightSize));
 		zeroButton.addActionListener(new zeroButtonAct());
 		zeroButton.setContentAreaFilled(start.synligaKnappar);
 		zeroButton.setFocusPainted(start.synligaKnappar);
 		zeroButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		zeroButton.setText("0");
-		
-		oneButton.setBounds((int) Math.round(735 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
-		oneButton.addActionListener(new oneButtonAct());
-		oneButton.setContentAreaFilled(start.synligaKnappar);
-		oneButton.setFocusPainted(start.synligaKnappar);
-		oneButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		oneButton.setText("1");
-		
-		twoButton.setBounds((int) Math.round(821 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
-		twoButton.addActionListener(new twoButtonAct());
-		twoButton.setContentAreaFilled(start.synligaKnappar);
-		twoButton.setFocusPainted(start.synligaKnappar);
-		twoButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		twoButton.setText("2");
 		
 		threeButton.setBounds((int) Math.round(907 * start.widthSize), (int) Math.round(625 * start.heightSize), (int) Math.round(85 * start.widthSize), (int) Math.round(85 * start.heightSize));
 		threeButton.addActionListener(new threeButtonAct());
@@ -229,50 +215,6 @@ public class flashcardsGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			start.wordList.get(categoryNumber + 2).set(wordNumber, "0");
-			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
-			
-			wordNumber = randomNumber.nextInt(2);
-			if(randomNumber.nextInt(2) == 0)
-			{
-				categoryNumber = 1;
-			}
-			else
-			{
-				categoryNumber = 4;
-			}
-			answerButton.setText("Show meaning");
-			exampleButton.setText("Show example");
-			flashcardWriteWord();
-		}
-	}
-	
-	static class oneButtonAct implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e)
-		{
-			start.wordList.get(categoryNumber + 2).set(wordNumber, "1");
-			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
-			
-			wordNumber = randomNumber.nextInt(2);
-			if(randomNumber.nextInt(2) == 0)
-			{
-				categoryNumber = 1;
-			}
-			else
-			{
-				categoryNumber = 4;
-			}
-			answerButton.setText("Show meaning");
-			exampleButton.setText("Show example");
-			flashcardWriteWord();
-		}
-	}
-	
-	static class twoButtonAct implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e)
-		{
-			start.wordList.get(categoryNumber + 2).set(wordNumber, "2");
 			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
 			
 			wordNumber = randomNumber.nextInt(2);
