@@ -318,7 +318,8 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			readingGame.textArea.setText(readingGame.books.get(0));
+			start.Byta(start.readingSpel);
 		}
 	}
 	
@@ -327,7 +328,8 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			readingGame.textArea.setText(readingGame.books.get(1));
+			start.Byta(start.readingSpel);
 		}
 	}
 	
@@ -336,7 +338,8 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			readingGame.textArea.setText(readingGame.books.get(2));
+			start.Byta(start.readingSpel);
 		}
 	}
 	
@@ -345,7 +348,8 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			readingGame.textArea.setText(readingGame.books.get(3));
+			start.Byta(start.readingSpel);
 		}
 	}
 	
@@ -354,7 +358,8 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			readingGame.textArea.setText(readingGame.books.get(4));
+			start.Byta(start.readingSpel);
 		}
 	}
 	
