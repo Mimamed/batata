@@ -137,8 +137,9 @@ public class readingGame extends JPanel {
 		textArea.setFont(new Font("comic sans ms", Font.BOLD, 22));
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
-		textArea.setBackground(new Color(0,0,0,0));
+		textArea.setOpaque(false);
 		textArea.setForeground(Color.BLACK);
+		textArea.setEditable(false);
 	}
 	
 	public void paintComponent(Graphics g)
