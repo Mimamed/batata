@@ -37,6 +37,7 @@ public class flashcardsGame extends JPanel {
 	//BEHÖVER: hur många försök
 	static Random randomNumber = new Random();
 	static int stringToInt;
+	static int timesAnswered = 0;
 	
 	flashcardsGame() {
 		try
@@ -197,9 +198,16 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//.get(RÄKNARE) och LÄGG TILL 1+
+			//lägger till 1+ till räknare
+			timesAnswered = Integer.parseInt(start.wordList.get(categoryNumber + 3).get(wordNumber)) + 1;
+			start.wordList.get(categoryNumber + 3).set(wordNumber, Integer.toString(timesAnswered));
+			
+			//antal poäng
 			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": inga extra poäng");
+			//antal svar
+			System.out.println(start.wordList.get(categoryNumber + 3).get(wordNumber));
+			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
@@ -219,15 +227,20 @@ public class flashcardsGame extends JPanel {
 	static class yesButtonAct implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
-		{
-			//start.wordList.get(categoryNumber + 2).set(wordNumber, "100"); HÄMTA POÄNGEN I STRING, BYT TILL INTEGER, LÄGG TILL 100 POÄNG, ÄNDRA TILL STRING IGEN
-			//.get(RÄKNARE) och LÄGG TILL 1+
+		{	
+			//lägger till 100 poäng till ordet
 			stringToInt = Integer.parseInt(start.wordList.get(categoryNumber + 2).get(wordNumber)) + 100;
 			start.wordList.get(categoryNumber + 2).set(wordNumber, Integer.toString(stringToInt));
+			//lägger till 1+ till räknare
+			timesAnswered = Integer.parseInt(start.wordList.get(categoryNumber + 3).get(wordNumber)) + 1;
+			start.wordList.get(categoryNumber + 3).set(wordNumber, Integer.toString(timesAnswered));
 			
-			
+			//antal poäng
 			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 100 extra poäng");
+			//antal svar
+			System.out.println(start.wordList.get(categoryNumber + 3).get(wordNumber));
+			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
 			wordNumber = randomNumber.nextInt(2);
 			if(randomNumber.nextInt(2) == 0)
