@@ -16,11 +16,11 @@ public class start
 {
 	static boolean synligaKnappar = false;
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settingsMenu.jpg")};
+	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settings.jpg")};
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
 	static int radnummer = -4;
-	static String[] defaultWordList = {":substantiv;", "ord=word<0;", "bil=car<0;", ":verb;", "prata=speak,talk<0;", "hoppa=jump,hop<0;", ":function?;", ":describer?;", ":meningar;", "-"};//82601895623013
+	static String[] defaultWordList = {":substantiv;", "ord=word<0><0>;", "bil=car<0><0>;", ":verb;", "prata=speak,talk<0><0>;", "hoppa=jump,hop<0><0>;", ":function?;", ":describer?;", ":meningar;", "-"};//82601895623013
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
