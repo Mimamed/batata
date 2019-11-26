@@ -207,7 +207,7 @@ public class flashcardsGame extends JPanel {
 			}
 			else
 			{
-				categoryNumber = 4;
+				categoryNumber = 5;
 			}
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
@@ -231,7 +231,7 @@ public class flashcardsGame extends JPanel {
 			}
 			else
 			{
-				categoryNumber = 4;
+				categoryNumber = 5;
 			}
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
