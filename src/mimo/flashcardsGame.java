@@ -223,7 +223,7 @@ public class flashcardsGame extends JPanel {
 			//start.wordList.get(categoryNumber + 2).set(wordNumber, "100"); HÄMTA POÄNGEN I STRING, BYT TILL INTEGER, LÄGG TILL 100 POÄNG, ÄNDRA TILL STRING IGEN
 			//.get(RÄKNARE) och LÄGG TILL 1+
 			stringToInt = Integer.parseInt(start.wordList.get(categoryNumber + 2).get(wordNumber)) + 100;
-			//start.wordList.get(categoryNumber + 2).set(wordNumber, Integer(stringToInt).toString());
+			start.wordList.get(categoryNumber + 2).set(wordNumber, Integer.toString(stringToInt));
 			
 			
 			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
