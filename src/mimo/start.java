@@ -74,7 +74,7 @@ public class start
 		
 		//System.out.print(widthSize);
 
-		System.out.print("\n test: " + wordList.get(0).get(1));
+		System.out.print("\n test: " + wordList.get(0).get(0));
 		flashkortspelen.flashcardWriteWord();
 		
 	}
