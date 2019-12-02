@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class start 
-{
+{//r
 	static boolean synligaKnappar = false;
 	static int[] ljusGrå = {200, 200, 200};
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
