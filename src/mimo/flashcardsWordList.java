@@ -26,7 +26,8 @@ import java.awt.image.BufferedImage;
 
 public class flashcardsWordList extends JPanel {
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton("Add"),  saveButton = new JButton("Save");
+	JButton[] removeButton = new JButton[6], changeButton = new JButton[6];
 	static JTextField ordFältetet = new JTextField(), översättningsFällten = new JTextField();
 	
 	flashcardsWordList() 
@@ -39,12 +40,24 @@ public class flashcardsWordList extends JPanel {
 			System.out.print("fel men uppladning5");
 		}
 		
+		//Initierar och adderar in remove och change knapperna(för att de är arrays)
+		for(int i = 0; i < removeButton.length; i++)
+		{
+			removeButton[i] = new JButton("Remove");
+			changeButton[i] = new JButton("Change");
+			this.add(removeButton[i]);
+			this.add(changeButton[i]);
+		}
+		
+		
 		this.setLayout(null);
 		
 		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);
 		this.add(menyButton);
+		this.add(addButton);
+		this.add(saveButton);
 		
 		//Fixar kanpparna nedan DE SKITER TILL SIG
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
@@ -78,6 +91,32 @@ public class flashcardsWordList extends JPanel {
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
+		addButton.setBounds((int) Math.round(936 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+		addButton.setFocusPainted(start.synligaKnappar);
+		addButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
+		addButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
+		
+		saveButton.setBounds((int) Math.round(1050 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+		saveButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
+		saveButton.setFocusPainted(start.synligaKnappar);
+		saveButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
+		
+		
+		
+		//sätter in array knapparna
+		for(int i = 0; i < removeButton.length; i++)
+		{
+			removeButton[i].setBounds((int) Math.round(936 * start.widthSize), (int) Math.round((235 + 79 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+			removeButton[i].setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
+			removeButton[i].setFocusPainted(start.synligaKnappar);
+			removeButton[i].setFont(new Font("comic sans ms", Font.BOLD, 20));
+			
+			
+			changeButton[i].setBounds((int) Math.round(1050 * start.widthSize), (int) Math.round((235 + 79 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+			changeButton[i].setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
+			changeButton[i].setFocusPainted(start.synligaKnappar);
+			changeButton[i].setFont(new Font("comic sans ms", Font.BOLD, 20));
+		}
 		
 		
 		//Fixar Text Fältena
