@@ -30,7 +30,7 @@ public class flashcardsWordList extends JPanel {
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton("Add"), saveButton = new JButton("Save"), downButton = new JButton("v"), upButton = new JButton("^");
 	JButton[] removeButton = new JButton[6], changeButton = new JButton[6];
 	static JTextField ordFältetet = new JTextField(), översättningsFällten = new JTextField();
-	static JLabel[][] labelList = new JLabel[9][9];
+	static JLabel[][] labelList = new JLabel[6][6];
 	
 	flashcardsWordList() 
 	{
@@ -149,7 +149,10 @@ public class flashcardsWordList extends JPanel {
 		översättningsFällten.setBackground(new Color(77, 77, 77));
 		översättningsFällten.setHorizontalAlignment(WIDTH/2);
 		översättningsFällten.setFont(new Font("comic sans ms", Font.BOLD, 30));
-		//översättnings
+		
+		
+		//Fixar nu Labels
+		labelFixare();
 		}
 		
 	public void paintComponent(Graphics g)
