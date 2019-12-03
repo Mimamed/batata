@@ -1,6 +1,7 @@
 package mimo;
 
 import java.awt.Toolkit;
+//82601895623013 ingen vill se din lilla spend for nend kod
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -21,7 +22,7 @@ public class start
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
 	static int radnummer = -4;
-	static String[] defaultWordList = {":substantiv;", "Jag=I<0><0>;", "Du=You (singular)<0><0>;", ":verb;", "Vara=to be<0><0>;", "Äta=to eat<0><0>;", ":function?;", ":describer?;", ":meningar;", "-"};//82601895623013 
+	static String[] defaultWordList = {":substantiv;", "Jag=I<0><0>;", "Du=You (singular)<0><0>;", ":verb;", "Vara=to be<0><0>;", "Äta=to eat<0><0>;", ":function?;", ":describer?;", ":meningar;", "-"};
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
