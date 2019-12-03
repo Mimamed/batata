@@ -1,35 +1,28 @@
 package mimo;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
-public class tabMeny extends JPanel
+public class lessonTree extends JPanel
 {
-	
 	static BufferedImage bakgrund;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
 	
-	
-	tabMeny()
+	lessonTree()
 	{
 		try
 		{
-			bakgrund = ImageIO.read(start.filer[1]);
+			bakgrund = ImageIO.read(start.filer[8]);
 		}catch(Exception e)
 		{
-			System.out.print("fel men uppladning3");
+			System.out.print("fel men uppladning30");
 		}
 		
 		this.setLayout(null);
@@ -105,15 +98,7 @@ public class tabMeny extends JPanel
 			start.Byta(start.readingMenyn);
 		}
 	}
-
-	static class button implements ActionListener
-	{
-		
-		public void actionPerformed(ActionEvent e)
-		{
-		}
-	}
-
+	
 	static class menyButton implements ActionListener
 	{
 		
