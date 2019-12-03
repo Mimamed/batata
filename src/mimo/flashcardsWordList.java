@@ -2,6 +2,7 @@ package mimo;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -26,9 +27,10 @@ import java.awt.image.BufferedImage;
 
 public class flashcardsWordList extends JPanel {
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton("Add"),  saveButton = new JButton("Save");
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton("Add"), saveButton = new JButton("Save"), downButton = new JButton("v"), upButton = new JButton("^");
 	JButton[] removeButton = new JButton[6], changeButton = new JButton[6];
 	static JTextField ordFältetet = new JTextField(), översättningsFällten = new JTextField();
+	static JLabel[][] labelList = new JLabel[9][9];
 	
 	flashcardsWordList() 
 	{
@@ -58,6 +60,8 @@ public class flashcardsWordList extends JPanel {
 		this.add(menyButton);
 		this.add(addButton);
 		this.add(saveButton);
+		this.add(downButton);
+		this.add(upButton);
 		
 		//Fixar kanpparna nedan DE SKITER TILL SIG
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
@@ -100,6 +104,17 @@ public class flashcardsWordList extends JPanel {
 		saveButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
 		saveButton.setFocusPainted(start.synligaKnappar);
 		saveButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
+		
+		downButton.setBounds((int) Math.round(1166 * start.widthSize), (int) Math.round(630 * start.heightSize), (int) Math.round(78 * start.widthSize), (int) Math.round(78 * start.heightSize));
+		downButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
+		downButton.setFocusPainted(start.synligaKnappar);
+		downButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
+		
+		
+		upButton.setBounds((int) Math.round(1166 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(78 * start.widthSize), (int) Math.round(78 * start.heightSize));
+		upButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
+		upButton.setFocusPainted(start.synligaKnappar);
+		upButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
 		
 		
 		

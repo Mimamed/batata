@@ -133,7 +133,7 @@ public class start
 					wordList.get(radnummer + 2).add(textList.get(i).substring(mitten + 1, textList.get(i).indexOf("<")));
 					wordList.get(radnummer + 3).add(textList.get(i).substring(textList.get(i).indexOf("<") + 1, textList.get(i).indexOf(">")));
 					wordList.get(radnummer + 4).add(textList.get(i).substring(textList.get(i).indexOf("<", textList.get(i).indexOf(">") + 1) + 1, textList.get(i).indexOf(">", textList.get(i).indexOf(">") + 1)));
-					//wordList.get(radnummer + 5).add(textList.get(i).substring(textList.get(i).indexOf("<", textList.get(i).indexOf(">", textList.indexOf(">") + 1) + 1), textList.get(i).indexOf(">", textList.get(i).indexOf(">", textList.indexOf(">") + 1) + 1))); för tre siffror
+					wordList.get(radnummer + 5).add(textList.get(i).substring(textList.get(i).indexOf("<", textList.get(i).indexOf(">", textList.indexOf(">") + 1) + 1), textList.get(i).indexOf(">", textList.get(i).indexOf(">", textList.indexOf(">") + 1) + 1))); för tre siffror
 					System.out.println("\nen ord klar");
 				}
 				
