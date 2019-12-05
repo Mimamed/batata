@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 public class lessonTree extends JPanel
 {
 	static BufferedImage bakgrund;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), l1Button = new JButton();
 	
 	lessonTree()
 	{
@@ -33,6 +33,7 @@ public class lessonTree extends JPanel
 		this.add(flashcardButton);
 		this.add(readingButton);
 		this.add(menyButton);
+		this.add(l1Button);
 		
 		//sätter upp knapparna
 		
@@ -65,6 +66,9 @@ public class lessonTree extends JPanel
 		menyButton.setContentAreaFilled(start.synligaKnappar);
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
+		
+		l1Button.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		l1Button.addActionListener(new l1Button());
 	}
 	
 	public void paintComponent(Graphics g)
@@ -100,6 +104,15 @@ public class lessonTree extends JPanel
 	}
 	
 	static class menyButton implements ActionListener
+	{
+		
+		public void actionPerformed(ActionEvent e)
+		{
+			start.Byta(start.meny);
+		}
+	}
+	
+	static class l1Button implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
