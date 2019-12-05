@@ -21,8 +21,13 @@ public class start
 	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settings.jpg"), start.class.getResource("/Bilder/lessonMenu.jpg")};
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
+<<<<<<< HEAD
 	static int radnummer = -5;
 	static String[] defaultWordList = {":substantiv;", "Jag=I<0><neb><0>;", "Du=You (singular)<0><neb><0>;", ":verb;", "Vara=to be<0><neb><0>;", "Äta=to eat<0><meb><0>;", ":function?;", ":describer?;", ":meningar;", "-"};
+=======
+	static int radnummer = -4;
+	static String[] defaultWordList = {":substantiv;", "Jag=I<0><0>;", "Du=You (singular)<0><0>;", "Han=He<0><0>;", "Hon=She<0><0>;", "Det=It, That<0><0>;", "Den=It, That<0><0>;", "Vi=We<0><0>;", "Ni=You (plural)<0><0>;", "De=They<0><0>;", ":verb;", "Vara=To be<0><0>;", "Äta=To eat<0><0>;", "Dricka=To drink<0><0>;", "Gilla=To like<0><0>;", ":describer?;", "Stor=Big<0><0>;", ":function?;", ":meningar;", "-"};
+>>>>>>> branch 'master' of https://github.com/Mimamed/batata.git
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
@@ -136,8 +141,6 @@ public class start
 					wordList.get(radnummer + 3).add(textList.get(i).substring(textList.get(i).indexOf("<") + 1, textList.get(i).indexOf(">")));
 					wordList.get(radnummer + 4).add(textList.get(i).substring(textList.get(i).indexOf("<", textList.get(i).indexOf(">") + 1) + 1, textList.get(i).indexOf(">", textList.get(i).indexOf(">") + 1)));
 					wordList.get(radnummer + 5).add(textList.get(i).substring(textList.get(i).indexOf("<", textList.get(i).indexOf(">", textList.get(i).indexOf(">") + 1) + 1) + 1, textList.get(i).indexOf(">", textList.get(i).indexOf(">", textList.get(i).indexOf(">") + 1) + 1))); //för tre siffror
-					System.out.println("hahahahahah: " + (textList.get(i).indexOf("<", textList.get(i).indexOf(">", textList.get(i).indexOf(">") + 1) + 1) + 1));
-					System.out.println(textList.get(i).indexOf("<", textList.get(i).indexOf(">", textList.get(i).indexOf(">") + 1) + 1) + 1);
 					System.out.println("\nen ord klar");
 				}
 				
