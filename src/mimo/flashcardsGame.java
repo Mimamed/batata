@@ -274,7 +274,7 @@ public class flashcardsGame extends JPanel {
 			//sedan word
 			wordNumber = randomNumber.nextInt(start.wordList.get(categoryNumber).size());
 			
-			//återställer utseende
+			//återställer utseende 
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
 			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
