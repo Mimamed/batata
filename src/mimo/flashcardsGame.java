@@ -147,7 +147,7 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			start.Byta(start.lektionTräd);
 		}
 	}
 	
@@ -190,7 +190,8 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			exampleButton.setText("Fepoj är en bra pojke");
+			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
+			exampleButton.setText("No example available");
 		}
 	}
 	
@@ -218,8 +219,11 @@ public class flashcardsGame extends JPanel {
 			{
 				categoryNumber = 5;
 			}
+			
+			//återställer utseende
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
+			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 			flashcardWriteWord();
 		}
 	}
@@ -251,8 +255,11 @@ public class flashcardsGame extends JPanel {
 			{
 				categoryNumber = 5;
 			}
+			
+			//återställer utseende
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
+			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 			flashcardWriteWord();
 		}
 	}
