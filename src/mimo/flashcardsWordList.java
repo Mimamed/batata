@@ -152,7 +152,7 @@ public class flashcardsWordList extends JPanel {
 		
 		
 		//Fixar nu Labels
-		labelFixare();
+		//labelFixare();
 		}
 		
 	public void paintComponent(Graphics g)
