@@ -131,13 +131,6 @@ public class flashcardsGame extends JPanel {
 		yesButton.setText("Yes");
 	}
 	
-	public static void flashcardWriteWord()
-	{
-		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
-		word.setText(start.wordList.get(categoryNumber).get(wordNumber));
-		//get(y).get(x), y och x ska vara slumpade
-	}
-	
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(pic, 0, 0, this.getWidth(), this.getHeight(), null);
@@ -195,6 +188,13 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 	
+	public static void flashcardWriteWord()
+	{
+		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
+		word.setText(start.wordList.get(categoryNumber).get(wordNumber));
+		//get(y).get(x), y och x ska vara slumpade
+	}
+	
 	static class noButtonAct implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -210,7 +210,7 @@ public class flashcardsGame extends JPanel {
 			System.out.println(start.wordList.get(categoryNumber + 3).get(wordNumber));
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
-			wordNumber = randomNumber.nextInt(2);
+			//slumpar först category
 			if(randomNumber.nextInt(2) == 0)
 			{
 				categoryNumber = 1;
@@ -219,6 +219,8 @@ public class flashcardsGame extends JPanel {
 			{
 				categoryNumber = 5;
 			}
+			//sedan word
+			wordNumber = randomNumber.nextInt(start.wordList.get(categoryNumber).size());
 			
 			//återställer utseende
 			answerButton.setText("Show meaning");
@@ -246,7 +248,7 @@ public class flashcardsGame extends JPanel {
 			System.out.println(start.wordList.get(categoryNumber + 3).get(wordNumber));
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
-			wordNumber = randomNumber.nextInt(2);
+			//slumpar först category
 			if(randomNumber.nextInt(2) == 0)
 			{
 				categoryNumber = 1;
@@ -255,6 +257,8 @@ public class flashcardsGame extends JPanel {
 			{
 				categoryNumber = 5;
 			}
+			//sedan word
+			wordNumber = randomNumber.nextInt(start.wordList.get(categoryNumber).size());
 			
 			//återställer utseende
 			answerButton.setText("Show meaning");
