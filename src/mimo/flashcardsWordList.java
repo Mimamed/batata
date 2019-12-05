@@ -1,6 +1,8 @@
 package mimo;
 
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,6 +22,7 @@ import java.util.List;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -109,14 +112,23 @@ public class flashcardsWordList extends JPanel {
 		downButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
 		downButton.setFocusPainted(start.synligaKnappar);
 		downButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
-		
+		try {
+		    Image img = ImageIO.read(getClass().getResource("/Bilder/greenArrowUp.png"));
+		    downButton.setIcon(new ImageIcon(img));
+		  } catch (Exception e) {
+		    System.out.println(e);
+		  }
 		
 		upButton.setBounds((int) Math.round(1166 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(78 * start.widthSize), (int) Math.round(78 * start.heightSize));
 		upButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
 		upButton.setFocusPainted(start.synligaKnappar);
 		upButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
-		
-		
+		try {
+		    Image img = ImageIO.read(getClass().getResource("/Bilder/greenArrowDown.png"));
+		    upButton.setIcon(new ImageIcon(img));
+		  } catch (Exception e) {
+		    System.out.println(e);
+		  }
 		
 		//sätter in array knapparna
 		for(int i = 0; i < removeButton.length; i++)
