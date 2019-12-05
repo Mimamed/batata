@@ -315,11 +315,11 @@ public class readingMenu extends JPanel
 	
 	static class title1ButtonAct implements ActionListener
 	{
-	
 		public void actionPerformed(ActionEvent e)
 		{
 			readingGame.textArea.setText(readingGame.books.get(0));
 			start.Byta(start.readingSpel);
+			readingGame.whichBook = 0;
 		}
 	}
 	
@@ -330,6 +330,7 @@ public class readingMenu extends JPanel
 		{
 			readingGame.textArea.setText(readingGame.books.get(1));
 			start.Byta(start.readingSpel);
+			readingGame.whichBook = 1;
 		}
 	}
 	
@@ -340,6 +341,7 @@ public class readingMenu extends JPanel
 		{
 			readingGame.textArea.setText(readingGame.books.get(2));
 			start.Byta(start.readingSpel);
+			readingGame.whichBook = 2;
 		}
 	}
 	
@@ -350,6 +352,7 @@ public class readingMenu extends JPanel
 		{
 			readingGame.textArea.setText(readingGame.books.get(3));
 			start.Byta(start.readingSpel);
+			readingGame.whichBook = 3;
 		}
 	}
 	
@@ -360,6 +363,7 @@ public class readingMenu extends JPanel
 		{
 			readingGame.textArea.setText(readingGame.books.get(4));
 			start.Byta(start.readingSpel);
+			readingGame.whichBook = 4;
 		}
 	}
 	
