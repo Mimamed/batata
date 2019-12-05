@@ -121,13 +121,13 @@ public class flashcardsWordList extends JPanel {
 		//sätter in array knapparna
 		for(int i = 0; i < removeButton.length; i++)
 		{
-			removeButton[i].setBounds((int) Math.round(936 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+			removeButton[i].setBounds((int) Math.round(935.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
 			removeButton[i].setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
 			removeButton[i].setFocusPainted(start.synligaKnappar);
 			removeButton[i].setFont(new Font("comic sans ms", Font.BOLD, 20));
 			
 			
-			changeButton[i].setBounds((int) Math.round(1050 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+			changeButton[i].setBounds((int) Math.round(1050 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114.2 * start.widthSize), (int) Math.round(78 * start.heightSize));
 			changeButton[i].setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
 			changeButton[i].setFocusPainted(start.synligaKnappar);
 			changeButton[i].setFont(new Font("comic sans ms", Font.BOLD, 20));
