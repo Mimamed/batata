@@ -211,13 +211,20 @@ public class flashcardsGame extends JPanel {
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
 			//slumpar först category
-			if(randomNumber.nextInt(2) == 0)
+			switch (randomNumber.nextInt(4))
 			{
+			case 0:
 				categoryNumber = 1;
-			}
-			else
-			{
+				break;
+			case 1:
 				categoryNumber = 5;
+				break;
+			case 2:
+				categoryNumber = 9;
+				break;
+			case 3:
+				categoryNumber = 13;
+				break;
 			}
 			//sedan word
 			wordNumber = randomNumber.nextInt(start.wordList.get(categoryNumber).size());
@@ -249,13 +256,20 @@ public class flashcardsGame extends JPanel {
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
 			//slumpar först category
-			if(randomNumber.nextInt(2) == 0)
+			switch (randomNumber.nextInt(4))
 			{
+			case 0:
 				categoryNumber = 1;
-			}
-			else
-			{
+				break;
+			case 1:
 				categoryNumber = 5;
+				break;
+			case 2:
+				categoryNumber = 9;
+				break;
+			case 3:
+				categoryNumber = 13;
+				break;
 			}
 			//sedan word
 			wordNumber = randomNumber.nextInt(start.wordList.get(categoryNumber).size());
