@@ -22,7 +22,7 @@ public class start
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
 	static int radnummer = -5;
-	static String[] defaultWordList = {":substantiv;", "Jag=I<0><0><0>;", "Du=You (singular)<0><0><0>;", "Han=He<0><0><0>;", "Hon=She<0><0><0>;", "Det=It, That<0><0><0>;", "Den=It, That<0><0><0>;", "Vi=We<0><0><0>;", "Ni=You (plural)<0><0><0>;", "De=They<0><0><0>;", ":verb;", "Vara=To be<0><0><0>;", "Äta=To eat<0><0><0>;", "Dricka=To drink<0><0><0>;", "Gilla=To like<0><0><0>;", ":describer?;", "Stor=Big<0><0><0>;", ":function?;", "Och=And<0><0><0>;", ":meningar;", "-"};
+	static String[] defaultWordList = {":substantiv;", "Jag=I<0><0><0>;", "Du=You (singular)<Du är en man><0><0>;", "Han=He<0><0><0>;", "Hon=She<0><0><0>;", "Det=It, That<0><0><0>;", "Den=It, That<0><0><0>;", "Vi=We<0><0><0>;", "Ni=You (plural)<Ni är kockar><0><0>;", "De=They<0><0><0>;", ":verb;", "Vara=To be<Vi är här><0><0>;", "Äta=To eat<0><0><0>;", "Dricka=To drink<0><0><0>;", "Gilla=To like<0><0><0>;", "Komma från=To come from<Jag kommer från Sverige><0><0>;", ":describer;", "Stor=Big<stor chungas rolig mem><0><0>;", "God=Well tasting<Maten är god><0><0>;", "God=Good (not evil)<0><0><0>;", "Hemma=At home<Jag är hemma älskling><0><0>;", "Bra=Good, well, fine<Ge mig en bra gaffel><0><0>;", ":function;", "Inte=Not<Inte roligt, skrattade inte><0><0>;", "Och=And<Vi och de><0><0>;", "Ja=Yes<0><0><0>;", "Nej=No<0><0><0>;", "Jo=Yes (against no)<Jo, det är möjligt><0><0>;", ":meningar;", "-"};
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
