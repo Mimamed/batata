@@ -217,13 +217,13 @@ public class flashcardsGame extends JPanel {
 				categoryNumber = 1;
 				break;
 			case 1:
-				categoryNumber = 5;
+				categoryNumber = 6;
 				break;
 			case 2:
-				categoryNumber = 9;
+				categoryNumber = 11;
 				break;
 			case 3:
-				categoryNumber = 13;
+				categoryNumber = 16;
 				break;
 			}
 			//sedan word
@@ -262,13 +262,13 @@ public class flashcardsGame extends JPanel {
 				categoryNumber = 1;
 				break;
 			case 1:
-				categoryNumber = 5;
+				categoryNumber = 6;
 				break;
 			case 2:
-				categoryNumber = 9;
+				categoryNumber = 11;
 				break;
 			case 3:
-				categoryNumber = 13;
+				categoryNumber = 16;
 				break;
 			}
 			//sedan word
