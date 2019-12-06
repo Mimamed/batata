@@ -24,9 +24,10 @@ import java.awt.image.BufferedImage;
 
 public class readingGame extends JPanel {
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), test = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), translate = new JButton();
 	static JTextArea textArea = new JTextArea();
-	static List<String> books = new ArrayList();
+	static List<String> books = new ArrayList(), booksTranslated = new ArrayList();
+	public static int whichBook;
 	
 	readingGame() {
 		try
@@ -51,7 +52,9 @@ public class readingGame extends JPanel {
 				"Karl: Katter är bättre.");
 		
 		books.add("Har du hört om talspråket “alla heter Glenn i Göteborg?”\n" + 
-				"Talspråket kommer från året 1982. 1982 fanns det fyra olika fotbollsspelare i ett lag från Göteborg, alla hette Glenn. \nSom ett skämt började folk säga “alla heter Glenn i Göteborg” och skämtet blev känt över hela Sverige.\nÄven om det har gått väldigt länge så kan man fortfarande höra folk säga detta talspråk.");
+				"Talspråket kommer från året 1982. 1982 fanns det fyra olika fotbollsspelare i ett lag från Göteborg, alla hette Glenn. \n" +
+				"Som ett skämt började folk säga “alla heter Glenn i Göteborg” och skämtet blev känt över hela Sverige.\n" +
+				"Även om det har gått väldigt länge så kan man fortfarande höra folk säga detta talspråk.");
 		
 		books.add("Carlos: Vet du hur säkert Sverige är?\n" + 
 				"Mimamed: Hur säkert är Sverige?\n" + 
@@ -68,11 +71,12 @@ public class readingGame extends JPanel {
 				"Carlos: Bra jobbat…");
 		
 		books.add("Varför fusk är dåligt för dig själv och dem runt om dig.\n\n" +
-				"För det första: fusk leder till att folk som inte borde klara något klarar det. Om du fuskar kan det leda till att du förstår mindre och mindre. I slutändan kan du inte hantera enkla uppgifter utan hjälp av fusk.\n\n>" +
-				"För det andra: tänk på dem som försöker. Vilken moral och etik kan du använda för att försvara att du fuskar istället för att du studerar och gör ditt bästa?\n" + 
+				"För det första, fusk leder till att folk som inte borde klara något klarar det. Om du fuskar kan det leda till att du förstår mindre och mindre. I slutändan kan du inte hantera enkla uppgifter utan hjälp av fusk.\n\n" +
+				"För det andra, tänk på dem som försöker. Vilken moral och/eller etik kan du använda för att försvara att du fuskar istället för att du studerar och gör ditt bästa?\n" + 
 				"\"Jag har inte tillräckligt med tid just nu\" är inte en lämplig ursäkt. Gör ditt bästa, alla får en andra chans.\n\n" +
-				"För det tredje: du påverkar andras framtid. Om du fortsätter fuska kan det leda till bra resultat på ett papper men det kan också leda till dåliga resultat utanför det pappret. \nDe som skulle ha fått bättre resultat än dig om du inte fuskade får nu lägre resultat. Dessa resultat påverkar andra. De som är lämpligare för vissa saker blir inte valda utan du blir vald.\n\n" + 
-				"För det sista: du kan inte fuska på ditt jobb.");
+				"För det tredje, du påverkar andras framtid. Om du fortsätter fuska kan det leda till bra resultat på ett papper men det kan också leda till dåliga resultat utanför det pappret. \n" +
+				"De som skulle ha fått bättre resultat än dig, om du inte fuskade, blir nu valda efter dig. Dessa resultat påverkar andra. De som är lämpligare för vissa saker blir inte valda utan du blir vald.\n\n" + 
+				"För det sista, du kan inte fuska på ditt jobb.");
 		
 		books.add("Kalle: Tjena Pelle! Jag har precis fått chansen att vinna en fullständigt gratis ny mobil!\n" + 
 				"Pelle: Wow, vart har du fått det erbjudandet?\n" + 
@@ -91,15 +95,69 @@ public class readingGame extends JPanel {
 				"Pelle: Du vet väl hur höga räntor de sätter på sådana lån?\n" + 
 				"Kalle: Inga problem, jag kan ändå sälja mobilen om det behövs.\n" + 
 				"Pelle: Haha, vilka ska skicka mobilen till dig då?\n" + 
-				"Kalle: Ett företag som heter Free Sweden Telefon\n" + 
+				"Kalle: Ett företag som heter Free Sweden Telefon.\n" + 
 				"Pelle: Bra jobbat. Du har inte bara gett din privata information till försäljare online, du har inte bara räknat fel och satt dig själv i skuld… Du har också blivit bedragen. Ge upp.");
+		
+		booksTranslated.add("Emma: Hi Karl.\n" +
+				"Karl: Hi Emma.\n" +
+				"Emma: What is your favorite animal?\n" +
+				"Karl: I like cats and dogs.\n" +
+				"Emma: What do you like the most?\n" +
+				"Karl: Cats." +
+				"Emma: I like dogs more. They are kind and good friends.\n" +
+				"Karl: Cats are better.");
+		
+		booksTranslated.add("Have you heard about the spoken language “everyone is called Glenn in Gothenburg? \n" +
+				"The idiom comes from the year 1982. In 1982, there were four different football players in a team from Gothenburg, all called Glenn. \n" +
+				"As a joke, people started saying \"everyone is called Glenn in Gothenburg\" and the joke became known throughout Sweden. \n" +
+				"Even though it has been a very long time, you can still hear people say this idiom.");
+		
+		booksTranslated.add("Carlos: Do you know how safe Sweden is? \n" +
+				"Mimamed: How safe is Sweden? \n" +
+				"Carlos: Sweden is so safe that you can leave your bag for hours at an outdoor restaurant without anyone thinking of stealing it. \n" +
+				"Mimamed: I'll try that! \n\n" + 
+				"*A few days later* \n\n" +
+				"Mimamed: My bag is gone! \n" +
+				"Carlos: You know that what I said is not always true? \n" +
+				"Mimamed: Oh. In fact, no one stole my bag. \n" +
+				"Carlos: But what happened then? \n" +
+				"Mimamed: I dropped it while walking up on a hill. \n" +
+				"Carlos: How? \n" +
+				"Mimamed: I dropped the bag. \n" +
+				"Carlos: Good job…");
+		
+		booksTranslated.add("Why cheating is bad for yourself and those around you. \n\n" +
+				"First of all: cheating leads to people who should not do anything. Cheating can make you understand less and less. In the end, you can\'t handle simple tasks without the help of cheating. \n\n" +
+				"Second, think of those who are trying. What morality and / or ethics can you use to justify cheating instead of studying and doing your best? \n\"I don't have enough time right now\" is not an appropriate excuse. Do your best, everyone gets a second chance. \n\n" +
+				"Third, you affect the future of others. Continuing to cheat can result in good results on a piece of paper, but it can also result in poor results outside of that piece of paper. \nThose who would have achieved better results than you, if you did not cheat, are now chosen after you. These results affect others. Those who are more suitable for certain things are not chosen but you are chosen. \n\n" +
+				"Lastly, you can't cheat on your job.");
+		
+		booksTranslated.add("Kalle: Hello Pelle! I just got the chance to win a completely free new mobile!\r\n" + 
+				"Pelle: Wow, where did you get that offer?\r\n" + 
+				"Kalle: I got an email that I could win a new mobile if I did a quick survey online.\r\n" + 
+				"Pelle: Have you done it yet?\r\n" + 
+				"Kalle: Yes, they also wanted me to pay a small sum to get the phone sent here.\r\n" + 
+				"Pelle: How much?\r\n" + 
+				"Kalle: Only 200 american dollars.\r\n" + 
+				"Pelle: ... Do you know how much that is in sek?\r\n" + 
+				"Kalle: Around 180 of course!\r\n" + 
+				"Pelle: Multiply that by 10 and then you get a more realistic price.\r\n" + 
+				"Kalle: Oh... Maybe I shouldn't have done that.\r\n" + 
+				"Kalle: But you know what?\r\n" + 
+				"Pelle: What?\r\n" + 
+				"Kalle: I took a instant loan earlier to have some extra cash and I can use that money to pay for the mobile. No problem!\r\n" + 
+				"Pelle: You know how high interest rates they put on such loans?\r\n" + 
+				"Kalle: No problem, I can still sell the phone if needed.\r\n" + 
+				"Pelle: Haha, who sent you the cellphone then?\r\n" + 
+				"Kalle: A company called Free Sweden Telephone.\r\n" + 
+				"Pelle: Good job. You have not only given your private information to sellers online, you have not only miscalculated and put yourself in debt… You have also been deceived. Give up.");
 		
 		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);
 		this.add(menyButton);
 		this.add(textArea);
-		this.add(test);
+		this.add(translate);
 		
 		//sätter upp knapparna
 		
@@ -140,6 +198,40 @@ public class readingGame extends JPanel {
 		textArea.setOpaque(false);
 		textArea.setForeground(Color.BLACK);
 		textArea.setEditable(false);
+		
+		translate.setBounds((int) Math.round(1004 * start.widthSize), (int) Math.round(665 * start.heightSize), (int) Math.round(156 * start.widthSize), (int) Math.round(34 * start.heightSize));
+		translate.setAlignmentX(CENTER_ALIGNMENT);
+		translate.setAlignmentY(CENTER_ALIGNMENT);
+		translate.setHorizontalAlignment(JLabel.CENTER);
+		translate.setVerticalAlignment(JLabel.CENTER);
+		translate.setBorderPainted(start.synligaKnappar);
+		translate.setFocusPainted(start.synligaKnappar);
+		translate.setContentAreaFilled(start.synligaKnappar);
+		translate.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		translate.setText("Translate");
+		translate.addActionListener(new translateButton());
+	}
+	
+	public static void translateText (int whichBook) {
+		if(whichBook == 0) {
+			textArea.setText(booksTranslated.get(0));
+		}
+		
+		else if(whichBook == 1) {
+			textArea.setText(booksTranslated.get(1));
+		}
+		
+		else if(whichBook == 2) {
+			textArea.setText(booksTranslated.get(2));
+		}
+		
+		else if(whichBook == 3) {
+			textArea.setText(booksTranslated.get(3));
+		}
+		
+		else if(whichBook == 4) {
+			textArea.setText(booksTranslated.get(4));
+		}
 	}
 	
 	public void paintComponent(Graphics g)
@@ -180,6 +272,15 @@ public class readingGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			start.Byta(start.meny);
+		}
+	}
+	
+	static class translateButton implements ActionListener
+	{
+		
+		public void actionPerformed(ActionEvent e)
+		{
+			translateText(whichBook);
 		}
 	}
 }
