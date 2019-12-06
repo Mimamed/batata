@@ -22,7 +22,7 @@ public class start
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
 	static int radnummer = -4;
-	static String[] defaultWordList = {":substantiv;", "Jag=I<0><0>;", "Du=You (singular)<0><0>;", "Han=He<0><0>;", "Hon=She<0><0>;", "Det=It, That<0><0>;", "Den=It, That<0><0>;", "Vi=We<0><0>;", "Ni=You (plural)<0><0>;", "De=They<0><0>;", ":verb;", "Vara=To be<0><0>;", "Äta=To eat<0><0>;", "Dricka=To drink<0><0>;", "Gilla=To like<0><0>;", ":describer?;", "Stor=Big<0><0>;", ":function?;", ":meningar;", "-"};
+	static String[] defaultWordList = {":substantiv;", "Jag=I<0><0>;", "Du=You (singular)<0><0>;", "Han=He<0><0>;", "Hon=She<0><0>;", "Det=It, That<0><0>;", "Den=It, That<0><0>;", "Vi=We<0><0>;", "Ni=You (plural)<0><0>;", "De=They<0><0>;", ":verb;", "Vara=To be<0><0>;", "Äta=To eat<0><0>;", "Dricka=To drink<0><0>;", "Gilla=To like<0><0>;", ":describer;", "Stor=Big<0><0>;", ":function;", "Inte=Not<0><0>;", "Och=And<0><0>;", ":meningar;", "-"};
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
