@@ -2,7 +2,9 @@ package mimo;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
@@ -21,9 +23,14 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Desktop;
+import java.net.URI;
 
 public class settingsMenu extends JPanel {
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton(), donationButton = new JButton(), colorBlindModeButtonON = new JButton(), colorBlindModeButtonOFF = new JButton();
+	static JLabel colorBlindModeText = new JLabel();
 	static BufferedImage pic;
 	
 	settingsMenu() {
@@ -44,8 +51,12 @@ public class settingsMenu extends JPanel {
 		this.add(menyButton);
 		this.add(practiseButton);
 		this.add(wordlistButton);
+		this.add(donationButton);
+		this.add(colorBlindModeText);
+		this.add(colorBlindModeButtonON);
+		this.add(colorBlindModeButtonOFF);
 		
-		//sätter upp knapparna
+		//satter upp knapparna
 		
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		lessonButton.addActionListener(new lessonButtonAct());
@@ -76,6 +87,33 @@ public class settingsMenu extends JPanel {
 		menyButton.setContentAreaFilled(start.synligaKnappar);
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
+		
+		donationButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(574.5 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		donationButton.setContentAreaFilled(start.synligaKnappar);
+		donationButton.setBorderPainted(start.synligaKnappar);
+		donationButton.setFocusPainted(start.synligaKnappar);
+		donationButton.addActionListener(new donationActionListener());
+		donationButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		donationButton.setText("Donate");
+		
+		colorBlindModeText.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(455 * start.heightSize), (int) Math.round(272 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		colorBlindModeText.setAlignmentX(CENTER_ALIGNMENT);
+		colorBlindModeText.setAlignmentY(CENTER_ALIGNMENT);
+		colorBlindModeText.setHorizontalAlignment(JLabel.CENTER);
+		colorBlindModeText.setVerticalAlignment(JLabel.CENTER);
+		colorBlindModeText.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		colorBlindModeText.setText("Color blind mode");
+		
+		colorBlindModeButtonON.setBounds((int) Math.round(771 * start.widthSize), (int) Math.round(455 * start.heightSize), (int) Math.round(49 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		colorBlindModeButtonON.setFont(new Font("comic sans ms", Font.BOLD, 15));
+		colorBlindModeButtonON.setText("On");
+		colorBlindModeButtonON.addActionListener(new colorBlindModeONActionListener());
+
+		
+		colorBlindModeButtonOFF.setBounds((int) Math.round(820 * start.widthSize), (int) Math.round(455 * start.heightSize), (int) Math.round(48.5 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		colorBlindModeButtonOFF.setFont(new Font("comic sans ms", Font.BOLD, 15));
+		colorBlindModeButtonOFF.setText("Off");
+		colorBlindModeButtonOFF.addActionListener(new colorBlindModeOFFActionListener());
 	}
 	
 	public void paintComponent(Graphics g)
@@ -131,6 +169,36 @@ public class settingsMenu extends JPanel {
 	static class knapp6 implements ActionListener
 	{
 	
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+	
+	static class donationActionListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			try {
+			Desktop d = Desktop.getDesktop();
+			d.browse(new URI("https://www.patreon.com/Mimo_Official/creators"));
+			}
+			catch(Exception z){
+				z.printStackTrace();
+			}
+		}
+	}
+	
+	static class colorBlindModeONActionListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			
+		}
+	}
+	
+	static class colorBlindModeOFFActionListener implements ActionListener
+	{
 		public void actionPerformed(ActionEvent e)
 		{
 			
