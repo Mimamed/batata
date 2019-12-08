@@ -62,7 +62,7 @@ public class readingGame extends JPanel {
 				"Mimamed: Det ska jag pröva!\n\n" +  
 				"*Några dagar senare*\n\n" + 
 				"Mimamed: Min väska är borta!\n" + 
-				"Carlos: Du vet väl att det jag sade inte alltid är sant?\n" + 
+				"Carlos: Du vet väl att det jag säger inte alltid är sant?\n" + 
 				"Mimamed: Åh. Faktiskt stal ingen min väska\n" + 
 				"Carlos: Men vad hände då?\n" + 
 				"Mimamed: Jag tappade den när jag vandrade på en kulle.\n" + 
@@ -71,13 +71,13 @@ public class readingGame extends JPanel {
 				"Carlos: Bra jobbat…");
 		
 		books.add("Varför fusk är dåligt för dig själv och dem runt om dig.\n\n" +
-				"För det första, fusk leder till att folk som inte borde klara något klarar det. Om du fuskar kan det leda till att du förstår mindre och mindre. I slutändan kan du inte hantera enkla uppgifter utan hjälp av fusk.\n\n" +
+				"För det första, fusk leder till att folk som inte borde klara något klarar det. Om du fuskar kan det leda till att du förstår mindre och mindre. I slutändan kommer du inte kunna hantera enkla uppgifter utan hjälp av fusk.\n\n" +
 				"För det andra, tänk på dem som försöker. Vilken moral och/eller etik kan du använda för att försvara att du fuskar istället för att du studerar och gör ditt bästa?\n" + 
 				"\"Jag har inte tillräckligt med tid just nu\" är inte en lämplig ursäkt. Gör ditt bästa, alla får en andra chans.\n\n" +
 				"För det tredje, du påverkar andras framtid. Om du fortsätter fuska kan det leda till bra resultat på ett papper men det kan också leda till dåliga resultat utanför det pappret. \n" +
 				"De som skulle ha fått bättre resultat än dig, om du inte fuskade, blir nu valda efter dig. Dessa resultat påverkar andra. De som är lämpligare för vissa saker blir inte valda utan du blir vald.\n\n" + 
 				"För det sista, du kan inte fuska på ditt jobb.");
-		
+		//KOLLA ÖVERSÄTTNING
 		books.add("Kalle: Tjena Pelle! Jag har precis fått chansen att vinna en fullständigt gratis ny mobil!\n" + 
 				"Pelle: Wow, vart har du fått det erbjudandet?\n" + 
 				"Kalle: Jag fick ett mail om att jag kunde vinna en ny mobil om jag gjorde en snabb enkät på nätet.\n" + 
@@ -99,7 +99,7 @@ public class readingGame extends JPanel {
 				"Pelle: Bra jobbat. Du har inte bara gett din privata information till försäljare online, du har inte bara räknat fel och satt dig själv i skuld… Du har också blivit bedragen. Ge upp.");
 		
 		booksTranslated.add("Emma: Hi Karl.\n" +
-				"Karl: Hi Emma.\n" +
+				"Karl: Hello Emma.\n" +
 				"Emma: What is your favorite animal?\n" +
 				"Karl: I like cats and dogs.\n" +
 				"Emma: What do you like the most?\n" +
@@ -107,10 +107,10 @@ public class readingGame extends JPanel {
 				"Emma: I like dogs more. They are kind and good friends.\n" +
 				"Karl: Cats are better.");
 		
-		booksTranslated.add("Have you heard about the spoken language “everyone is called Glenn in Gothenburg? \n" +
-				"The idiom comes from the year 1982. In 1982, there were four different football players in a team from Gothenburg, all called Glenn. \n" +
+		booksTranslated.add("Have you heard about the saying “everyone is called Glenn in Gothenburg? \n" +
+				"The saying comes from the year 1982. In 1982, there were four different football players in a team from Gothenburg, all of them named Glenn. \n" +
 				"As a joke, people started saying \"everyone is called Glenn in Gothenburg\" and the joke became known throughout Sweden. \n" +
-				"Even though it has been a very long time, you can still hear people say this idiom.");
+				"Even though it has been a very long time, you can still hear people say this saying.");
 		
 		booksTranslated.add("Carlos: Do you know how safe Sweden is? \n" +
 				"Mimamed: How safe is Sweden? \n" +
@@ -118,19 +118,19 @@ public class readingGame extends JPanel {
 				"Mimamed: I'll try that! \n\n" + 
 				"*A few days later* \n\n" +
 				"Mimamed: My bag is gone! \n" +
-				"Carlos: You know that what I said is not always true? \n" +
+				"Carlos: You do know that what I say is not always true? \n" +
 				"Mimamed: Oh. In fact, no one stole my bag. \n" +
 				"Carlos: But what happened then? \n" +
-				"Mimamed: I dropped it while walking up on a hill. \n" +
+				"Mimamed: I dropped it while I was wandering on a hill. \n" +
 				"Carlos: How? \n" +
 				"Mimamed: I dropped the bag. \n" +
 				"Carlos: Good job…");
 		
-		booksTranslated.add("Why cheating is bad for yourself and those around you. \n\n" +
-				"First of all: cheating leads to people who should not do anything. Cheating can make you understand less and less. In the end, you can\'t handle simple tasks without the help of cheating. \n\n" +
-				"Second, think of those who are trying. What morality and / or ethics can you use to justify cheating instead of studying and doing your best? \n\"I don't have enough time right now\" is not an appropriate excuse. Do your best, everyone gets a second chance. \n\n" +
-				"Third, you affect the future of others. Continuing to cheat can result in good results on a piece of paper, but it can also result in poor results outside of that piece of paper. \nThose who would have achieved better results than you, if you did not cheat, are now chosen after you. These results affect others. Those who are more suitable for certain things are not chosen but you are chosen. \n\n" +
-				"Lastly, you can't cheat on your job.");
+		booksTranslated.add("Why cheating is bad for you and those around you. \n\n" +
+				"First of all: cheating leads to people who should not do be able to do something being able to do that thing. If you cheat, it can lead to you understanding less and less. In the end, you won\'t be able to handle simple tasks without the help of cheating. \n\n" +
+				"Secondly, think of those who are trying. What morality and/or ethics can you use to justify cheating instead of studying and doing your best? \n\"I don't have enough time right now\" is not an appropriate excuse. Do your best, everyone gets a second chance. \n\n" +
+				"Thirdly, you  are affecting other people's future. If you continue cheating it can lead to good results on a piece of paper, but it can also lead to poor results outside of that piece of paper. \nThose who should have gotten better results than you, if you did not cheat, are now getting lower results. These results affect others. Those who are more suitable for certain things are not chosen but you are chosen. \n\n" +
+				"Lastly, you can't cheat during your job.");
 		
 		booksTranslated.add("Kalle: Hello Pelle! I just got the chance to win a completely free new mobile!\r\n" + 
 				"Pelle: Wow, where did you get that offer?\r\n" + 
