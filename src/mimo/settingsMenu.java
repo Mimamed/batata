@@ -108,7 +108,6 @@ public class settingsMenu extends JPanel {
 		colorBlindModeButtonON.setFont(new Font("comic sans ms", Font.BOLD, 15));
 		colorBlindModeButtonON.setText("On");
 		colorBlindModeButtonON.addActionListener(new colorBlindModeONActionListener());
-
 		
 		colorBlindModeButtonOFF.setBounds((int) Math.round(820 * start.widthSize), (int) Math.round(455 * start.heightSize), (int) Math.round(48.5 * start.widthSize), (int) Math.round(77 * start.heightSize));
 		colorBlindModeButtonOFF.setFont(new Font("comic sans ms", Font.BOLD, 15));
