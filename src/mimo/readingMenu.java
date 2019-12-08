@@ -27,6 +27,8 @@ import java.awt.image.BufferedImage;
 
 public class readingMenu extends JPanel
 {
+	static boolean alreadyRead1, alreadyRead2, alreadyRead3, alreadyRead4, alreadyRead5 = false;
+	
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), title1Button = new JButton(), title2Button = new JButton(), title3Button = new JButton(), title4Button = new JButton(), title5Button = new JButton(), title6Button = new JButton(), readOrNot1 = new JButton(), readOrNot2 = new JButton(), readOrNot3 = new JButton(), readOrNot4 = new JButton(), readOrNot5 = new JButton(), readOrNot6 = new JButton();
 	static JLabel titleText = new JLabel(), readOrNotText = new JLabel(), difficulty1Text = new JLabel(), difficulty2Text = new JLabel(), difficulty3Text = new JLabel(), difficulty4Text = new JLabel(), difficulty5Text = new JLabel(), difficulty6Text = new JLabel();
 	static BufferedImage pic;
@@ -79,7 +81,6 @@ public class readingMenu extends JPanel
 		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		lessonButton.setText("Lessons");
 		
-		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		flashcardButton.addActionListener(new flashcardButtonAct());
 		flashcardButton.setContentAreaFilled(start.synligaKnappar);
@@ -372,8 +373,18 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			readOrNot1.setBackground(new java.awt.Color(140,198,63));
-			readOrNot1.setText("read");
+			if(alreadyRead1)
+			{
+				readOrNot1.setBackground(null);
+				readOrNot1.setText("read?");
+				alreadyRead1 = false;
+			}
+			else
+			{
+				readOrNot1.setBackground(new java.awt.Color(140,198,63));
+				readOrNot1.setText("read");
+				alreadyRead1 = true;
+			}
 		}
 	}
 	
@@ -382,8 +393,18 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			readOrNot2.setBackground(new java.awt.Color(140,198,63));
-			readOrNot2.setText("read");
+			if(alreadyRead2)
+			{
+				readOrNot2.setBackground(null);
+				readOrNot2.setText("read?");
+				alreadyRead2 = false;
+			}
+			else
+			{
+				readOrNot2.setBackground(new java.awt.Color(140,198,63));
+				readOrNot2.setText("read");
+				alreadyRead2 = true;
+			}
 		}
 	}
 
@@ -392,8 +413,18 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			readOrNot3.setBackground(new java.awt.Color(140,198,63));
-			readOrNot3.setText("read");
+			if(alreadyRead3)
+			{
+				readOrNot3.setBackground(null);
+				readOrNot3.setText("read?");
+				alreadyRead3 = false;
+			}
+			else
+			{
+				readOrNot3.setBackground(new java.awt.Color(140,198,63));
+				readOrNot3.setText("read");
+				alreadyRead3 = true;
+			}
 		}
 	}
 
@@ -402,8 +433,18 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			readOrNot4.setBackground(new java.awt.Color(140,198,63));
-			readOrNot4.setText("read");
+			if(alreadyRead4)
+			{
+				readOrNot4.setBackground(null);
+				readOrNot4.setText("read?");
+				alreadyRead4 = false;
+			}
+			else
+			{
+				readOrNot4.setBackground(new java.awt.Color(140,198,63));
+				readOrNot4.setText("read");
+				alreadyRead4 = true;
+			}
 		}
 	}
 
@@ -412,8 +453,18 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			readOrNot5.setBackground(new java.awt.Color(140,198,63));
-			readOrNot5.setText("read");
+			if(alreadyRead5)
+			{
+				readOrNot5.setBackground(null);
+				readOrNot5.setText("read?");
+				alreadyRead5 = false;
+			}
+			else
+			{
+				readOrNot5.setBackground(new java.awt.Color(140,198,63));
+				readOrNot5.setText("read");
+				alreadyRead5 = true;
+			}
 		}
 	}
 }

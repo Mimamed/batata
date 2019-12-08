@@ -184,7 +184,14 @@ public class flashcardsGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
-			exampleButton.setText("No example available");
+			if (start.wordList.get(categoryNumber + 2).get(wordNumber).equals("0"))
+			{
+				exampleButton.setText("No example available");
+			}
+			else
+			{
+				exampleButton.setText(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			}
 		}
 	}
 	
@@ -200,24 +207,31 @@ public class flashcardsGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			//lägger till 1+ till räknare
-			timesAnswered = Integer.parseInt(start.wordList.get(categoryNumber + 3).get(wordNumber)) + 1;
-			start.wordList.get(categoryNumber + 3).set(wordNumber, Integer.toString(timesAnswered));
+			timesAnswered = Integer.parseInt(start.wordList.get(categoryNumber + 4).get(wordNumber)) + 1;
+			start.wordList.get(categoryNumber + 4).set(wordNumber, Integer.toString(timesAnswered));
 			
 			//antal poäng
-			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			System.out.println(start.wordList.get(categoryNumber + 3).get(wordNumber));
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": inga extra poäng");
 			//antal svar
-			System.out.println(start.wordList.get(categoryNumber + 3).get(wordNumber));
+			System.out.println(start.wordList.get(categoryNumber + 4).get(wordNumber));
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
 			//slumpar först category
-			if(randomNumber.nextInt(2) == 0)
+			switch (randomNumber.nextInt(4))
 			{
+			case 0:
 				categoryNumber = 1;
-			}
-			else
-			{
-				categoryNumber = 5;
+				break;
+			case 1:
+				categoryNumber = 6;
+				break;
+			case 2:
+				categoryNumber = 11;
+				break;
+			case 3:
+				categoryNumber = 16;
+				break;
 			}
 			//sedan word
 			wordNumber = randomNumber.nextInt(start.wordList.get(categoryNumber).size());
@@ -235,32 +249,39 @@ public class flashcardsGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{	
 			//lägger till 100 poäng till ordet
-			stringToInt = Integer.parseInt(start.wordList.get(categoryNumber + 2).get(wordNumber)) + 100;
-			start.wordList.get(categoryNumber + 2).set(wordNumber, Integer.toString(stringToInt));
+			stringToInt = Integer.parseInt(start.wordList.get(categoryNumber + 3).get(wordNumber)) + 100;
+			start.wordList.get(categoryNumber + 3).set(wordNumber, Integer.toString(stringToInt));
 			//lägger till 1+ till räknare
-			timesAnswered = Integer.parseInt(start.wordList.get(categoryNumber + 3).get(wordNumber)) + 1;
-			start.wordList.get(categoryNumber + 3).set(wordNumber, Integer.toString(timesAnswered));
+			timesAnswered = Integer.parseInt(start.wordList.get(categoryNumber + 4).get(wordNumber)) + 1;
+			start.wordList.get(categoryNumber + 4).set(wordNumber, Integer.toString(timesAnswered));
 			
 			//antal poäng
-			System.out.println(start.wordList.get(categoryNumber + 2).get(wordNumber));
+			System.out.println(start.wordList.get(categoryNumber + 3).get(wordNumber));
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 100 extra poäng");
 			//antal svar
-			System.out.println(start.wordList.get(categoryNumber + 3).get(wordNumber));
+			System.out.println(start.wordList.get(categoryNumber + 4).get(wordNumber));
 			System.out.println(start.wordList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
 			//slumpar först category
-			if(randomNumber.nextInt(2) == 0)
+			switch (randomNumber.nextInt(4))
 			{
+			case 0:
 				categoryNumber = 1;
-			}
-			else
-			{
-				categoryNumber = 5;
+				break;
+			case 1:
+				categoryNumber = 6;
+				break;
+			case 2:
+				categoryNumber = 11;
+				break;
+			case 3:
+				categoryNumber = 16;
+				break;
 			}
 			//sedan word
 			wordNumber = randomNumber.nextInt(start.wordList.get(categoryNumber).size());
 			
-			//återställer utseende
+			//återställer utseende 
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
 			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
