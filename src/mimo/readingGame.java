@@ -8,6 +8,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import mimo.tabMeny.lessonButton;
+import mimo.flashcardsGame.returnButtonAct;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
 import mimo.tabMeny.menyButton;
@@ -24,7 +25,7 @@ import java.awt.image.BufferedImage;
 
 public class readingGame extends JPanel {
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), translate = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), translate = new JButton(), returnButton = new JButton();
 	static JTextArea textArea = new JTextArea();
 	static List<String> books = new ArrayList(), booksTranslated = new ArrayList();
 	public static int whichBook;
@@ -159,6 +160,7 @@ public class readingGame extends JPanel {
 		this.add(menyButton);
 		this.add(textArea);
 		this.add(translate);
+		this.add(returnButton);
 		
 		//sätter upp knapparna
 		
@@ -211,6 +213,11 @@ public class readingGame extends JPanel {
 		translate.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		translate.setText("Translate");
 		translate.addActionListener(new translateButton());
+		
+		returnButton.setBounds((int) Math.round(110 * start.widthSize), (int) Math.round(350 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		returnButton.addActionListener(new returnButtonAct());
+		returnButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		returnButton.setText("<");
 	}
 	
 	public static void translateText (int whichBook) {
@@ -319,6 +326,15 @@ public class readingGame extends JPanel {
 				translateText(whichBook);
 				translateClicked = true;
 			}
+		}
+	}
+	
+	static class returnButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{	
+			translateClicked = false;
+			start.Byta(start.readingMenyn);
 		}
 	}
 }

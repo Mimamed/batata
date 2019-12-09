@@ -10,6 +10,7 @@ import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
 import mimo.tabMeny.readingButton;
 import mimo.spelFlashkort.lessonButtonAct;
+import mimo.flashcardsGame.returnButtonAct;
 import mimo.spelFlashkort.flashcardButtonAct;
 import mimo.spelFlashkort.readingButtonAct;
 import mimo.spelFlashkort.menyButtonAct;
@@ -29,7 +30,7 @@ import java.awt.Desktop;
 import java.net.URI;
 
 public class settingsMenu extends JPanel {
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton(), donationButton = new JButton(), colorBlindModeButtonON = new JButton(), colorBlindModeButtonOFF = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton(), donationButton = new JButton(), colorBlindModeButtonON = new JButton(), colorBlindModeButtonOFF = new JButton(), returnButton = new JButton();
 	static JLabel colorBlindModeText = new JLabel();
 	static BufferedImage pic;
 	
@@ -55,6 +56,7 @@ public class settingsMenu extends JPanel {
 		this.add(colorBlindModeText);
 		this.add(colorBlindModeButtonON);
 		this.add(colorBlindModeButtonOFF);
+		this.add(returnButton);
 		
 		//satter upp knapparna
 		
@@ -113,6 +115,11 @@ public class settingsMenu extends JPanel {
 		colorBlindModeButtonOFF.setFont(new Font("comic sans ms", Font.BOLD, 15));
 		colorBlindModeButtonOFF.setText("Off");
 		colorBlindModeButtonOFF.addActionListener(new colorBlindModeOFFActionListener());
+		
+		returnButton.setBounds((int) Math.round(110 * start.widthSize), (int) Math.round(350 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		returnButton.addActionListener(new returnButtonAct());
+		returnButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		returnButton.setText("<");
 	}
 	
 	public void paintComponent(Graphics g)
@@ -201,6 +208,14 @@ public class settingsMenu extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			
+		}
+	}
+	
+	static class returnButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{	
+			start.Byta(start.meny);
 		}
 	}
 }
