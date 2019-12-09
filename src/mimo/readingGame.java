@@ -248,7 +248,8 @@ public class readingGame extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			translateClicked = false;
+			start.Byta(start.lektionTräd);
 		}
 	}
 	

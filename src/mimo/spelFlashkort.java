@@ -99,7 +99,7 @@ public class spelFlashkort extends JPanel {
 			
 			public void actionPerformed(ActionEvent e)
 			{
-				
+				start.Byta(start.lektionTräd);
 			}
 		}
 		

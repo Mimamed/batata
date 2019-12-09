@@ -283,7 +283,7 @@ public class readingMenu extends JPanel
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			start.Byta(start.lektionTräd);
 		}
 	}
 	

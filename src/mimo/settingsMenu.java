@@ -125,7 +125,7 @@ public class settingsMenu extends JPanel {
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			start.Byta(start.lektionTräd);
 		}
 	}
 	
@@ -143,7 +143,7 @@ public class settingsMenu extends JPanel {
 	
 		public void actionPerformed(ActionEvent e)
 		{
-		
+			start.Byta(start.readingMenyn);
 		}
 	}
 
