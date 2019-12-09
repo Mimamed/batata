@@ -28,6 +28,7 @@ public class readingGame extends JPanel {
 	static JTextArea textArea = new JTextArea();
 	static List<String> books = new ArrayList(), booksTranslated = new ArrayList();
 	public static int whichBook;
+	static boolean translateClicked = false;
 	
 	readingGame() {
 		try
@@ -213,24 +214,27 @@ public class readingGame extends JPanel {
 	}
 	
 	public static void translateText (int whichBook) {
-		if(whichBook == 0) {
+		switch(whichBook)
+		{
+		case 0:
 			textArea.setText(booksTranslated.get(0));
-		}
-		
-		else if(whichBook == 1) {
+			break;
+			
+		case 1:
 			textArea.setText(booksTranslated.get(1));
-		}
-		
-		else if(whichBook == 2) {
+			break;
+			
+		case 2:
 			textArea.setText(booksTranslated.get(2));
-		}
-		
-		else if(whichBook == 3) {
+			break;
+			
+		case 3:
 			textArea.setText(booksTranslated.get(3));
-		}
-		
-		else if(whichBook == 4) {
+			break;
+			
+		case 4:
 			textArea.setText(booksTranslated.get(4));
+			break;
 		}
 	}
 	
@@ -253,6 +257,7 @@ public class readingGame extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
+			translateClicked = false;
 			start.Byta(start.flashkort);
 		}
 	}
@@ -262,6 +267,7 @@ public class readingGame extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
+			translateClicked = false;
 			start.Byta(start.readingMenyn);
 		}
 	}
@@ -271,6 +277,7 @@ public class readingGame extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
+			translateClicked = false;
 			start.Byta(start.meny);
 		}
 	}
@@ -280,7 +287,37 @@ public class readingGame extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			translateText(whichBook);
+			if(translateClicked)
+			{
+				switch(whichBook)
+				{
+				case 0:
+					textArea.setText(books.get(0));
+					break;
+					
+				case 1:
+					textArea.setText(books.get(1));
+					break;
+					
+				case 2:
+					textArea.setText(books.get(2));
+					break;
+					
+				case 3:
+					textArea.setText(books.get(3));
+					break;
+					
+				case 4:
+					textArea.setText(books.get(4));
+					break;
+				}
+				translateClicked = false;
+			}
+			else
+			{
+				translateText(whichBook);
+				translateClicked = true;
+			}
 		}
 	}
 }
