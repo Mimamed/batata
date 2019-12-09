@@ -77,25 +77,25 @@ public class readingGame extends JPanel {
 				"För det tredje, du påverkar andras framtid. Om du fortsätter fuska kan det leda till bra resultat på ett papper men det kan också leda till dåliga resultat utanför det pappret. \n" +
 				"De som skulle ha fått bättre resultat än dig, om du inte fuskade, blir nu valda efter dig. Dessa resultat påverkar andra. De som är lämpligare för vissa saker blir inte valda utan du blir vald.\n\n" + 
 				"För det sista, du kan inte fuska på ditt jobb.");
-		//KOLLA ÖVERSÄTTNING
+		
 		books.add("Kalle: Tjena Pelle! Jag har precis fått chansen att vinna en fullständigt gratis ny mobil!\n" + 
-				"Pelle: Wow, vart har du fått det erbjudandet?\n" + 
+				"Pelle: Wow, vart har du fått det erbjudandet från?\n" + 
 				"Kalle: Jag fick ett mail om att jag kunde vinna en ny mobil om jag gjorde en snabb enkät på nätet.\n" + 
 				"Pelle: Har du gjort den ännu?<br>" + 
-				"Kalle: Ja, de ville också att jag skulle betala en liten summa för att få mobilen skickad hitåt.\n" + 
+				"Kalle: Ja, de ville också att jag skulle betala en liten summa pengar för att få mobilen skickad hitåt.\n" + 
 				"Pelle: Hur mycket?\n" + 
 				"Kalle: Bara 200 amerikanska dollar.\n" + 
 				"Pelle: ...Vet du hur många kronor det är?\n" + 
 				"Kalle: Runt 180 såklart!\n" + 
 				"Pelle: Multiplicera det där med 10 och sedan får du ett verkligare pris.\n" + 
 				"Kalle: Oj… Då skulle jag kanske inte ha gjort det.\n" + 
-				"Kalle: Men vet du vad?\n" + 
+				"Kalle: Men, vet du vad?\n" + 
 				"Pelle: Vadå?\n" + 
 				"Kalle: Jag tog ett snabblån tidigare för att ha lite pengar över och de pengarna kan jag använda för att betala för mobilen. Inga problem!\n" + 
 				"Pelle: Du vet väl hur höga räntor de sätter på sådana lån?\n" + 
 				"Kalle: Inga problem, jag kan ändå sälja mobilen om det behövs.\n" + 
 				"Pelle: Haha, vilka ska skicka mobilen till dig då?\n" + 
-				"Kalle: Ett företag som heter Free Sweden Telefon.\n" + 
+				"Kalle: Ett företag som heter 'Free Sweden Telefon'.\n" + 
 				"Pelle: Bra jobbat. Du har inte bara gett din privata information till försäljare online, du har inte bara räknat fel och satt dig själv i skuld… Du har också blivit bedragen. Ge upp.");
 		
 		booksTranslated.add("Emma: Hi Karl.\n" +
@@ -132,25 +132,25 @@ public class readingGame extends JPanel {
 				"Thirdly, you  are affecting other people's future. If you continue cheating it can lead to good results on a piece of paper, but it can also lead to poor results outside of that piece of paper. \nThose who should have gotten better results than you, if you did not cheat, are now getting lower results. These results affect others. Those who are more suitable for certain things are not chosen but you are chosen. \n\n" +
 				"Lastly, you can't cheat during your job.");
 		
-		booksTranslated.add("Kalle: Hello Pelle! I just got the chance to win a completely free new mobile!\r\n" + 
-				"Pelle: Wow, where did you get that offer?\r\n" + 
-				"Kalle: I got an email that I could win a new mobile if I did a quick survey online.\r\n" + 
+		booksTranslated.add("Kalle: Hi Pelle! I just got the chance to win a completely free new phone!\r\n" + 
+				"Pelle: Wow, where have you gotten that offer from?\r\n" + 
+				"Kalle: I got an email saying that I could win a new phone if I did a quick survey online.\r\n" + 
 				"Pelle: Have you done it yet?\r\n" + 
-				"Kalle: Yes, they also wanted me to pay a small sum to get the phone sent here.\r\n" + 
+				"Kalle: Yes, they also wanted me to pay a small sum of money to get the phone sent here.\r\n" + 
 				"Pelle: How much?\r\n" + 
 				"Kalle: Only 200 american dollars.\r\n" + 
-				"Pelle: ... Do you know how much that is in sek?\r\n" + 
+				"Pelle: ... Do you know how much that is in kronor?\r\n" + 
 				"Kalle: Around 180 of course!\r\n" + 
 				"Pelle: Multiply that by 10 and then you get a more realistic price.\r\n" + 
-				"Kalle: Oh... Maybe I shouldn't have done that.\r\n" + 
-				"Kalle: But you know what?\r\n" + 
+				"Kalle: Oops... Maybe I shouldn't have done that then.\r\n" + 
+				"Kalle: But, you know what?\r\n" + 
 				"Pelle: What?\r\n" + 
-				"Kalle: I took a instant loan earlier to have some extra cash and I can use that money to pay for the mobile. No problem!\r\n" + 
-				"Pelle: You know how high interest rates they put on such loans?\r\n" + 
-				"Kalle: No problem, I can still sell the phone if needed.\r\n" + 
-				"Pelle: Haha, who sent you the cellphone then?\r\n" + 
-				"Kalle: A company called Free Sweden Telephone.\r\n" + 
-				"Pelle: Good job. You have not only given your private information to sellers online, you have not only miscalculated and put yourself in debt… You have also been deceived. Give up.");
+				"Kalle: I took a instant loan earlier in order to have some money over and I can use that money to pay for the phone. No problem!\r\n" + 
+				"Pelle: You do know how high the interest rates are that they put on such loans, right?\r\n" + 
+				"Kalle: No problem, I can still sell the phone if that's needed.\r\n" + 
+				"Pelle: Haha, who are going to send you the phone then?\r\n" + 
+				"Kalle: A company called 'Free Sweden Telefon'.\r\n" + 
+				"Pelle: Good job. You have not only given your private information to online vendors, you have not only miscalculated and put yourself in debt… You have also gotten swindled. Give up.");
 		
 		this.add(lessonButton);
 		this.add(flashcardButton);
