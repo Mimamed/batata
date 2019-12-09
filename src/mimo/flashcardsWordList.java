@@ -29,11 +29,12 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 public class flashcardsWordList extends JPanel {
+	static int antalOrd;
 	static BufferedImage pic;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton("Add"), saveButton = new JButton("Save"), downButton = new JButton("v"), upButton = new JButton("^");
 	JButton[] removeButton = new JButton[6], changeButton = new JButton[6];
 	static JTextField ordFältetet = new JTextField(), översättningsFällten = new JTextField();
-	static JLabel[][] labelList = new JLabel[6][6];
+	static JLabel[][] labelList = new JLabel[2][6];
 	
 	flashcardsWordList() 
 	{
@@ -45,11 +46,17 @@ public class flashcardsWordList extends JPanel {
 			System.out.print("fel men uppladning5");
 		}
 		
-		//Initierar och adderar in remove och change knapperna(för att de är arrays)
+		
+		//Initierar och adderar in remove och change knapperna(för att de är arrays)** la till labelList
 		for(int i = 0; i < removeButton.length; i++)
 		{
+			
 			removeButton[i] = new JButton("Remove");
 			changeButton[i] = new JButton("Change");
+			labelList[0][i] = new JLabel();
+			labelList[1][i] = new JLabel();
+			this.add(labelList[0][i]);
+			this.add(labelList[1][i]);
 			this.add(removeButton[i]);
 			this.add(changeButton[i]);
 		}
@@ -112,6 +119,8 @@ public class flashcardsWordList extends JPanel {
 		downButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
 		downButton.setFocusPainted(start.synligaKnappar);
 		downButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
+		
+		
 		try {
 		    Image img = ImageIO.read(getClass().getResource("/Bilder/greenArrowUp.png"));
 		    downButton.setIcon(new ImageIcon(img));
@@ -133,6 +142,9 @@ public class flashcardsWordList extends JPanel {
 		//sätter in array knapparna
 		for(int i = 0; i < removeButton.length; i++)
 		{
+			labelList[0][i].setBounds((int) Math.round(535.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+			labelList[1][i].setBounds((int) Math.round(235.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+			
 			removeButton[i].setBounds((int) Math.round(935.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
 			removeButton[i].setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
 			removeButton[i].setFocusPainted(start.synligaKnappar);
@@ -166,6 +178,65 @@ public class flashcardsWordList extends JPanel {
 		//Fixar nu Labels
 		//labelFixare();
 		}
+	
+	public static void labelFixare()
+	{
+
+		for (int i = 0; i < (start.wordList.size()-1)/(start.antalrader); i++)
+		{
+			antalOrd += start.wordList.get(i * start.antalrader + 1).size();
+			System.out.println("--------------" + start.wordList.get(i * start.antalrader + 1).size()); //kolla hur mycket ord den lägger till
+		}
+		
+		if (antalOrd < labelList[0].length)
+		{
+			for (int i = 0; i < antalOrd;)
+			{
+				for (int u = 0; u < ((start.radnummer + start.antalrader)/start.antalrader); u++)
+				{
+					for (int y = 0; y < start.wordList.get(u * start.antalrader + 1).size(); y++)
+					{
+						labelList[0][i].setText(start.wordList.get(u * start.antalrader + 1).get(y));
+						labelList[1][i].setText(start.wordList.get(u * start.antalrader + 2).get(y));
+						i++;
+					}
+					
+				}
+				//labelList[0][i].setText(start.wordList.get(i * start.antalrader).get(i));
+			}
+		}
+		else//kanske användbar information om man behöver hantera de övriga
+		{
+			System.out.print("Fel här?");
+			for (int i = 0; i < antalOrd && i < (labelList[0].length) - 3;) // i < antalOrd bara för säkerhets skull
+			{
+				for (int u = 0; u < ((start.radnummer + start.antalrader)/start.antalrader); u++)
+				{
+					for (int y = 0; y < start.wordList.get(u * start.antalrader + 1).size(); y++)
+					{
+						if(i > 4)
+						{
+							u = 9999;
+							y = 9999;
+							i = 9999;
+							break;
+							
+						}
+						System.out.print("Fel här?");
+						labelList[0][i].setText(start.wordList.get(u * start.antalrader + 1).get(y));
+						labelList[1][i].setText(start.wordList.get(u * start.antalrader + 2).get(y));
+						i++;
+					}
+					
+				}
+				//labelList[0][i].setText(start.wordList.get(i * start.antalrader).get(i));
+			}
+		}
+		
+		
+		
+		System.out.println("antal ord: " + antalOrd);
+	}
 		
 	public void paintComponent(Graphics g)
 	{
