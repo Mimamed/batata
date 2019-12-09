@@ -14,6 +14,7 @@ import mimo.tabMeny.readingButton;
 import mimo.flashcardsGame.lessonButtonAct;
 import mimo.flashcardsGame.flashcardButtonAct;
 import mimo.flashcardsGame.readingButtonAct;
+import mimo.flashcardsGame.returnButtonAct;
 import mimo.spelFlashkort.menyButtonAct;
 import mimo.tabMeny.button;
 import mimo.tabMeny.menyButton;
@@ -31,7 +32,7 @@ import java.awt.image.BufferedImage;
 public class flashcardsWordList extends JPanel {
 	static int antalOrd;
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton("Add"), saveButton = new JButton("Save"), downButton = new JButton("v"), upButton = new JButton("^");
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), addButton = new JButton("Add"), saveButton = new JButton("Save"), downButton = new JButton("v"), upButton = new JButton("^"), returnButton = new JButton();
 	JButton[] removeButton = new JButton[6], changeButton = new JButton[6];
 	static JTextField ordFältetet = new JTextField(), översättningsFällten = new JTextField();
 	static JLabel[][] labelList = new JLabel[2][6];
@@ -72,6 +73,7 @@ public class flashcardsWordList extends JPanel {
 		this.add(saveButton);
 		this.add(downButton);
 		this.add(upButton);
+		this.add(returnButton);
 		
 		//Fixar kanpparna nedan DE SKITER TILL SIG
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
@@ -82,7 +84,6 @@ public class flashcardsWordList extends JPanel {
 		lessonButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		lessonButton.setText("Lessons");
 		
-		//SKA HA RÖD BAKGRUND, LISTA UT SENARE.
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		flashcardButton.addActionListener(new flashcardButtonAct());
 		flashcardButton.setContentAreaFilled(start.synligaKnappar);
@@ -120,6 +121,10 @@ public class flashcardsWordList extends JPanel {
 		downButton.setFocusPainted(start.synligaKnappar);
 		downButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
 		
+		returnButton.setBounds((int) Math.round(110 * start.widthSize), (int) Math.round(350 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		returnButton.addActionListener(new returnButtonAct());
+		returnButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		returnButton.setText("<");
 		
 		try {
 		    Image img = ImageIO.read(getClass().getResource("/Bilder/greenArrowUp.png"));
@@ -248,6 +253,14 @@ public class flashcardsWordList extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			start.Byta(start.meny);
+		}
+	}
+	
+	static class returnButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{	
+			start.Byta(start.flashkort);
 		}
 	}
 }

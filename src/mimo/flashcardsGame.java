@@ -30,7 +30,7 @@ import java.awt.image.BufferedImage;
 public class flashcardsGame extends JPanel {
 	
 	static BufferedImage pic;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), noButton = new JButton(), yesButton = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton(), exampleButton = new JButton(), noButton = new JButton(), yesButton = new JButton(), returnButton = new JButton();
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
 	static int wordNumber = 0;
 	static int categoryNumber = 1;
@@ -62,6 +62,7 @@ public class flashcardsGame extends JPanel {
 		this.add(meaning);
 		this.add(noButton);
 		this.add(yesButton);
+		this.add(returnButton);
 		
 		//Fixar kanpparna nedan
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
@@ -129,6 +130,11 @@ public class flashcardsGame extends JPanel {
 		yesButton.setFocusPainted(start.synligaKnappar);
 		yesButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		yesButton.setText("Yes");
+		
+		returnButton.setBounds((int) Math.round(110 * start.widthSize), (int) Math.round(350 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		returnButton.addActionListener(new returnButtonAct());
+		returnButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		returnButton.setText("<");
 	}
 	
 	public void paintComponent(Graphics g)
@@ -286,6 +292,14 @@ public class flashcardsGame extends JPanel {
 			exampleButton.setText("Show example");
 			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 			flashcardWriteWord();
+		}
+	}
+	
+	static class returnButtonAct implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{	
+			start.Byta(start.flashkort);
 		}
 	}
 }
