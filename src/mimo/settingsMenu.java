@@ -2,6 +2,7 @@ package mimo;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -32,8 +33,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class settingsMenu extends JPanel {
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton(), donationButton = new JButton(), colorBlindModeButtonON = new JButton(), colorBlindModeButtonOFF = new JButton(), returnButton = new JButton(), notificationOFF = new JButton(), notificationON = new JButton();
-	static JLabel colorBlindModeText = new JLabel(), reminder = new JLabel(), notificationText = new JLabel();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton(), donationButton = new JButton(), colorBlindModeButtonON = new JButton(), colorBlindModeButtonOFF = new JButton(), returnButton = new JButton(), notificationOFF = new JButton(), notificationON = new JButton(), openInBackgroundON = new JButton(), openInBackgroundOFF = new JButton();
+	static JLabel colorBlindModeText = new JLabel(), reminder = new JLabel(), notificationText = new JLabel(), openInBackgroundText = new JLabel();
 	static BufferedImage pic;
 	static JPanel panel = new JPanel();
 	static int secondPassed = 1;
@@ -41,7 +42,7 @@ public class settingsMenu extends JPanel {
 	static TimerTask task = new TimerTask() {
 		public void run() {
 			secondPassed++;
-			System.out.println("\ndet har gått: " + secondPassed + " sekunder");
+			System.out.println("det har gått: " + secondPassed + " sekunder");
 		}
 	};
 	
@@ -71,6 +72,9 @@ public class settingsMenu extends JPanel {
 		this.add(notificationText);
 		this.add(notificationOFF);
 		this.add(notificationON);
+		this.add(openInBackgroundText);
+		this.add(openInBackgroundON);
+		this.add(openInBackgroundOFF);
 		
 		//satter upp knapparna
 		
@@ -172,7 +176,23 @@ public class settingsMenu extends JPanel {
 		notificationOFF.setText("Off");
 		notificationOFF.addActionListener(new notificationOFFActionListener());
 		
+		openInBackgroundText.setBounds((int) Math.round (499 * start.widthSize), (int) Math.round (216 * start.heightSize), (int) Math.round (272 * start.widthSize), (int) Math.round (77 * start.heightSize));
+		openInBackgroundText.setAlignmentX(CENTER_ALIGNMENT);
+		openInBackgroundText.setAlignmentY(CENTER_ALIGNMENT);
+		openInBackgroundText.setHorizontalAlignment(JLabel.CENTER);
+		openInBackgroundText.setVerticalAlignment(JLabel.CENTER);
+		openInBackgroundText.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		openInBackgroundText.setText("Open in background");
 		
+		openInBackgroundON.setBounds((int) Math.round(771 * start.widthSize), (int) Math.round(216 * start.heightSize), (int) Math.round(49 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		openInBackgroundON.setFont(new Font("comic sans ms", Font.BOLD, 15));
+		openInBackgroundON.setText("On");
+		openInBackgroundON.addActionListener(new openInBackgroundONActionListener());
+		
+		openInBackgroundOFF.setBounds((int) Math.round(820 * start.widthSize), (int) Math.round(216 * start.heightSize), (int) Math.round(48.5 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		openInBackgroundOFF.setFont(new Font("comic sans ms", Font.BOLD, 15));
+		openInBackgroundOFF.setText("Off");
+		openInBackgroundOFF.addActionListener(new openInBackgroundOFFActionListener());
 	}
 	
 	public void paintComponent(Graphics g)
@@ -310,6 +330,22 @@ public class settingsMenu extends JPanel {
 		{	
 			timer.cancel();
 	        task.cancel();
+		}
+	}
+	
+	static class openInBackgroundONActionListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{	
+			start.fönster.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		}
+	}
+
+	static class openInBackgroundOFFActionListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{	
+			start.fönster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
 	}
 }
