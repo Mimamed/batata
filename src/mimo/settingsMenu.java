@@ -199,7 +199,19 @@ public class settingsMenu extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			/*try {
+			flashcardsGame.pic = ImageIO.read(start.filerColorBlindMode[3]);
+			flashcardsWordList.pic = ImageIO.read(start.filerColorBlindMode[5]);
+			lessonTree.bakgrund = ImageIO.read(start.filerColorBlindMode[8]);
+			readingGame.pic = ImageIO.read(start.filerColorBlindMode[6]);
+			readingMenu.pic = ImageIO.read(start.filerColorBlindMode[4]);
+			spelFlashkort.pic = ImageIO.read(start.filerColorBlindMode[2]);
+			startMeny.pic = ImageIO.read(start.filerColorBlindMode[0]);
+			tabMeny.bakgrund = ImageIO.read(start.filerColorBlindMode[1]);
+			}
+			catch(Exception l) {
+				l.printStackTrace();
+			}*/
 		}
 	}
 	
@@ -207,7 +219,19 @@ public class settingsMenu extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			try {
+			flashcardsGame.pic = ImageIO.read(start.filer[3]);
+			flashcardsWordList.pic = ImageIO.read(start.filer[5]);
+			lessonTree.bakgrund = ImageIO.read(start.filer[8]);
+			readingGame.pic = ImageIO.read(start.filer[6]);
+			readingMenu.pic = ImageIO.read(start.filer[4]);
+			spelFlashkort.pic = ImageIO.read(start.filer[2]);
+			startMeny.pic = ImageIO.read(start.filer[0]);
+			tabMeny.bakgrund = ImageIO.read(start.filer[1]);
+			}
+			catch(Exception o) {
+				o.printStackTrace();
+			}
 		}
 	}
 	

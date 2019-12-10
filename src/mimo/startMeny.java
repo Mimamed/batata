@@ -17,7 +17,7 @@ public class startMeny extends JPanel
 {
 	static private JButton startButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton(), menuButton = new JButton();
 	static private JPanel pan = new JPanel(); // förkortning för panel
-	static private BufferedImage pic; // förkortning för picture
+	static BufferedImage pic; // förkortning för picture
 	startMeny()
 	{
 		checkup();
