@@ -213,17 +213,17 @@ public class flashcardsWordList extends JPanel {
 		else//kanske användbar information om man behöver hantera de övriga
 		{
 			System.out.print("Fel här?");
-			for (int i = 0; i < antalOrd && i < (labelList[0].length) - 3;) // i < antalOrd bara för säkerhets skull
+			for (int i = 0; i < antalOrd && i < (labelList[0].length);) // i < antalOrd bara för säkerhets skull
 			{
 				for (int u = 0; u < ((start.radnummer + start.antalrader)/start.antalrader); u++)
 				{
 					for (int y = 0; y < start.wordList.get(u * start.antalrader + 1).size(); y++)
 					{
-						if(i > 4)
+						if(i > 5)
 						{
-							u = 9999;
-							y = 9999;
-							i = 9999;
+							y = start.wordList.get(u * start.antalrader + 1).size() + 1;
+							u = ((start.radnummer + start.antalrader)/start.antalrader) + 1;
+							i = (labelList[0].length) + 1;
 							break;
 							
 						}
