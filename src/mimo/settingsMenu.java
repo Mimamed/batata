@@ -142,7 +142,6 @@ public class settingsMenu extends JPanel {
 		reminder.setEditable(false);
 		reminder.setText("Don't forget to do your lessons in Mimo!");
 		
-		
 		tiden.start();
 		if(secondPassed == 10) {
 			this.add(frame);
@@ -183,7 +182,6 @@ public class settingsMenu extends JPanel {
 		openInBackgroundOFF.setFont(new Font("comic sans ms", Font.BOLD, 15));
 		openInBackgroundOFF.setText("Off");
 		openInBackgroundOFF.addActionListener(new openInBackgroundOFFActionListener());
-		System.out.println("din mmma");
 	}
 	
 	public void paintComponent(Graphics g)
