@@ -186,11 +186,12 @@ public class flashcardsWordList extends JPanel {
 	
 	public static void labelFixare()
 	{
-
-		for (int i = 0; i < (start.wordList.size()-1)/(start.antalrader); i++)
+		//går igenom varje kategori
+		for (int i = 0; i < (start.wordList.size()-1)/(start.antalrader)/*räknar kategorier*/; i++)
 		{
-			antalOrd += start.wordList.get(i * start.antalrader + 1).size();
-			System.out.println("--------------" + start.wordList.get(i * start.antalrader + 1).size()); //kolla hur mycket ord den lägger till
+			//räknar ord i varje kategori
+			antalOrd += start.wordList.get(i * start.antalrader + 1).size(); //beräknar antal ord +1
+			System.out.println("--------------" + start.wordList.get(i * start.antalrader + 1).size()); //Skriver ut hur många ord som har lagts till
 		}
 		
 		if (antalOrd < labelList[0].length)
