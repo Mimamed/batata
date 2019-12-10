@@ -13,7 +13,7 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class start 
+public class start //jij
 {
 	static boolean synligaKnappar = false;
 	static int[] ljusGrå = {200, 200, 200};
