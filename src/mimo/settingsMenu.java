@@ -184,7 +184,7 @@ public class settingsMenu extends JPanel {
 		openInBackgroundText.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		openInBackgroundText.setText("Open in background");
 		
-		openInBackgroundON.setBounds((int) Math.round(771 * start.widthSize), (int) Math.round(216 * start.heightSize), (int) Math.round(49 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		openInBackgroundON.setBounds((int) Math.round(770.5 * start.widthSize), (int) Math.round(216 * start.heightSize), (int) Math.round(50 * start.widthSize), (int) Math.round(77 * start.heightSize));
 		openInBackgroundON.setFont(new Font("comic sans ms", Font.BOLD, 15));
 		openInBackgroundON.setText("On");
 		openInBackgroundON.addActionListener(new openInBackgroundONActionListener());
