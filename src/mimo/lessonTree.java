@@ -22,7 +22,7 @@ public class lessonTree extends JPanel
 			bakgrund = ImageIO.read(start.filer[8]);
 		}catch(Exception e)
 		{
-			System.out.print("fel men uppladning30");
+			System.out.print("fel men uppladning");
 		}
 		
 		this.setLayout(null);
@@ -67,7 +67,7 @@ public class lessonTree extends JPanel
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
-		l1Button.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
+		l1Button.setBounds((int) Math.round(643 * start.widthSize), (int) Math.round(76 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
 		l1Button.addActionListener(new l1Button());
 	}
 	
@@ -117,7 +117,7 @@ public class lessonTree extends JPanel
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.meny);
+			start.Byta(start.lektionGrunder);
 		}
 	}
 }

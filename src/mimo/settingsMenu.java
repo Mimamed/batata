@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.Timer;
 
 import mimo.tabMeny.lessonButton;
 import mimo.tabMeny.flashcardButton;
@@ -29,22 +30,15 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Desktop;
 import java.net.URI;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class settingsMenu extends JPanel {
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton(), donationButton = new JButton(), colorBlindModeButtonON = new JButton(), colorBlindModeButtonOFF = new JButton(), returnButton = new JButton(), notificationOFF = new JButton(), notificationON = new JButton(), openInBackgroundON = new JButton(), openInBackgroundOFF = new JButton();
-	static JLabel colorBlindModeText = new JLabel(), reminder = new JLabel(), notificationText = new JLabel(), openInBackgroundText = new JLabel();
+	static JLabel colorBlindModeText = new JLabel(), notificationText = new JLabel(), openInBackgroundText = new JLabel();
+	static JTextArea reminder = new JTextArea();
 	static BufferedImage pic;
-	static JPanel panel = new JPanel();
-	static int secondPassed = 1;
-	static Timer timer = new Timer();
-	static TimerTask task = new TimerTask() {
-		public void run() {
-			secondPassed++;
-			System.out.println("det har gått: " + secondPassed + " sekunder");
-		}
-	};
+	static JFrame frame = new JFrame(), oldFrame = new JFrame();
+	static int secondPassed = 0;
+	static Timer tiden = new Timer(1000, new tid());
 	
 	settingsMenu() {
 		try
@@ -140,23 +134,18 @@ public class settingsMenu extends JPanel {
 		returnButton.setText("<");
 		
 		reminder.setBounds((int) Math.round(501 * start.widthSize), (int) Math.round(501 * start.heightSize), (int) Math.round(498 * start.widthSize), (int) Math.round(498 * start.heightSize));
-		reminder.setAlignmentX(CENTER_ALIGNMENT);
-		reminder.setAlignmentY(CENTER_ALIGNMENT);
-		reminder.setHorizontalAlignment(JLabel.CENTER);
-		reminder.setVerticalAlignment(JLabel.CENTER);
-		reminder.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		reminder.setFont(new Font("comic sans ms", Font.BOLD, 22));
+		reminder.setLineWrap(true);
+		reminder.setWrapStyleWord(true);
+		reminder.setOpaque(false);
+		reminder.setForeground(Color.BLACK);
+		reminder.setEditable(false);
 		reminder.setText("Don't forget to do your lessons in Mimo!");
 		
-		panel.setBounds((int) Math.round(500 * start.widthSize), (int) Math.round(500 * start.heightSize), (int) Math.round(500 * start.widthSize), (int) Math.round(500 * start.heightSize));
-		panel.add(reminder);
-		
-		do {
-			timer.scheduleAtFixedRate(task, 1000, 1000);
-			if(secondPassed == (15*60)) {
-				this.add(panel);
-				secondPassed = 0;
-			}
-		}while(secondPassed == 0);
+		tiden.start();
+		if(secondPassed == 10) {
+			this.add(frame);
+		}
 		
 		notificationText.setBounds((int) Math.round (499 * start.widthSize), (int) Math.round (335.5 * start.heightSize), (int) Math.round (272 * start.widthSize), (int) Math.round (77 * start.heightSize));
 		notificationText.setAlignmentX(CENTER_ALIGNMENT);
@@ -272,7 +261,7 @@ public class settingsMenu extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			/*try {
+			try {
 			flashcardsGame.pic = ImageIO.read(start.filerColorBlindMode[3]);
 			flashcardsWordList.pic = ImageIO.read(start.filerColorBlindMode[5]);
 			lessonTree.bakgrund = ImageIO.read(start.filerColorBlindMode[8]);
@@ -284,7 +273,7 @@ public class settingsMenu extends JPanel {
 			}
 			catch(Exception l) {
 				l.printStackTrace();
-			}*/
+			}
 		}
 	}
 	
@@ -316,11 +305,40 @@ public class settingsMenu extends JPanel {
 		}
 	}
 	
+	public static class tid implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			// lol
+			do {
+				if(secondPassed == 10) {
+					if(frame.isEnabled()) {
+						
+					}
+					else {
+						JFrame frame = new JFrame();
+						
+						frame.setBounds((int) Math.round(500 * start.widthSize), (int) Math.round(500 * start.heightSize), (int) Math.round(500 * start.widthSize), (int) Math.round(500 * start.heightSize));
+						frame.setVisible(true);
+						frame.add(reminder);
+					
+						tiden.restart();
+					}
+					secondPassed = 0;
+				}
+				else {
+					secondPassed++;
+				}
+			}while(secondPassed == 0);
+			System.out.println(secondPassed);
+		}
+	}
+	
 	static class notificationONActionListener implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{	
-			
+			tiden.restart();
 		}
 	}
 	
@@ -328,8 +346,7 @@ public class settingsMenu extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{	
-			timer.cancel();
-	        task.cancel();
+			tiden.stop();
 		}
 	}
 	
