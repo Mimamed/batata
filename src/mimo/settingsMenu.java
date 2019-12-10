@@ -28,11 +28,22 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Desktop;
 import java.net.URI;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class settingsMenu extends JPanel {
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton(), donationButton = new JButton(), colorBlindModeButtonON = new JButton(), colorBlindModeButtonOFF = new JButton(), returnButton = new JButton();
-	static JLabel colorBlindModeText = new JLabel();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), wordlistButton = new JButton(), practiseButton = new JButton(), donationButton = new JButton(), colorBlindModeButtonON = new JButton(), colorBlindModeButtonOFF = new JButton(), returnButton = new JButton(), notificationOFF = new JButton(), notificationON = new JButton();
+	static JLabel colorBlindModeText = new JLabel(), reminder = new JLabel(), notificationText = new JLabel();
 	static BufferedImage pic;
+	static JPanel panel = new JPanel();
+	static int secondPassed = 1;
+	static Timer timer = new Timer();
+	static TimerTask task = new TimerTask() {
+		public void run() {
+			secondPassed++;
+			System.out.println("\ndet har gått: " + secondPassed + " sekunder");
+		}
+	};
 	
 	settingsMenu() {
 		try
@@ -57,6 +68,9 @@ public class settingsMenu extends JPanel {
 		this.add(colorBlindModeButtonON);
 		this.add(colorBlindModeButtonOFF);
 		this.add(returnButton);
+		this.add(notificationText);
+		this.add(notificationOFF);
+		this.add(notificationON);
 		
 		//satter upp knapparna
 		
@@ -120,6 +134,45 @@ public class settingsMenu extends JPanel {
 		returnButton.addActionListener(new returnButtonAct());
 		returnButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		returnButton.setText("<");
+		
+		reminder.setBounds((int) Math.round(501 * start.widthSize), (int) Math.round(501 * start.heightSize), (int) Math.round(498 * start.widthSize), (int) Math.round(498 * start.heightSize));
+		reminder.setAlignmentX(CENTER_ALIGNMENT);
+		reminder.setAlignmentY(CENTER_ALIGNMENT);
+		reminder.setHorizontalAlignment(JLabel.CENTER);
+		reminder.setVerticalAlignment(JLabel.CENTER);
+		reminder.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		reminder.setText("Don't forget to do your lessons in Mimo!");
+		
+		panel.setBounds((int) Math.round(500 * start.widthSize), (int) Math.round(500 * start.heightSize), (int) Math.round(500 * start.widthSize), (int) Math.round(500 * start.heightSize));
+		panel.add(reminder);
+		
+		do {
+			timer.scheduleAtFixedRate(task, 1000, 1000);
+			if(secondPassed == (15*60)) {
+				this.add(panel);
+				secondPassed = 0;
+			}
+		}while(secondPassed == 0);
+		
+		notificationText.setBounds((int) Math.round (499 * start.widthSize), (int) Math.round (335.5 * start.heightSize), (int) Math.round (272 * start.widthSize), (int) Math.round (77 * start.heightSize));
+		notificationText.setAlignmentX(CENTER_ALIGNMENT);
+		notificationText.setAlignmentY(CENTER_ALIGNMENT);
+		notificationText.setHorizontalAlignment(JLabel.CENTER);
+		notificationText.setVerticalAlignment(JLabel.CENTER);
+		notificationText.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		notificationText.setText("Notifications");
+		
+		notificationON.setBounds((int) Math.round(771 * start.widthSize), (int) Math.round(335.5 * start.heightSize), (int) Math.round(49 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		notificationON.setFont(new Font("comic sans ms", Font.BOLD, 15));
+		notificationON.setText("On");
+		notificationON.addActionListener(new notificationONActionListener());
+		
+		notificationOFF.setBounds((int) Math.round(820 * start.widthSize), (int) Math.round(335.5 * start.heightSize), (int) Math.round(48.5 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		notificationOFF.setFont(new Font("comic sans ms", Font.BOLD, 15));
+		notificationOFF.setText("Off");
+		notificationOFF.addActionListener(new notificationOFFActionListener());
+		
+		
 	}
 	
 	public void paintComponent(Graphics g)
@@ -240,6 +293,23 @@ public class settingsMenu extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{	
 			start.Byta(start.meny);
+		}
+	}
+	
+	static class notificationONActionListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{	
+			
+		}
+	}
+	
+	static class notificationOFFActionListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{	
+			timer.cancel();
+	        task.cancel();
 		}
 	}
 }
