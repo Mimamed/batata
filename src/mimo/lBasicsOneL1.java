@@ -1,5 +1,6 @@
 package mimo;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,7 @@ public class lBasicsOneL1 extends JPanel {
 	static BufferedImage bakgrund;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton();
 	static JTextArea textArea = new JTextArea();
-	static List<String> lessonSentences = new ArrayList();
+	static List<String> lessonSentences = new ArrayList(), sentencesTranslated = new ArrayList();
 	public static int whichSentence;
 	
 	lBasicsOneL1 ()
@@ -34,10 +35,29 @@ public class lBasicsOneL1 extends JPanel {
 		
 		//addar grejer
 		
+		lessonSentences.add("Jag är en man");
+		lessonSentences.add("Du är en flicka");
+		lessonSentences.add("Han är en pojke");
+		lessonSentences.add("Hon är en kvinna");
+		lessonSentences.add("Jag är en kvinna");
+		lessonSentences.add("Du är en pojke");
+		lessonSentences.add("Han är en man");
+		lessonSentences.add("Hon är en flicka");
+		
+		sentencesTranslated.add("I am a man");
+		sentencesTranslated.add("You are a girl");
+		sentencesTranslated.add("He is a boy");
+		sentencesTranslated.add("She is a woman");
+		sentencesTranslated.add("I am a woman");
+		sentencesTranslated.add("You are a boy");
+		sentencesTranslated.add("He is a man");
+		sentencesTranslated.add("She is a girl");
+		
 		this.add(lessonButton);
 		this.add(flashcardButton);
 		this.add(readingButton);
 		this.add(menyButton);
+		this.add(textArea);
 		
 		//sätter upp knapparna
 		
@@ -70,6 +90,15 @@ public class lBasicsOneL1 extends JPanel {
 		menyButton.setContentAreaFilled(start.synligaKnappar);
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
+		
+		textArea.setBounds((int) Math.round(200 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(965 * start.widthSize), (int) Math.round(500 * start.heightSize));
+		textArea.setFont(new Font("comic sans ms", Font.BOLD, 22));
+		textArea.setLineWrap(true);
+		textArea.setWrapStyleWord(true);
+		textArea.setOpaque(false);
+		textArea.setForeground(Color.BLACK);
+		textArea.setEditable(false);
+		textArea.setText("Translate into English: " + lessonSentences.get(0));
 	}
 	
 	public void paintComponent(Graphics g)
