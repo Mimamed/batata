@@ -1,5 +1,5 @@
 package mimo;
-//BARA EN BILD JUST NU
+
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
