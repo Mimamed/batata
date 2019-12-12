@@ -39,6 +39,10 @@ public class flashcardsWordList extends JPanel {
 	
 	flashcardsWordList() 
 	{
+		JButton test = new JButton();
+		this.add(test);
+		test.setBounds((int) Math.round(199.8 * start.widthSize), (int) Math.round((235 + 79.5 * 1) * start.heightSize), (int) Math.round(364 * start.widthSize), (int) Math.round(78 * start.heightSize));
+		
 		try
 		{
 			pic = ImageIO.read(start.filer[5]);
@@ -56,6 +60,8 @@ public class flashcardsWordList extends JPanel {
 			changeButton[i] = new JButton("Change");
 			labelList[0][i] = new JLabel();
 			labelList[1][i] = new JLabel();
+			labelList[0][i].setFont(new Font("comic sans ms", Font.BOLD, 30));
+			labelList[1][i].setFont(new Font("comic sans ms", Font.BOLD, 30));
 			this.add(labelList[0][i]);
 			this.add(labelList[1][i]);
 			this.add(removeButton[i]);
@@ -147,8 +153,8 @@ public class flashcardsWordList extends JPanel {
 		//sätter in array knapparna
 		for(int i = 0; i < removeButton.length; i++)
 		{
-			labelList[0][i].setBounds((int) Math.round(535.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
-			labelList[1][i].setBounds((int) Math.round(235.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
+			labelList[0][i].setBounds((int) Math.round(577.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(364 * start.widthSize), (int) Math.round(78 * start.heightSize));
+			labelList[1][i].setBounds((int) Math.round(209.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(364 * start.widthSize), (int) Math.round(78 * start.heightSize));
 			
 			removeButton[i].setBounds((int) Math.round(935.8 * start.widthSize), (int) Math.round((235 + 79.5 * i) * start.heightSize), (int) Math.round(114 * start.widthSize), (int) Math.round(78 * start.heightSize));
 			removeButton[i].setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
