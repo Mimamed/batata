@@ -1,7 +1,7 @@
 package mimo;
 
 import java.awt.Toolkit;
-//82601895623013 ingen vill se din lilla spend for nend kod
+//82601895623013 <- plz do not steal
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -13,12 +13,12 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class start //jij
+public class start //mimamed kolla igenom ditt skit före du förstör allting, noob
 {
 	static boolean synligaKnappar = false;
 	static int[] ljusGrå = {200, 200, 200};
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settings.jpg"), start.class.getResource("/Bilder/lessonMenu.jpg")};
+	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settings.jpg"), start.class.getResource("/Bilder/lessonMenu.jpg"), start.class.getResource("/Bilder/lessonGameBasics.jpg"), start.class.getResource("/Bilder/lessonGame.jpg")};
 	static URL[] filerColorBlindMode = {start.class.getResource("/BilderCB/startMenuCB.jpg"), start.class.getResource("/BilderCB/tabMenuCB.jpg"), start.class.getResource("/BilderCB/flashcardMenuCB.jpg"), start.class.getResource("/BilderCB/flashcardGameCB.jpg"), start.class.getResource("/BilderCB/readingMenuCB.jpg"), start.class.getResource("/BilderCB/flashcardListCB.jpg"), start.class.getResource("/BilderCB/readingGameCB.jpg"), start.class.getResource("/BilderCB/settingsCB.jpg"), start.class.getResource("/BilderCB/lessonMenuCB.jpg")};
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
@@ -37,7 +37,8 @@ public class start //jij
 	static readingGame readingSpel = new readingGame();
 	static settingsMenu inställningar = new settingsMenu();
 	static lessonTree lektionTräd = new lessonTree();
-	
+	static lBasicsOne lektionGrunder = new lBasicsOne();
+	static lBasicsOneL1 lektionGrunderL1 = new lBasicsOneL1();
 	
 	public static void main(String[] Args)
 	{

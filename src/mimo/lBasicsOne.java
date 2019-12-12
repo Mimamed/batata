@@ -130,6 +130,7 @@ public class lBasicsOne extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
+			lBasicsOneL1.l1RandomSentence();
 			start.Byta(start.lektionGrunderL1);
 		}
 	}
