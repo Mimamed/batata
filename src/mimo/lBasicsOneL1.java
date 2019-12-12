@@ -27,6 +27,7 @@ public class lBasicsOneL1 extends JPanel {
 	public static int whichSentence;
 	static Random randomNumber = new Random();
 	static int sentenceNumber;
+	static int sentencesLeft = 0;
 	
 	lBasicsOneL1 ()
 	{
@@ -41,23 +42,8 @@ public class lBasicsOneL1 extends JPanel {
 		this.setLayout(null);
 		
 		//addar grejer
-		//DETTA KAN BLI MYCKET BÄTTRE
-		SentenceList sentenceInfo = new SentenceList("Jag är en man", "I am a man", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Du är en flicka", "You are a girl", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Han är en pojke", "He is a boy", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Hon är en kvinna", "She is a woman", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Jag är en kvinna", "I am a woman", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Du är en pojke", "You are a boy", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Han är en man", "He is a man", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Hon är en flicka", "She is a girl", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
+		
+		setupSentences();
 		
 		this.add(lessonButton);
 		this.add(flashcardButton);
@@ -114,6 +100,27 @@ public class lBasicsOneL1 extends JPanel {
 		
 	}
 	
+	public static void setupSentences()
+	{
+		//DETTA KAN BLI MYCKET BÄTTRE
+		SentenceList sentenceInfo = new SentenceList("Jag är en man", "I am a man", 0, 0, false);
+		lessonSentences.add(sentenceInfo);
+		sentenceInfo = new SentenceList("Du är en flicka", "You are a girl", 0, 0, false);
+		lessonSentences.add(sentenceInfo);
+		sentenceInfo = new SentenceList("Han är en pojke", "He is a boy", 0, 0, false);
+		lessonSentences.add(sentenceInfo);
+		sentenceInfo = new SentenceList("Hon är en kvinna", "She is a woman", 0, 0, false);
+		lessonSentences.add(sentenceInfo);
+		sentenceInfo = new SentenceList("Jag är en kvinna", "I am a woman", 0, 0, false);
+		lessonSentences.add(sentenceInfo);
+		sentenceInfo = new SentenceList("Du är en pojke", "You are a boy", 0, 0, false);
+		lessonSentences.add(sentenceInfo);
+		sentenceInfo = new SentenceList("Han är en man", "He is a man", 0, 0, false);
+		lessonSentences.add(sentenceInfo);
+		sentenceInfo = new SentenceList("Hon är en flicka", "She is a girl", 0, 0, false);
+		lessonSentences.add(sentenceInfo);
+	}
+	
 	public void paintComponent(Graphics g)
 	{
 		g.drawImage(bakgrund, 0, 0, this.getWidth(), this.getHeight(), null);
@@ -121,9 +128,31 @@ public class lBasicsOneL1 extends JPanel {
 	
 	public static void l1RandomSentence()
 	{
-		//FOR LOOP SOM RÄKNAR correctAnswer = false;
-		sentenceNumber = randomNumber.nextInt(8);
-		textArea.setText("Translate into English: " + lessonSentences.get(sentenceNumber).getSentence());
+		for (int i = 0; i < lessonSentences.size(); i++)
+		{
+			if (lessonSentences.get(i).getCorrectAnswer() == false)
+			{
+				sentencesLeft ++;
+			}
+		}
+		
+		if (sentencesLeft == 0)
+		{
+			/*
+			Meddelande som säger att man har gjort klart lektionen
+			Global variabel: lBasicsOneL1 = färdig
+			Sparar informationen från dessa
+			 */
+			lessonSentences.clear();
+			setupSentences();
+			start.Byta(start.lektionTräd);
+		}
+		else
+		{
+			sentenceNumber = randomNumber.nextInt(sentencesLeft);
+			sentencesLeft = 0;
+			textArea.setText("Translate into English: " + lessonSentences.get(sentenceNumber).getSentence());
+		}
 	}
 	
 	static class lessonButton implements ActionListener
@@ -167,7 +196,15 @@ public class lBasicsOneL1 extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
+			/*
+			if (lessonSentences.get(sentenceNumber).getTranslation() = lessonSentences.get(sentenceNumber)getSentence())
+			då correctAnswer = true
+			 */
 			lessonSentences.get(sentenceNumber).setCorrectAnswer(true);
+			SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), lessonSentences.get(sentenceNumber).getPoints(), lessonSentences.get(sentenceNumber).getTries(), lessonSentences.get(sentenceNumber).getCorrectAnswer());
+			lessonSentences.add(sentenceInfo);
+			lessonSentences.remove(lessonSentences.get(sentenceNumber));
+			l1RandomSentence();
 		}
 	}
 }
