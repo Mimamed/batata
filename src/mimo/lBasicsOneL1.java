@@ -129,7 +129,7 @@ public class lBasicsOneL1 extends JPanel {
 			SentenceList sentenceInfo = new SentenceList("Jag är en man", "I am a man", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
-	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            if (lessonSentences.get(i).getSentence().equals("Jag är en man"))
 	            {
 	                System.out.println("funnen!");
 	                sentenceInfo = new SentenceList("Jag är en man", "I am a man", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
@@ -144,10 +144,9 @@ public class lBasicsOneL1 extends JPanel {
 	        }
 			
 			//ANDRA MENINGEN
-			sentenceInfo = new SentenceList("Du är en flicka", "You are a girl", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
-	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            if (lessonSentences.get(i).getSentence().equals("Du är en flicka"))
 	            {
 	                System.out.println("funnen!");
 	                sentenceInfo = new SentenceList("Du är en flicka", "You are a girl", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
@@ -161,10 +160,9 @@ public class lBasicsOneL1 extends JPanel {
 	            }
 	        }
 			//TREDJE MENINGEN
-			sentenceInfo = new SentenceList("Han är en pojke", "He is a boy", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
-	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            if (lessonSentences.get(i).getSentence().equals("Han är en pojke"))
 	            {
 	                System.out.println("funnen!");
 	                sentenceInfo = new SentenceList("Han är en pojke", "He is a boy", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
@@ -179,10 +177,9 @@ public class lBasicsOneL1 extends JPanel {
 	        }
 			
 			//FJÄRDE MENINGEN
-			sentenceInfo = new SentenceList("Hon är en kvinna", "She is a woman", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
-	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            if (lessonSentences.get(i).getSentence().equals("Hon är en kvinna"))
 	            {
 	                System.out.println("funnen!");
 	                sentenceInfo = new SentenceList("Hon är en kvinna", "She is a woman", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
@@ -197,10 +194,9 @@ public class lBasicsOneL1 extends JPanel {
 	        }
 			
 			//FEMTE MENINGEN
-			sentenceInfo = new SentenceList("Jag är en kvinna", "I am a woman", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
-	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            if (lessonSentences.get(i).getSentence().equals("Jag är en kvinna"))
 	            {
 	                System.out.println("funnen!");
 	                sentenceInfo = new SentenceList("Jag är en kvinna", "I am a woman", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
@@ -215,10 +211,9 @@ public class lBasicsOneL1 extends JPanel {
 	        }
 			
 			//SJÄTTE MENINGEN
-			sentenceInfo = new SentenceList("Du är en pojke", "You are a boy", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
-	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            if (lessonSentences.get(i).getSentence().equals("Du är en pojke"))
 	            {
 	                System.out.println("funnen!");
 	                sentenceInfo = new SentenceList("Du är en pojke", "You are a boy", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
@@ -233,10 +228,9 @@ public class lBasicsOneL1 extends JPanel {
 	        }
 			
 			//SJUNDE MENINGEN
-			sentenceInfo = new SentenceList("Han är en man", "He is a man", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
-	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            if (lessonSentences.get(i).getSentence().equals("Han är en man"))
 	            {
 	                System.out.println("funnen!");
 	                sentenceInfo = new SentenceList("Han är en man", "He is a man", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
@@ -251,10 +245,9 @@ public class lBasicsOneL1 extends JPanel {
 	        }
 			
 			//ÅTTONDE MENINGEN
-			sentenceInfo = new SentenceList("Hon är en flicka", "She is a girl", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
-	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            if (lessonSentences.get(i).getSentence().equals("Hon är en flicka"))
 	            {
 	                System.out.println("funnen!");
 	                sentenceInfo = new SentenceList("Hon är en flicka", "She is a girl", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
@@ -286,7 +279,7 @@ public class lBasicsOneL1 extends JPanel {
 				sentencesLeft ++;
 			}
 		}
-		
+		System.out.println("sentencesLeft: " + sentencesLeft);
 		if (sentencesLeft == 0)
 		{
 			/*
@@ -294,6 +287,7 @@ public class lBasicsOneL1 extends JPanel {
 			Sparar informationen från dessa
 			 */
 			lBasicsOneL1Done = true;
+			System.out.println("TESTTEST");
 			setupSentences();
 			start.Byta(start.lektionTräd);
 		}
