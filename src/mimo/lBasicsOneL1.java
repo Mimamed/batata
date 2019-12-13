@@ -28,6 +28,7 @@ public class lBasicsOneL1 extends JPanel {
 	static Random randomNumber = new Random();
 	static int sentenceNumber;
 	static int sentencesLeft = 0;
+	static boolean lBasicsOneL1Done = false;
 	
 	lBasicsOneL1 ()
 	{
@@ -102,23 +103,172 @@ public class lBasicsOneL1 extends JPanel {
 	
 	public static void setupSentences()
 	{
-		//DETTA KAN BLI MYCKET BÄTTRE
-		SentenceList sentenceInfo = new SentenceList("Jag är en man", "I am a man", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Du är en flicka", "You are a girl", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Han är en pojke", "He is a boy", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Hon är en kvinna", "She is a woman", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Jag är en kvinna", "I am a woman", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Du är en pojke", "You are a boy", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Han är en man", "He is a man", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
-		sentenceInfo = new SentenceList("Hon är en flicka", "She is a girl", 0, 0, false);
-		lessonSentences.add(sentenceInfo);
+		if (lBasicsOneL1Done == false)
+		{
+			//DETTA KAN BLI MYCKET BÄTTRE
+			SentenceList sentenceInfo = new SentenceList("Jag är en man", "I am a man", 0, 0, false);
+			lessonSentences.add(sentenceInfo);
+			sentenceInfo = new SentenceList("Du är en flicka", "You are a girl", 0, 0, false);
+			lessonSentences.add(sentenceInfo);
+			sentenceInfo = new SentenceList("Han är en pojke", "He is a boy", 0, 0, false);
+			lessonSentences.add(sentenceInfo);
+			sentenceInfo = new SentenceList("Hon är en kvinna", "She is a woman", 0, 0, false);
+			lessonSentences.add(sentenceInfo);
+			sentenceInfo = new SentenceList("Jag är en kvinna", "I am a woman", 0, 0, false);
+			lessonSentences.add(sentenceInfo);
+			sentenceInfo = new SentenceList("Du är en pojke", "You are a boy", 0, 0, false);
+			lessonSentences.add(sentenceInfo);
+			sentenceInfo = new SentenceList("Han är en man", "He is a man", 0, 0, false);
+			lessonSentences.add(sentenceInfo);
+			sentenceInfo = new SentenceList("Hon är en flicka", "She is a girl", 0, 0, false);
+			lessonSentences.add(sentenceInfo);
+		}
+		else
+		{
+			//FÖRSTA MENINGEN
+			SentenceList sentenceInfo = new SentenceList("Jag är en man", "I am a man", 0, 0, false);
+			for (int i = 0; i < lessonSentences.size(); i++)
+	        {
+	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            {
+	                System.out.println("funnen!");
+	                sentenceInfo = new SentenceList("Jag är en man", "I am a man", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
+	                lessonSentences.add(sentenceInfo);
+	                lessonSentences.remove(i);
+	                break;
+	            }
+	            else if ((i + 1) == lessonSentences.size())
+	            {
+	                System.out.println("Kunde inte hitta");
+	            }
+	        }
+			
+			//ANDRA MENINGEN
+			sentenceInfo = new SentenceList("Du är en flicka", "You are a girl", 0, 0, false);
+			for (int i = 0; i < lessonSentences.size(); i++)
+	        {
+	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            {
+	                System.out.println("funnen!");
+	                sentenceInfo = new SentenceList("Du är en flicka", "You are a girl", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
+	                lessonSentences.add(sentenceInfo);
+	                lessonSentences.remove(i);
+	                break;
+	            }
+	            else if ((i + 1) == lessonSentences.size())
+	            {
+	                System.out.println("Kunde inte hitta");
+	            }
+	        }
+			//TREDJE MENINGEN
+			sentenceInfo = new SentenceList("Han är en pojke", "He is a boy", 0, 0, false);
+			for (int i = 0; i < lessonSentences.size(); i++)
+	        {
+	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            {
+	                System.out.println("funnen!");
+	                sentenceInfo = new SentenceList("Han är en pojke", "He is a boy", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
+	                lessonSentences.add(sentenceInfo);
+	                lessonSentences.remove(i);
+	                break;
+	            }
+	            else if ((i + 1) == lessonSentences.size())
+	            {
+	                System.out.println("Kunde inte hitta");
+	            }
+	        }
+			
+			//FJÄRDE MENINGEN
+			sentenceInfo = new SentenceList("Hon är en kvinna", "She is a woman", 0, 0, false);
+			for (int i = 0; i < lessonSentences.size(); i++)
+	        {
+	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            {
+	                System.out.println("funnen!");
+	                sentenceInfo = new SentenceList("Hon är en kvinna", "She is a woman", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
+	                lessonSentences.add(sentenceInfo);
+	                lessonSentences.remove(i);
+	                break;
+	            }
+	            else if ((i + 1) == lessonSentences.size())
+	            {
+	                System.out.println("Kunde inte hitta");
+	            }
+	        }
+			
+			//FEMTE MENINGEN
+			sentenceInfo = new SentenceList("Jag är en kvinna", "I am a woman", 0, 0, false);
+			for (int i = 0; i < lessonSentences.size(); i++)
+	        {
+	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            {
+	                System.out.println("funnen!");
+	                sentenceInfo = new SentenceList("Jag är en kvinna", "I am a woman", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
+	                lessonSentences.add(sentenceInfo);
+	                lessonSentences.remove(i);
+	                break;
+	            }
+	            else if ((i + 1) == lessonSentences.size())
+	            {
+	                System.out.println("Kunde inte hitta");
+	            }
+	        }
+			
+			//SJÄTTE MENINGEN
+			sentenceInfo = new SentenceList("Du är en pojke", "You are a boy", 0, 0, false);
+			for (int i = 0; i < lessonSentences.size(); i++)
+	        {
+	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            {
+	                System.out.println("funnen!");
+	                sentenceInfo = new SentenceList("Du är en pojke", "You are a boy", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
+	                lessonSentences.add(sentenceInfo);
+	                lessonSentences.remove(i);
+	                break;
+	            }
+	            else if ((i + 1) == lessonSentences.size())
+	            {
+	                System.out.println("Kunde inte hitta");
+	            }
+	        }
+			
+			//SJUNDE MENINGEN
+			sentenceInfo = new SentenceList("Han är en man", "He is a man", 0, 0, false);
+			for (int i = 0; i < lessonSentences.size(); i++)
+	        {
+	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            {
+	                System.out.println("funnen!");
+	                sentenceInfo = new SentenceList("Han är en man", "He is a man", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
+	                lessonSentences.add(sentenceInfo);
+	                lessonSentences.remove(i);
+	                break;
+	            }
+	            else if ((i + 1) == lessonSentences.size())
+	            {
+	                System.out.println("Kunde inte hitta");
+	            }
+	        }
+			
+			//ÅTTONDE MENINGEN
+			sentenceInfo = new SentenceList("Hon är en flicka", "She is a girl", 0, 0, false);
+			for (int i = 0; i < lessonSentences.size(); i++)
+	        {
+	            if (lessonSentences.get(i).equals(sentenceInfo))
+	            {
+	                System.out.println("funnen!");
+	                sentenceInfo = new SentenceList("Hon är en flicka", "She is a girl", lessonSentences.get(i).getPoints(), lessonSentences.get(i).getTries(), false);
+	                lessonSentences.add(sentenceInfo);
+	                lessonSentences.remove(i);
+	                break;
+	            }
+	            else if ((i + 1) == lessonSentences.size())
+	            {
+	                System.out.println("Kunde inte hitta");
+	            }
+	        }
+		}
+		
 	}
 	
 	public void paintComponent(Graphics g)
@@ -128,6 +278,7 @@ public class lBasicsOneL1 extends JPanel {
 	
 	public static void l1RandomSentence()
 	{
+		//kollar antal meningar kvar
 		for (int i = 0; i < lessonSentences.size(); i++)
 		{
 			if (lessonSentences.get(i).getCorrectAnswer() == false)
@@ -140,17 +291,19 @@ public class lBasicsOneL1 extends JPanel {
 		{
 			/*
 			Meddelande som säger att man har gjort klart lektionen
-			Global variabel: lBasicsOneL1 = färdig
 			Sparar informationen från dessa
 			 */
-			lessonSentences.clear();
+			lBasicsOneL1Done = true;
 			setupSentences();
 			start.Byta(start.lektionTräd);
 		}
 		else
 		{
+			//ny mening
 			sentenceNumber = randomNumber.nextInt(sentencesLeft);
+			//återställer
 			sentencesLeft = 0;
+			//sätter ny mening
 			textArea.setText("Translate into English: " + lessonSentences.get(sentenceNumber).getSentence());
 		}
 	}
@@ -199,11 +352,16 @@ public class lBasicsOneL1 extends JPanel {
 			/*
 			if (lessonSentences.get(sentenceNumber).getTranslation() = lessonSentences.get(sentenceNumber)getSentence())
 			då correctAnswer = true
+			då poäng 100++;
 			 */
 			lessonSentences.get(sentenceNumber).setCorrectAnswer(true);
-			SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), lessonSentences.get(sentenceNumber).getPoints(), lessonSentences.get(sentenceNumber).getTries(), lessonSentences.get(sentenceNumber).getCorrectAnswer());
+			//lägger till ny mening med nya värden
+			SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), lessonSentences.get(sentenceNumber).getPoints(), lessonSentences.get(sentenceNumber).getTries() + 1, lessonSentences.get(sentenceNumber).getCorrectAnswer());
 			lessonSentences.add(sentenceInfo);
-			lessonSentences.remove(lessonSentences.get(sentenceNumber));
+			//tar bort gammal mening med gamla värden
+			lessonSentences.remove(sentenceNumber);
+			//skriver upp den senaste meningens försök
+			System.out.println("FÖRSÖK" + (lessonSentences.get(lessonSentences.size() - 1)).getTries());
 			l1RandomSentence();
 		}
 	}
