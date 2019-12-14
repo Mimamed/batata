@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /*
 BEHÖVER: SÄTT ATT SVARA
@@ -23,6 +24,7 @@ public class lBasicsOneL1 extends JPanel {
 	static BufferedImage bakgrund;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton();
 	static JTextArea textArea = new JTextArea();
+	static JTextField answerField = new JTextField();
 	static List<SentenceList> lessonSentences = new ArrayList();
 	public static int whichSentence;
 	static Random randomNumber = new Random();
@@ -51,6 +53,7 @@ public class lBasicsOneL1 extends JPanel {
 		this.add(readingButton);
 		this.add(menyButton);
 		this.add(textArea);
+		this.add(answerField);
 		this.add(answerButton);
 		
 		//sätter upp knapparna
@@ -85,7 +88,7 @@ public class lBasicsOneL1 extends JPanel {
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
-		textArea.setBounds((int) Math.round(200 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(965 * start.widthSize), (int) Math.round(500 * start.heightSize));
+		textArea.setBounds((int) Math.round(205 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(965 * start.widthSize), (int) Math.round(300 * start.heightSize));
 		textArea.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
@@ -94,7 +97,14 @@ public class lBasicsOneL1 extends JPanel {
 		textArea.setEditable(false);
 		textArea.setText("Test");
 		
-		answerButton.setBounds((int) Math.round(900 * start.widthSize), (int) Math.round(600 * start.heightSize), (int) Math.round(295 * start.widthSize), (int) Math.round(107 * start.heightSize));
+		answerField.setBounds((int) Math.round(200 * start.widthSize), (int) Math.round(603 * start.heightSize), (int) Math.round(700 * start.widthSize), (int) Math.round(107 * start.heightSize));
+		answerField.setEditable(true);
+		answerField.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		answerField.setHorizontalAlignment(WIDTH/2);
+		answerField.setBorder(null);
+		answerField.setBackground(new Color(77, 77, 77));
+		
+		answerButton.setBounds((int) Math.round(900 * start.widthSize), (int) Math.round(603 * start.heightSize), (int) Math.round(264 * start.widthSize), (int) Math.round(107 * start.heightSize));
 		answerButton.addActionListener(new answerButtonAct());
 		answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		answerButton.setText("Answer");
@@ -343,20 +353,35 @@ public class lBasicsOneL1 extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			/*
-			if (lessonSentences.get(sentenceNumber).getTranslation() = lessonSentences.get(sentenceNumber)getSentence())
-			då correctAnswer = true
-			då poäng 100++;
-			 */
-			lessonSentences.get(sentenceNumber).setCorrectAnswer(true);
-			//lägger till ny mening med nya värden
-			SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), lessonSentences.get(sentenceNumber).getPoints(), lessonSentences.get(sentenceNumber).getTries() + 1, lessonSentences.get(sentenceNumber).getCorrectAnswer());
-			lessonSentences.add(sentenceInfo);
-			//tar bort gammal mening med gamla värden
-			lessonSentences.remove(sentenceNumber);
-			//skriver upp den senaste meningens försök
-			System.out.println("FÖRSÖK" + (lessonSentences.get(lessonSentences.size() - 1)).getTries());
-			l1RandomSentence();
+			if (answerField.getText().equalsIgnoreCase(lessonSentences.get(sentenceNumber).getTranslation()))
+			{
+				lessonSentences.get(sentenceNumber).setCorrectAnswer(true);
+				//lägger till ny mening med nya värden, +100 poäng
+				SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), (lessonSentences.get(sentenceNumber).getPoints() + 100), (lessonSentences.get(sentenceNumber).getTries() + 1), lessonSentences.get(sentenceNumber).getCorrectAnswer());
+				lessonSentences.add(sentenceInfo);
+				//tar bort gammal mening med gamla värden
+				lessonSentences.remove(sentenceNumber);
+				//skriver upp den senaste meningens försök + poäng
+				System.out.println("FÖRSÖK, POÄNG: " + (lessonSentences.get(lessonSentences.size() - 1)).getTries() + ", " + (lessonSentences.get(lessonSentences.size() - 1)).getPoints());
+				//återställer textfält
+				answerField.setText(null);
+				//ny mening
+				l1RandomSentence();
+			}
+			else
+			{
+				//lägger till ny mening med nya värden, inga nya poäng
+				SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), lessonSentences.get(sentenceNumber).getPoints(), lessonSentences.get(sentenceNumber).getTries() + 1, lessonSentences.get(sentenceNumber).getCorrectAnswer());
+				lessonSentences.add(sentenceInfo);
+				//tar bort gammal mening med gamla värden
+				lessonSentences.remove(sentenceNumber);
+				//skriver upp den senaste meningens försök + poäng
+				System.out.println("FÖRSÖK, POÄNG: " + (lessonSentences.get(lessonSentences.size() - 1)).getTries() + ", " + (lessonSentences.get(lessonSentences.size() - 1)).getPoints());
+				//återställer textfält
+				answerField.setText(null);
+				//ny mening
+				l1RandomSentence();
+			}
 		}
 	}
 }
