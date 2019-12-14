@@ -284,6 +284,7 @@ public class lBasicsOneL1 extends JPanel {
 		//kollar antal meningar kvar
 		for (int i = 0; i < lessonSentences.size(); i++)
 		{
+			System.out.println(lessonSentences.get(i).getSentence() + lessonSentences.get(i).getCorrectAnswer());
 			if (lessonSentences.get(i).getCorrectAnswer() == false)
 			{
 				sentencesLeft ++;
@@ -308,6 +309,7 @@ public class lBasicsOneL1 extends JPanel {
 			//återställer
 			sentencesLeft = 0;
 			//sätter ny mening
+			System.out.println(lessonSentences.get(sentenceNumber).getSentence() + lessonSentences.get(sentenceNumber).getCorrectAnswer());
 			textArea.setText("Translate into English: " + lessonSentences.get(sentenceNumber).getSentence());
 		}
 	}
@@ -361,7 +363,7 @@ public class lBasicsOneL1 extends JPanel {
 				lessonSentences.add(sentenceInfo);
 				//tar bort gammal mening med gamla värden
 				lessonSentences.remove(sentenceNumber);
-				//skriver upp den senaste meningens försök + poäng
+				//skriver ut den senaste meningens försök + poäng
 				System.out.println("FÖRSÖK, POÄNG: " + (lessonSentences.get(lessonSentences.size() - 1)).getTries() + ", " + (lessonSentences.get(lessonSentences.size() - 1)).getPoints());
 				//återställer textfält
 				answerField.setText(null);
@@ -370,13 +372,10 @@ public class lBasicsOneL1 extends JPanel {
 			}
 			else
 			{
-				//lägger till ny mening med nya värden, inga nya poäng
-				SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), lessonSentences.get(sentenceNumber).getPoints(), lessonSentences.get(sentenceNumber).getTries() + 1, lessonSentences.get(sentenceNumber).getCorrectAnswer());
-				lessonSentences.add(sentenceInfo);
-				//tar bort gammal mening med gamla värden
-				lessonSentences.remove(sentenceNumber);
-				//skriver upp den senaste meningens försök + poäng
-				System.out.println("FÖRSÖK, POÄNG: " + (lessonSentences.get(lessonSentences.size() - 1)).getTries() + ", " + (lessonSentences.get(lessonSentences.size() - 1)).getPoints());
+				//lägger till ett försök i meningen
+				lessonSentences.get(sentenceNumber).setTries(lessonSentences.get(sentenceNumber).getTries() + 1);
+				//skriver ut den senaste meningens försök + poäng
+				System.out.println("FÖRSÖK, POÄNG: " + lessonSentences.get(sentenceNumber).getTries() + ", " + lessonSentences.get(sentenceNumber).getPoints());
 				//återställer textfält
 				answerField.setText(null);
 				//ny mening
