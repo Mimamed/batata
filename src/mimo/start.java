@@ -39,6 +39,7 @@ public class start //mimamed kolla igenom ditt skit före du förstör allting, noo
 	static lessonTree lektionTräd = new lessonTree();
 	static lBasicsOne lektionGrunder = new lBasicsOne();
 	static lBasicsOneL1 lektionGrunderL1 = new lBasicsOneL1();
+	static lBasicsOneL2 lektionGrunderL2 = new lBasicsOneL2();
 	
 	public static void main(String[] Args)
 	{

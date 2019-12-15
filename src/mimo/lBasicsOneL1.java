@@ -16,10 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-/*
-BEHÖVER: SÄTT ATT SVARA
- */
-
 public class lBasicsOneL1 extends JPanel {
 	static BufferedImage bakgrund;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton();
@@ -59,7 +55,7 @@ public class lBasicsOneL1 extends JPanel {
 		//sätter upp knapparna
 		
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		lessonButton.addActionListener(new lessonButton());
+		//lessonButton.addActionListener(new lessonButton());
 		lessonButton.setContentAreaFilled(start.synligaKnappar);
 		lessonButton.setBorderPainted(start.synligaKnappar);
 		lessonButton.setFocusPainted(start.synligaKnappar);
@@ -67,7 +63,7 @@ public class lBasicsOneL1 extends JPanel {
 		lessonButton.setText("Lessons");
 
 		flashcardButton.setBounds((int) Math.round(499 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		flashcardButton.addActionListener(new flashcardButton());
+		//flashcardButton.addActionListener(new flashcardButton());
 		flashcardButton.setContentAreaFilled(start.synligaKnappar);
 		flashcardButton.setBorderPainted(start.synligaKnappar);
 		flashcardButton.setFocusPainted(start.synligaKnappar);
@@ -75,7 +71,7 @@ public class lBasicsOneL1 extends JPanel {
 		flashcardButton.setText("Flashcards");
 		
 		readingButton.setBounds((int) Math.round(870 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(370 * start.widthSize), (int) Math.round(76 * start.heightSize));
-		readingButton.addActionListener(new readingButton());
+		//readingButton.addActionListener(new readingButton());
 		readingButton.setContentAreaFilled(start.synligaKnappar);
 		readingButton.setBorderPainted(start.synligaKnappar);
 		readingButton.setFocusPainted(start.synligaKnappar);
@@ -83,7 +79,7 @@ public class lBasicsOneL1 extends JPanel {
 		readingButton.setText("Reading");
 		
 		menyButton.setBounds((int) Math.round(10 * start.widthSize), (int) Math.round(10 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		menyButton.addActionListener(new menyButton());
+		//menyButton.addActionListener(new menyButton());
 		menyButton.setContentAreaFilled(start.synligaKnappar);
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
@@ -108,7 +104,6 @@ public class lBasicsOneL1 extends JPanel {
 		answerButton.addActionListener(new answerButtonAct());
 		answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		answerButton.setText("Answer");
-		
 	}
 	
 	public static void setupSentences()
@@ -271,7 +266,6 @@ public class lBasicsOneL1 extends JPanel {
 	            }
 	        }
 		}
-		
 	}
 	
 	public void paintComponent(Graphics g)
@@ -313,7 +307,7 @@ public class lBasicsOneL1 extends JPanel {
 			textArea.setText("Translate into English: " + lessonSentences.get(sentenceNumber).getSentence());
 		}
 	}
-	
+	/*
 	static class lessonButton implements ActionListener
 	{
 		
@@ -349,7 +343,7 @@ public class lBasicsOneL1 extends JPanel {
 			start.Byta(start.meny);
 		}
 	}
-	
+	*/
 	static class answerButtonAct implements ActionListener
 	{
 		

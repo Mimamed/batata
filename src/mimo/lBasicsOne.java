@@ -140,7 +140,8 @@ public class lBasicsOne extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.meny);
+			lBasicsOneL2.l2RandomSentence();
+			start.Byta(start.lektionGrunderL2);
 		}
 	}
 }
