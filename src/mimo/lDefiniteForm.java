@@ -140,7 +140,7 @@ public class lDefiniteForm extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			lBasicsOneL2.l2RandomSentence();
+			lDefiniteFormL2.l2RandomSentence();
 			start.Byta(start.lektionBestämdFormL2);
 		}
 	}
