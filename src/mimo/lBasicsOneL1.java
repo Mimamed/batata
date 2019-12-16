@@ -164,6 +164,7 @@ public class lBasicsOneL1 extends JPanel {
 	                System.out.println("Kunde inte hitta");
 	            }
 	        }
+			
 			//TREDJE MENINGEN
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
