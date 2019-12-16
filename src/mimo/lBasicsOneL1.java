@@ -314,6 +314,7 @@ public class lBasicsOneL1 extends JPanel {
 			 */
 			sentencesCorrect = 0;
 			answersFraction.setText(sentencesCorrect + "/8");
+			correctAnswerField.setText(null);
 			lBasicsOneL1Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();
@@ -387,6 +388,7 @@ public class lBasicsOneL1 extends JPanel {
 					//återställer textfält
 					answerField.setText(null);
 					//visar svar
+					correctAnswerField.setText("Correct!");
 					/*
 					correctAnswerField.setOpaque(true);
 					correctAnswerField.setBackground(new Color(255, 255, 255));
@@ -404,6 +406,7 @@ public class lBasicsOneL1 extends JPanel {
 					//återställer textfält
 					answerField.setText(null);
 					//visar svar
+					correctAnswerField.setText("Wrong! '" + lessonSentences.get(sentenceNumber).getSentence() + "' means '" + lessonSentences.get(sentenceNumber).getTranslation() + "'");
 					/*
 					correctAnswerField.setOpaque(true);
 					correctAnswerField.setBackground(new Color(255, 255, 255));
