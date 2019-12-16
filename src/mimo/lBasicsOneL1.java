@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 public class lBasicsOneL1 extends JPanel {
 	static BufferedImage bakgrund;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton();
-	static JTextArea textArea = new JTextArea();
+	static JTextArea textArea = new JTextArea(), answersFraction = new JTextArea();
 	static JTextField answerField = new JTextField();
 	static List<SentenceList> lessonSentences = new ArrayList();
 	public static int whichSentence;
@@ -27,6 +27,7 @@ public class lBasicsOneL1 extends JPanel {
 	static int sentenceNumber;
 	static int sentencesLeft = 0;
 	static boolean lBasicsOneL1Done = false;
+	static int sentencesCorrect = 0;
 	
 	lBasicsOneL1 ()
 	{
@@ -51,6 +52,7 @@ public class lBasicsOneL1 extends JPanel {
 		this.add(textArea);
 		this.add(answerField);
 		this.add(answerButton);
+		this.add(answersFraction);
 		
 		//sätter upp knapparna
 		
@@ -104,6 +106,16 @@ public class lBasicsOneL1 extends JPanel {
 		answerButton.addActionListener(new answerButtonAct());
 		answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		answerButton.setText("Answer");
+		
+		answersFraction.setBounds((int) Math.round(980 * start.widthSize), (int) Math.round(500 * start.heightSize), (int) Math.round(100 * start.widthSize), (int) Math.round(100 * start.heightSize));
+		answersFraction.setFont(new Font("comic sans ms", Font.BOLD, 50));
+		answersFraction.setLineWrap(true);
+		answersFraction.setWrapStyleWord(true);
+		answersFraction.setOpaque(false);
+		answersFraction.setForeground(Color.BLACK);
+		answersFraction.setEditable(false);
+		answersFraction.setText(sentencesCorrect + "/8");
+		
 	}
 	
 	public static void setupSentences()
@@ -285,6 +297,9 @@ public class lBasicsOneL1 extends JPanel {
 				sentencesLeft ++;
 			}
 		}
+		sentencesCorrect = 8 - sentencesLeft;
+		answersFraction.setText(sentencesCorrect + "/8");
+		
 		System.out.println("sentencesLeft: " + sentencesLeft);
 		if (sentencesLeft == 0)
 		{
@@ -292,6 +307,8 @@ public class lBasicsOneL1 extends JPanel {
 			Meddelande som säger att man har gjort klart lektionen
 			Sparar informationen från dessa
 			 */
+			sentencesCorrect = 0;
+			answersFraction.setText(sentencesCorrect + "/8");
 			lBasicsOneL1Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();

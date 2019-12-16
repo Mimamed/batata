@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 public class lDefiniteFormL2 extends JPanel {
 	static BufferedImage bakgrund;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton();
-	static JTextArea textArea = new JTextArea();
+	static JTextArea textArea = new JTextArea(), answersFraction = new JTextArea();
 	static JTextField answerField = new JTextField();
 	static List<SentenceList> lessonSentences = new ArrayList();
 	static ArrayList<String> possibleTranslations = new ArrayList<String>();
@@ -28,6 +28,7 @@ public class lDefiniteFormL2 extends JPanel {
 	static int sentenceNumber;
 	static int sentencesLeft = 0;
 	static boolean lDefiniteFormL2Done = false;
+	static int sentencesCorrect = 0;
 	
 	lDefiniteFormL2()
 	{
@@ -54,6 +55,7 @@ public class lDefiniteFormL2 extends JPanel {
 		this.add(textArea);
 		this.add(answerField);
 		this.add(answerButton);
+		this.add(answersFraction);
 		
 		//sätter upp knapparna
 		
@@ -107,6 +109,15 @@ public class lDefiniteFormL2 extends JPanel {
 		answerButton.addActionListener(new answerButtonAct());
 		answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		answerButton.setText("Answer");
+		
+		answersFraction.setBounds((int) Math.round(980 * start.widthSize), (int) Math.round(500 * start.heightSize), (int) Math.round(100 * start.widthSize), (int) Math.round(100 * start.heightSize));
+		answersFraction.setFont(new Font("comic sans ms", Font.BOLD, 50));
+		answersFraction.setLineWrap(true);
+		answersFraction.setWrapStyleWord(true);
+		answersFraction.setOpaque(false);
+		answersFraction.setForeground(Color.BLACK);
+		answersFraction.setEditable(false);
+		answersFraction.setText(sentencesCorrect + "/7");
 	}
 	
 	public static void setupSentences()
@@ -269,6 +280,9 @@ public class lDefiniteFormL2 extends JPanel {
 				sentencesLeft ++;
 			}
 		}
+		sentencesCorrect = 7 - sentencesLeft;
+		answersFraction.setText(sentencesCorrect + "/7");
+		
 		System.out.println("sentencesLeft: " + sentencesLeft);
 		if (sentencesLeft == 0)
 		{
@@ -276,6 +290,8 @@ public class lDefiniteFormL2 extends JPanel {
 			Meddelande som säger att man har gjort klart lektionen
 			Sparar informationen från dessa
 			 */
+			sentencesCorrect = 0;
+			answersFraction.setText(sentencesCorrect + "/7");
 			lDefiniteFormL2Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();
