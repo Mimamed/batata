@@ -184,7 +184,15 @@ public class flashcardsGame extends JPanel {
 			exampleText = start.wordList.get(categoryNumber + 1).get(wordNumber);
 			if(exampleText.length() > 15)
 			{
-				answerButton.setFont(new Font("comic sans ms", Font.BOLD, 25));
+				answerButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
+			}
+			else if(exampleText.length() > 20)
+			{
+				answerButton.setFont(new Font("comic sans ms", Font.BOLD, 17));
+			}
+			else if(exampleText.length() > 25)
+			{
+				answerButton.setFont(new Font("comic sans ms", Font.BOLD, 14));
 			}
 			answerButton.setText(exampleText);
 		}
