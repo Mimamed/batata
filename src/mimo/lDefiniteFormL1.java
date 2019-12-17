@@ -298,6 +298,7 @@ public class lDefiniteFormL1 extends JPanel {
 			 */
 			sentencesCorrect = 0;
 			answersFraction.setText(sentencesCorrect + "/7");
+			correctAnswerField.setFont(new Font("comic sans ms", Font.BOLD, 30));
 			correctAnswerField.setText(null);
 			lDefiniteFormL1Done = true;
 			System.out.println("TESTTEST");
