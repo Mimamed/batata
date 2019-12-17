@@ -13,7 +13,7 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class start //mimamed kolla igenom ditt skit före du förstör allting, noob
+public class start //mimamed kolla igenom ditt skit före du förstör allting, noob  //Jag tror mer det är jag som glömmer pulla då och då och därför förstör saker
 {
 	static boolean synligaKnappar = false;
 	static int[] ljusGrå = {200, 200, 200};
