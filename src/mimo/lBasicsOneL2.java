@@ -19,8 +19,8 @@ import javax.swing.JTextField;
 public class lBasicsOneL2 extends JPanel {
 	static BufferedImage bakgrund;
 	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), answerButton = new JButton();
-	static JTextArea textArea = new JTextArea(), answersFraction = new JTextArea();
-	static JTextField answerField = new JTextField();
+	static JTextArea textArea = new JTextArea();
+	static JTextField answerField = new JTextField(), correctAnswerField = new JTextField(), answersFraction = new JTextField();
 	static List<SentenceList> lessonSentences = new ArrayList();
 	static ArrayList<String> possibleTranslations = new ArrayList<String>();
 	public static int whichSentence;
@@ -54,6 +54,7 @@ public class lBasicsOneL2 extends JPanel {
 		this.add(textArea);
 		this.add(answerField);
 		this.add(answerButton);
+		this.add(correctAnswerField);
 		this.add(answersFraction);
 		
 		//sätter upp knapparna
@@ -109,14 +110,19 @@ public class lBasicsOneL2 extends JPanel {
 		answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 		answerButton.setText("Answer");
 		
-		answersFraction.setBounds((int) Math.round(980 * start.widthSize), (int) Math.round(500 * start.heightSize), (int) Math.round(100 * start.widthSize), (int) Math.round(100 * start.heightSize));
-		answersFraction.setFont(new Font("comic sans ms", Font.BOLD, 50));
-		answersFraction.setLineWrap(true);
-		answersFraction.setWrapStyleWord(true);
-		answersFraction.setOpaque(false);
-		answersFraction.setForeground(Color.BLACK);
+		correctAnswerField.setBounds((int) Math.round(200 * start.widthSize), (int) Math.round(233 * start.heightSize), (int) Math.round(964 * start.widthSize), (int) Math.round(369 * start.heightSize));
+		correctAnswerField.setFont(new Font("comic sans ms", Font.BOLD, 30));
+		correctAnswerField.setEditable(false);
+		correctAnswerField.setOpaque(false);
+		correctAnswerField.setBorder(null);
+		
+		answersFraction.setBounds((int) Math.round(1064 * start.widthSize), (int) Math.round(155 * start.heightSize), (int) Math.round(100 * start.widthSize), (int) Math.round(77 * start.heightSize));
+		answersFraction.setFont(new Font("comic sans ms", Font.BOLD, 40));
 		answersFraction.setEditable(false);
+		answersFraction.setBorder(null);
+		answersFraction.setHorizontalAlignment(WIDTH/2);
 		answersFraction.setText(sentencesCorrect + "/8");
+		answersFraction.setBackground(new Color(255, 0, 255));
 	}
 	
 	public static void setupSentences()
@@ -310,6 +316,7 @@ public class lBasicsOneL2 extends JPanel {
 			 */
 			sentencesCorrect = 0;
 			answersFraction.setText(sentencesCorrect + "/8");
+			correctAnswerField.setText(null);
 			lBasicsOneL2Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();
@@ -380,6 +387,8 @@ public class lBasicsOneL2 extends JPanel {
 				System.out.println("FÖRSÖK, POÄNG: " + (lessonSentences.get(lessonSentences.size() - 1)).getTries() + ", " + (lessonSentences.get(lessonSentences.size() - 1)).getPoints());
 				//återställer textfält
 				answerField.setText(null);
+				//visar svar
+				correctAnswerField.setText("Correct!");
 				//ny mening
 				l2RandomSentence();
 			}
@@ -395,6 +404,8 @@ public class lBasicsOneL2 extends JPanel {
 				System.out.println("FÖRSÖK, POÄNG: " + (lessonSentences.get(lessonSentences.size() - 1)).getTries() + ", " + (lessonSentences.get(lessonSentences.size() - 1)).getPoints());
 				//återställer textfält
 				answerField.setText(null);
+				//visar svar
+				correctAnswerField.setText("Correct! Please write '" + lessonSentences.get(sentenceNumber).getTranslation() + "' instead");
 				//ny mening
 				l2RandomSentence();
 			}
@@ -406,6 +417,8 @@ public class lBasicsOneL2 extends JPanel {
 				System.out.println("FÖRSÖK, POÄNG: " + lessonSentences.get(sentenceNumber).getTries() + ", " + lessonSentences.get(sentenceNumber).getPoints());
 				//återställer textfält
 				answerField.setText(null);
+				//visar svar
+				correctAnswerField.setText("Wrong! '" + lessonSentences.get(sentenceNumber).getSentence() + "' means '" + lessonSentences.get(sentenceNumber).getTranslation() + "'");
 				//ny mening
 				l2RandomSentence();
 			}
