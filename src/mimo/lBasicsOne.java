@@ -21,7 +21,7 @@ public class lBasicsOne extends JPanel {
 			bakgrund = ImageIO.read(start.filer[9]);
 		}catch(Exception e)
 		{
-			System.out.print("fel men uppladning30");
+			System.out.print("fel men uppladning");
 		}
 		
 		this.setLayout(null);
@@ -140,7 +140,8 @@ public class lBasicsOne extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.meny);
+			lBasicsOneL2.l2RandomSentence();
+			start.Byta(start.lektionGrunderL2);
 		}
 	}
 }
