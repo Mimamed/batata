@@ -181,7 +181,12 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			answerButton.setText(start.wordList.get(categoryNumber + 1).get(wordNumber));
+			exampleText = start.wordList.get(categoryNumber + 1).get(wordNumber);
+			if(exampleText.length() > 15)
+			{
+				answerButton.setFont(new Font("comic sans ms", Font.BOLD, 25));
+			}
+			answerButton.setText(exampleText);
 		}
 	}
 	
@@ -251,6 +256,7 @@ public class flashcardsGame extends JPanel {
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
 			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+			answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 			flashcardWriteWord();
 		}
 	}
@@ -296,6 +302,7 @@ public class flashcardsGame extends JPanel {
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
 			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+			answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 			flashcardWriteWord();
 		}
 	}
