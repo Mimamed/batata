@@ -34,10 +34,10 @@ public class flashcardsGame extends JPanel {
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
 	static int wordNumber = 0;
 	static int categoryNumber = 1;
-	//BEHÖVER: hur många försök
 	static Random randomNumber = new Random();
 	static int stringToInt;
 	static int timesAnswered = 0;
+	static String exampleText;
 	
 	flashcardsGame() {
 		try
@@ -196,7 +196,12 @@ public class flashcardsGame extends JPanel {
 			}
 			else
 			{
-				exampleButton.setText(start.wordList.get(categoryNumber + 2).get(wordNumber));
+				exampleText = start.wordList.get(categoryNumber + 2).get(wordNumber);
+				if(exampleText.length() > 20)
+				{
+					exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 17));
+				}
+				exampleButton.setText(exampleText);
 			}
 		}
 	}
