@@ -29,6 +29,7 @@ public class lDefiniteFormL1 extends JPanel {
 	static int sentencesLeft = 0;
 	static boolean lDefiniteFormL1Done = false;
 	static int sentencesCorrect = 0;
+	static String text;
 	
 	lDefiniteFormL1()
 	{
@@ -399,7 +400,16 @@ public class lDefiniteFormL1 extends JPanel {
 				//återställer textfält
 				answerField.setText(null);
 				//visar svar
-				correctAnswerField.setText("Wrong! '" + lessonSentences.get(sentenceNumber).getSentence() + "' means '" + lessonSentences.get(sentenceNumber).getTranslation() + "'");
+				text = "Wrong! '" + lessonSentences.get(sentenceNumber).getSentence() + "' means '" + lessonSentences.get(sentenceNumber).getTranslation() + "'";
+				if (text.length() > 61)
+				{
+					correctAnswerField.setFont(new Font("comic sans ms", Font.BOLD, 23));
+				}
+				else
+				{
+					correctAnswerField.setFont(new Font("comic sans ms", Font.BOLD, 30));
+				}
+				correctAnswerField.setText(text);
 				//ny mening
 				l1RandomSentence();
 			}
