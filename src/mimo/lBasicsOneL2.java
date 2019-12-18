@@ -30,7 +30,7 @@ public class lBasicsOneL2 extends JPanel {
 	static boolean lBasicsOneL2Done = false;
 	static int sentencesCorrect = 0;
 	
-	lBasicsOneL2 ()
+	lBasicsOneL2()
 	{
 		try
 		{
