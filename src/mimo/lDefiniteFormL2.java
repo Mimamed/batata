@@ -380,14 +380,14 @@ public class lDefiniteFormL2 extends JPanel {
 				//lägger till ny mening med nya värden, +100 poäng
 				SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), (lessonSentences.get(sentenceNumber).getPoints() + 100), (lessonSentences.get(sentenceNumber).getTries() + 1), lessonSentences.get(sentenceNumber).getCorrectAnswer());
 				lessonSentences.add(sentenceInfo);
+				//visar svar
+				correctAnswerField.setText("Correct! Also correct: '" + lessonSentences.get(sentenceNumber).getTranslation() + "'");
 				//tar bort gammal mening med gamla värden
 				lessonSentences.remove(sentenceNumber);
 				//skriver ut den senaste meningens försök + poäng
 				System.out.println("FÖRSÖK, POÄNG: " + (lessonSentences.get(lessonSentences.size() - 1)).getTries() + ", " + (lessonSentences.get(lessonSentences.size() - 1)).getPoints());
 				//återställer textfält
 				answerField.setText(null);
-				//visar svar
-				correctAnswerField.setText("Correct! Also correct: '" + lessonSentences.get(sentenceNumber).getTranslation() + "'");
 				//ny mening
 				l2RandomSentence();
 			}
@@ -397,14 +397,14 @@ public class lDefiniteFormL2 extends JPanel {
 				//lägger till ny mening med nya värden, +100 poäng
 				SentenceList sentenceInfo = new SentenceList(lessonSentences.get(sentenceNumber).getSentence(), lessonSentences.get(sentenceNumber).getTranslation(), (lessonSentences.get(sentenceNumber).getPoints() + 100), (lessonSentences.get(sentenceNumber).getTries() + 1), lessonSentences.get(sentenceNumber).getCorrectAnswer());
 				lessonSentences.add(sentenceInfo);
+				//visar svar
+				correctAnswerField.setText("Correct! Also correct: '" + lessonSentences.get(sentenceNumber).getTranslation() + "'");
 				//tar bort gammal mening med gamla värden
 				lessonSentences.remove(sentenceNumber);
 				//skriver ut den senaste meningens försök + poäng
 				System.out.println("FÖRSÖK, POÄNG: " + (lessonSentences.get(lessonSentences.size() - 1)).getTries() + ", " + (lessonSentences.get(lessonSentences.size() - 1)).getPoints());
 				//återställer textfält
 				answerField.setText(null);
-				//visar svar
-				correctAnswerField.setText("Correct! Also correct: '" + lessonSentences.get(sentenceNumber).getTranslation() + "'");
 				//ny mening
 				l2RandomSentence();
 			}
