@@ -18,7 +18,7 @@ public class start //mimamed kolla igenom ditt skit före du förstör allting, noo
 	static boolean synligaKnappar = false;
 	static int[] ljusGrå = {200, 200, 200};
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
-	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settings.jpg"), start.class.getResource("/Bilder/lessonMenu.jpg"), start.class.getResource("/Bilder/lessonGameBasics.jpg"), start.class.getResource("/Bilder/lessonGame.jpg"), start.class.getResource("/Bilder/lessonGameDefiniteForms.jpg")};
+	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settings.jpg"), start.class.getResource("/Bilder/lessonMenu.jpg"), start.class.getResource("/Bilder/lessonGameBasics.jpg"), start.class.getResource("/Bilder/lessonGame.jpg"), start.class.getResource("/Bilder/lessonGameDefiniteForms.jpg"), start.class.getResource("/Bilder/lessonGamePhrases.jpg")};
 	static URL[] filerColorBlindMode = {start.class.getResource("/BilderCB/startMenuCB.jpg"), start.class.getResource("/BilderCB/tabMenuCB.jpg"), start.class.getResource("/BilderCB/flashcardMenuCB.jpg"), start.class.getResource("/BilderCB/flashcardGameCB.jpg"), start.class.getResource("/BilderCB/readingMenuCB.jpg"), start.class.getResource("/BilderCB/flashcardListCB.jpg"), start.class.getResource("/BilderCB/readingGameCB.jpg"), start.class.getResource("/BilderCB/settingsCB.jpg"), start.class.getResource("/BilderCB/lessonMenuCB.jpg")};
 	static Formatter filskapare;
 	static List<ArrayList<String>> wordList = new ArrayList<ArrayList<String>>();
@@ -44,6 +44,9 @@ public class start //mimamed kolla igenom ditt skit före du förstör allting, noo
 	static lDefiniteForm lektionBestämdForm = new lDefiniteForm();
 	static lDefiniteFormL1 lektionBestämdFormL1 = new lDefiniteFormL1();
 	static lDefiniteFormL2 lektionBestämdFormL2 = new lDefiniteFormL2();
+	static lPhrases lektionFraser = new lPhrases();
+	//static lPhrasesL1 lekttionFraserL1 = new lPhrasesL1();
+	//static lPhrasesL2 lekttionFraserL2 = new lPhrasesL2();
 	
 	public static void main(String[] Args)
 	{

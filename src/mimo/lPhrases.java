@@ -10,16 +10,15 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class lessonTree extends JPanel
-{
+public class lPhrases extends JPanel {
 	static BufferedImage bakgrund;
-	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), l1Button = new JButton(), l2Button = new JButton(), l3Button = new JButton();
+	static JButton lessonButton = new JButton(), flashcardButton = new JButton(), readingButton = new JButton(), menyButton = new JButton(), startL1Button = new JButton(), startL2Button = new JButton();
 	
-	lessonTree()
+	lPhrases()
 	{
 		try
 		{
-			bakgrund = ImageIO.read(start.filer[8]);
+			bakgrund = ImageIO.read(start.filer[12]);
 		}catch(Exception e)
 		{
 			System.out.print("fel men uppladning");
@@ -33,9 +32,8 @@ public class lessonTree extends JPanel
 		this.add(flashcardButton);
 		this.add(readingButton);
 		this.add(menyButton);
-		this.add(l1Button);
-		this.add(l2Button);
-		this.add(l3Button);
+		this.add(startL1Button);
+		this.add(startL2Button);
 		
 		//sätter upp knapparna
 		
@@ -69,14 +67,21 @@ public class lessonTree extends JPanel
 		menyButton.setBorderPainted(start.synligaKnappar);
 		menyButton.setFocusPainted(start.synligaKnappar);
 		
-		l1Button.setBounds((int) Math.round(643 * start.widthSize), (int) Math.round(76 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		l1Button.addActionListener(new l1Button());
+		startL1Button.setBounds((int) Math.round(652 * start.widthSize), (int) Math.round(241 * start.heightSize), (int) Math.round(87 * start.widthSize), (int) Math.round(56 * start.heightSize));
+		startL1Button.addActionListener(new startL1ButtonAct());
+		startL1Button.setContentAreaFilled(start.synligaKnappar);
+		startL1Button.setBorderPainted(start.synligaKnappar);
+		startL1Button.setFocusPainted(start.synligaKnappar);
+		startL1Button.setFont(new Font("comic sans ms", Font.BOLD, 20));
+		startL1Button.setText("Start");
 		
-		l2Button.setBounds((int) Math.round(550 * start.widthSize), (int) Math.round(150 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		l2Button.addActionListener(new l2Button());
-		
-		l3Button.setBounds((int) Math.round(736 * start.widthSize), (int) Math.round(150 * start.heightSize), (int) Math.round(80 * start.widthSize), (int) Math.round(80 * start.heightSize));
-		l3Button.addActionListener(new l3Button());
+		startL2Button.setBounds((int) Math.round(652 * start.widthSize), (int) Math.round(430 * start.heightSize), (int) Math.round(87 * start.widthSize), (int) Math.round(56 * start.heightSize));
+		startL2Button.addActionListener(new startL2ButtonAct());
+		startL2Button.setContentAreaFilled(start.synligaKnappar);
+		startL2Button.setBorderPainted(start.synligaKnappar);
+		startL2Button.setFocusPainted(start.synligaKnappar);
+		startL2Button.setFont(new Font("comic sans ms", Font.BOLD, 20));
+		startL2Button.setText("Start");
 	}
 	
 	public void paintComponent(Graphics g)
@@ -120,30 +125,25 @@ public class lessonTree extends JPanel
 		}
 	}
 	
-	static class l1Button implements ActionListener
+	static class startL1ButtonAct implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionGrunder);
+			//lPhrasesL1.l1RandomSentence();
+			//start.Byta(start.lekttionFraserL1);
+			start.Byta(start.meny);
 		}
 	}
 	
-	static class l2Button implements ActionListener
+	static class startL2ButtonAct implements ActionListener
 	{
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionBestämdForm);
-		}
-	}
-	
-	static class l3Button implements ActionListener
-	{
-		
-		public void actionPerformed(ActionEvent e)
-		{
-			start.Byta(start.lektionFraser);
+			//lPhrasesL2.l2RandomSentence();
+			//start.Byta(start.lekttionFraserL2);
+			start.Byta(start.meny);
 		}
 	}
 }
