@@ -50,6 +50,8 @@ public class start //mimamed kolla igenom ditt skit före du förstör allting, noo
 	
 	public static void main(String[] Args)
 	{
+		//försök skapa fil för lektioner!
+		//sätt värdena på 0, sedan ska de adderas efter varje gång programmet stängs
 		/*----------------Fixar Textfil-------------------*/
 		try
 		{
