@@ -46,7 +46,7 @@ public class start //mimamed kolla igenom ditt skit före du förstör allting, noo
 	static lDefiniteFormL2 lektionBestämdFormL2 = new lDefiniteFormL2();
 	static lPhrases lektionFraser = new lPhrases();
 	static lPhrasesL1 lektionFraserL1 = new lPhrasesL1();
-	//static lPhrasesL2 lektionFraserL2 = new lPhrasesL2();
+	static lPhrasesL2 lektionFraserL2 = new lPhrasesL2();
 	
 	public static void main(String[] Args)
 	{
