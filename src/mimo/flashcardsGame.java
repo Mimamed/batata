@@ -1,5 +1,7 @@
 package mimo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -34,11 +36,12 @@ public class flashcardsGame extends JPanel {
 	static JLabel word = new JLabel(), meaning = new JLabel(), example = new JLabel();
 	static int wordNumber = 0;
 	static int categoryNumber = 1;
+	static boolean slumpaIgen; //bara en test för en error sak
 	static Random randomNumber = new Random();
 	static int stringToInt;
 	static int timesAnswered = 0;
 	static String exampleText;
-	
+	static List<String> ordBanLista = new ArrayList<String>();
 	flashcardsGame() {
 		try
 		{
@@ -223,6 +226,7 @@ public class flashcardsGame extends JPanel {
 	{
 		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
 		word.setText(start.wordList.get(categoryNumber).get(wordNumber));
+		ordBanLista.add(start.wordList.get(categoryNumber).get(wordNumber));
 		//get(y).get(x), y och x ska vara slumpade
 	}
 	
@@ -241,7 +245,54 @@ public class flashcardsGame extends JPanel {
 			System.out.println(start.fkOrdlista.tempList.get(categoryNumber + 4).get(wordNumber));
 			System.out.println(start.fkOrdlista.tempList.get(categoryNumber).get(wordNumber) + ": 1+");
 			
-			//slumpar först category
+			slumpaIgen = false;
+			while(slumpaIgen == false)
+			{
+				slumpaIgen = true;
+				slumpaOrd();
+			}
+			
+		}
+	}
+	
+	public static int antalOrd()
+	{
+		int antalOrd = 0;
+
+		for (int i = 0; i < (start.fkOrdlista.tempList.size()-1)/(start.antalrader)/*räknar kategorier*/; i++)
+		{
+			//räknar ord i varje kategori
+			antalOrd += start.fkOrdlista.tempList.get(i * start.antalrader + 1).size(); //beräknar antal ord +1
+			//System.out.println("--------------" + start.fkOrdlista.tempList.get(i * start.antalrader + 1).size()); //Skriver ut hur många ord som har lagts tillööööööööööööööööööööööööööööööööööööö
+		}
+		return antalOrd;
+	}
+	
+	public static void slumpaOrd()
+	{
+
+		boolean listanSlut = false;  //användaren har sett alla orden eller ej
+		
+		
+		System.out.println("mängd!!!: " + antalOrd() + " mängd2!! " + ordBanLista.size());//ööööööööööööööööööööööööööööööööö
+		
+		if (ordBanLista.size() == (antalOrd() ))//kollaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+		{
+			
+			word.setText("WordList has depleted, insert new words or try again next sesson");
+
+			answerButton.setText("No meaning");
+			exampleButton.setText("No example");
+			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+			answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
+			
+			answerButton.setEnabled(false);
+			exampleButton.setEnabled(false);
+			listanSlut = true;
+		}
+		else
+		{
+			//slumpar först category     //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 			switch (randomNumber.nextInt(4))
 			{
 			case 0:
@@ -257,8 +308,29 @@ public class flashcardsGame extends JPanel {
 				categoryNumber = 16;
 				break;
 			}
-			//sedan word
+			//System.out.println("NUK");öööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööö
+			//sedan word //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 			wordNumber = randomNumber.nextInt(start.fkOrdlista.tempList.get(categoryNumber).size());
+			for(int i = 0; i < ordBanLista.size(); i++)//loopa igenom alla ord i bannade ord listan och kolla om någon av dem är samma som den utslumpade orden
+			{
+				//System.out.println("NU");ööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööö
+				if(start.fkOrdlista.tempList.get(categoryNumber).get(wordNumber).equals(ordBanLista.get(i)))
+				{
+					//System.out.println("NUM");ööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööö
+					//System.out.print("?????????????");ööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööö
+					slumpaIgen = false;
+				}
+			}
+			
+		}
+
+		if (!listanSlut)
+		{
+			
+			//tänder knapparna
+			answerButton.setEnabled(true);
+			exampleButton.setEnabled(true);
+			
 			
 			//återställer utseende
 			answerButton.setText("Show meaning");
@@ -266,6 +338,15 @@ public class flashcardsGame extends JPanel {
 			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 			answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
 			flashcardWriteWord();
+			
+
+			//kollar alla bannade orden
+			for(int i = 0; i < ordBanLista.size(); i++)
+			{
+				System.out.print("ord " + i + ": " + ordBanLista.get(i) + " ___ ");
+			}
+			System.out.println("\n");
+			
 		}
 	}
 	
@@ -286,32 +367,14 @@ public class flashcardsGame extends JPanel {
 			//antal svar
 			System.out.println(start.fkOrdlista.tempList.get(categoryNumber + 4).get(wordNumber));
 			System.out.println(start.fkOrdlista.tempList.get(categoryNumber).get(wordNumber) + ": 1+");
-			
-			//slumpar först category
-			switch (randomNumber.nextInt(4))
+
+			slumpaIgen = false;
+			while(slumpaIgen == false)
 			{
-			case 0:
-				categoryNumber = 1;
-				break;
-			case 1:
-				categoryNumber = 6;
-				break;
-			case 2:
-				categoryNumber = 11;
-				break;
-			case 3:
-				categoryNumber = 16;
-				break;
+				slumpaIgen = true;
+				slumpaOrd();
 			}
-			//sedan word
-			wordNumber = randomNumber.nextInt(start.fkOrdlista.tempList.get(categoryNumber).size());
 			
-			//återställer utseende 
-			answerButton.setText("Show meaning");
-			exampleButton.setText("Show example");
-			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-			answerButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
-			flashcardWriteWord();
 		}
 	}
 	
@@ -323,3 +386,20 @@ public class flashcardsGame extends JPanel {
 		}
 	}
 }
+/*
+Exception in thread "AWT-EventQueue-0" java.lang.StackOverflowError
+at java.base/java.nio.CharBuffer.position(Unknown Source)
+at java.base/sun.nio.cs.SingleByte.withResult(Unknown Source)
+at java.base/sun.nio.cs.SingleByte.access$000(Unknown Source)
+at java.base/sun.nio.cs.SingleByte$Encoder.encodeArrayLoop(Unknown Source)
+at java.base/sun.nio.cs.SingleByte$Encoder.encodeLoop(Unknown Source)
+at java.base/java.nio.charset.CharsetEncoder.encode(Unknown Source)
+at java.base/sun.nio.cs.StreamEncoder.implWrite(Unknown Source)
+at java.base/sun.nio.cs.StreamEncoder.implWrite(Unknown Source)
+at java.base/sun.nio.cs.StreamEncoder.write(Unknown Source)
+at java.base/java.io.OutputStreamWriter.write(Unknown Source)
+at java.base/java.io.BufferedWriter.flushBuffer(Unknown Source)
+at java.base/java.io.PrintStream.write(Unknown Source)
+at java.base/java.io.PrintStream.print(Unknown Source)
+at java.base/java.io.PrintStream.println(Unknown Source)
+*/
