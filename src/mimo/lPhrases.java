@@ -130,9 +130,8 @@ public class lPhrases extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			//lPhrasesL1.l1RandomSentence();
-			//start.Byta(start.lekttionFraserL1);
-			start.Byta(start.meny);
+			lPhrasesL1.l1RandomSentence();
+			start.Byta(start.lektionFraserL1);
 		}
 	}
 	
@@ -141,9 +140,8 @@ public class lPhrases extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			//lPhrasesL2.l2RandomSentence();
-			//start.Byta(start.lekttionFraserL2);
-			start.Byta(start.meny);
+			lPhrasesL2.l2RandomSentence();
+			start.Byta(start.lektionFraserL2);
 		}
 	}
 }
