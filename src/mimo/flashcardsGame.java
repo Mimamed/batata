@@ -289,6 +289,9 @@ public class flashcardsGame extends JPanel {
 			answerButton.setEnabled(false);
 			exampleButton.setEnabled(false);
 			listanSlut = true;
+			start.tabKnapparnaPå[1] = false;
+			start.uppdaterarTabsen();
+			start.Byta(start.meny);
 		}
 		else
 		{

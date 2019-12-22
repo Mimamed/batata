@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 public class start //mimamed kolla igenom ditt skit före du förstör allting, noob  //Jag tror mer det är jag som glömmer pulla då och då och därför förstör saker
 {
 	static boolean synligaKnappar = false;
+	static boolean[] tabKnapparnaPå = {true, true, true};
 	static int[] ljusGrå = {200, 200, 200};
 	static double widthSize = Toolkit.getDefaultToolkit().getScreenSize().getWidth()/1366, heightSize = Toolkit.getDefaultToolkit().getScreenSize().getHeight()/768;
 	static URL[] filer = { start.class.getResource("/Bilder/startMenu.jpg"), start.class.getResource("/Bilder/tabMenu.jpg"), start.class.getResource("/Bilder/flashcardMenu.jpg"), start.class.getResource("/Bilder/flashcardGame.jpg"), start.class.getResource("/Bilder/readingMenu.jpg"), start.class.getResource("/Bilder/flashcardList.jpg"), start.class.getResource("/Bilder/readingGame.jpg"), start.class.getResource("/Bilder/settings.jpg"), start.class.getResource("/Bilder/lessonMenu.jpg"), start.class.getResource("/Bilder/lessonGameBasics.jpg"), start.class.getResource("/Bilder/lessonGame.jpg"), start.class.getResource("/Bilder/lessonGameDefiniteForms.jpg"), start.class.getResource("/Bilder/lessonGamePhrases.jpg")};
@@ -29,24 +30,24 @@ public class start //mimamed kolla igenom ditt skit före du förstör allting, noo
 	static List<String> textList = new ArrayList<String>();
 	static JFrame fönster = new JFrame("Mimo");
 	static startMeny meny = new startMeny();
-	static tabMeny spelSidan = new tabMeny();
+	static tabMeny spelSidan = new tabMeny();//2-
 	static JPanel gamlaPanelen = new JPanel();
-	static spelFlashkort flashkort = new spelFlashkort();
-	static flashcardsGame flashkortspelen = new flashcardsGame();
-	static flashcardsWordList fkOrdlista = new flashcardsWordList();
-	static readingMenu readingMenyn = new readingMenu();
-	static readingGame readingSpel = new readingGame();
-	static settingsMenu inställningar = new settingsMenu();
-	static lessonTree lektionTräd = new lessonTree();
-	static lBasicsOne lektionGrunder = new lBasicsOne();
-	static lBasicsOneL1 lektionGrunderL1 = new lBasicsOneL1();
-	static lBasicsOneL2 lektionGrunderL2 = new lBasicsOneL2();
-	static lDefiniteForm lektionBestämdForm = new lDefiniteForm();
-	static lDefiniteFormL1 lektionBestämdFormL1 = new lDefiniteFormL1();
-	static lDefiniteFormL2 lektionBestämdFormL2 = new lDefiniteFormL2();
-	static lPhrases lektionFraser = new lPhrases();
-	static lPhrasesL1 lektionFraserL1 = new lPhrasesL1();
-	static lPhrasesL2 lektionFraserL2 = new lPhrasesL2();
+	static spelFlashkort flashkort = new spelFlashkort();//4-
+	static flashcardsGame flashkortspelen = new flashcardsGame();//5.
+	static flashcardsWordList fkOrdlista = new flashcardsWordList();//6
+	static readingMenu readingMenyn = new readingMenu();//7
+	static readingGame readingSpel = new readingGame();//8
+	static settingsMenu inställningar = new settingsMenu();//9
+	static lessonTree lektionTräd = new lessonTree();//10
+	static lBasicsOne lektionGrunder = new lBasicsOne();//11
+	static lBasicsOneL1 lektionGrunderL1 = new lBasicsOneL1();//12
+	static lBasicsOneL2 lektionGrunderL2 = new lBasicsOneL2();//13
+	static lDefiniteForm lektionBestämdForm = new lDefiniteForm();//14
+	static lDefiniteFormL1 lektionBestämdFormL1 = new lDefiniteFormL1();//15
+	static lDefiniteFormL2 lektionBestämdFormL2 = new lDefiniteFormL2();//16
+	static lPhrases lektionFraser = new lPhrases();//17
+	static lPhrasesL1 lektionFraserL1 = new lPhrasesL1();//18
+	static lPhrasesL2 lektionFraserL2 = new lPhrasesL2();//19
 	
 	public static void main(String[] Args)
 	{
@@ -214,4 +215,77 @@ public class start //mimamed kolla igenom ditt skit före du förstör allting, noo
 		}
 		
 	}
+	
+	public static void uppdaterarTabsen()
+	{
+		spelSidan.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		spelSidan.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		spelSidan.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		flashkort.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		flashkort.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		flashkort.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		flashkortspelen.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		flashkortspelen.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		flashkortspelen.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		fkOrdlista.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		fkOrdlista.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		fkOrdlista.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		readingMenyn.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		readingMenyn.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		readingMenyn.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		readingSpel.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		readingSpel.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		readingSpel.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		inställningar.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		inställningar.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		inställningar.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionTräd.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionTräd.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionTräd.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionGrunder.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionGrunder.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionGrunder.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionGrunderL1.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionGrunderL1.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionGrunderL1.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionGrunderL2.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionGrunderL2.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionGrunderL2.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionBestämdForm.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionBestämdForm.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionBestämdForm.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionBestämdFormL1.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionBestämdFormL1.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionBestämdFormL1.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionBestämdFormL2.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionBestämdFormL2.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionBestämdFormL2.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionFraser.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionFraser.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionFraser.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionFraserL1.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionFraserL1.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionFraserL1.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+		lektionFraserL2.lessonButton.setEnabled(tabKnapparnaPå[0]);
+		lektionFraserL2.flashcardButton.setEnabled(tabKnapparnaPå[1]);
+		lektionFraserL2.readingButton.setEnabled(tabKnapparnaPå[2]);
+
+	}
+	
 }
