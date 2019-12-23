@@ -97,6 +97,7 @@ public class startMeny extends JPanel
 		{
 			start.spararFiler();
 			start.fönster.dispose();
+			start.timer.stop();
 		}
 	}
 	
