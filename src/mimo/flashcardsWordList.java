@@ -120,6 +120,7 @@ public class flashcardsWordList extends JPanel {
 		saveButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
 		saveButton.setFocusPainted(start.synligaKnappar);
 		saveButton.setFont(new Font("comic sans ms", Font.BOLD, 20));
+		saveButton.setEnabled(false);
 		
 		downButton.setBounds((int) Math.round(1166 * start.widthSize), (int) Math.round(633 * start.heightSize), (int) Math.round(78 * start.widthSize), (int) Math.round(78 * start.heightSize));
 		downButton.setBackground(new Color(start.ljusGrå[0], start.ljusGrå[1], start.ljusGrå[2]));
