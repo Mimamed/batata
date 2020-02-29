@@ -318,7 +318,7 @@ public class lBasicsOneL1 extends JPanel {
 			lBasicsOneL1Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 		else
 		{
@@ -337,7 +337,7 @@ public class lBasicsOneL1 extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 	}
 	

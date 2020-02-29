@@ -16,8 +16,8 @@ import java.awt.event.ActionListener;
 public class startMeny extends JPanel
 {
 	static private JButton startButton = new JButton(), settingsButton = new JButton(), quitButton = new JButton(), menuButton = new JButton();
-	static private JPanel pan = new JPanel(); // förkortning för panel
-	static BufferedImage pic; // förkortning för picture
+	static private JPanel pan = new JPanel(); // forkortning for panel
+	static BufferedImage pic; // forkortning for picture
 	startMeny()
 	{
 		checkup();
@@ -87,7 +87,7 @@ public class startMeny extends JPanel
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.inställningar);
+			start.Byta(start.installningar);
 		}
 	}
 	
@@ -96,7 +96,7 @@ public class startMeny extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			start.spararFiler();
-			start.fönster.dispose();
+			start.fonster.dispose();
 			start.timer.stop();
 		}
 	}

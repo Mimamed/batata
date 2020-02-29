@@ -94,7 +94,7 @@ public class lDefiniteForm extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 	}
 	
@@ -131,7 +131,7 @@ public class lDefiniteForm extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			lDefiniteFormL1.l1RandomSentence();
-			start.Byta(start.lektionBestämdFormL1);
+			start.Byta(start.lektionBestamdFormL1);
 		}
 	}
 	
@@ -141,7 +141,7 @@ public class lDefiniteForm extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			lDefiniteFormL2.l2RandomSentence();
-			start.Byta(start.lektionBestämdFormL2);
+			start.Byta(start.lektionBestamdFormL2);
 		}
 	}
 }

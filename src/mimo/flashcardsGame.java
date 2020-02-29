@@ -149,7 +149,7 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 	}
 	
@@ -224,7 +224,7 @@ public class flashcardsGame extends JPanel {
 	
 	public static void flashcardWriteWord()
 	{
-		//TAR ORD FRÅN LISTAN OCH SÄTTER DET I "WORD"
+		//TAR ORD FRAN LISTAN OCH SATTER DET I "WORD"
 		word.setText(start.wordList.get(categoryNumber).get(wordNumber));
 		ordBanLista.add(start.wordList.get(categoryNumber).get(wordNumber));
 		//get(y).get(x), y och x ska vara slumpade
@@ -234,11 +234,11 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			//lägger till 1+ till räknare
+			//lagger till 1+ till raknare
 			timesAnswered = Integer.parseInt(start.fkOrdlista.tempList.get(categoryNumber + 4).get(wordNumber)) + 1;
 			start.fkOrdlista.tempList.get(categoryNumber + 4).set(wordNumber, Integer.toString(timesAnswered));
 			
-			//antal poäng
+			//antal poang
 			System.out.println(start.fkOrdlista.tempList.get(categoryNumber + 3).get(wordNumber));
 			System.out.println(start.fkOrdlista.tempList.get(categoryNumber).get(wordNumber) + ": inga extra poäng");
 			//antal svar
@@ -259,11 +259,11 @@ public class flashcardsGame extends JPanel {
 	{
 		int antalOrd = 0;
 
-		for (int i = 0; i < (start.fkOrdlista.tempList.size()-1)/(start.antalrader)/*räknar kategorier*/; i++)
+		for (int i = 0; i < (start.fkOrdlista.tempList.size()-1)/(start.antalrader)/*raknar kategorier*/; i++)
 		{
-			//räknar ord i varje kategori
-			antalOrd += start.fkOrdlista.tempList.get(i * start.antalrader + 1).size(); //beräknar antal ord +1
-			//System.out.println("--------------" + start.fkOrdlista.tempList.get(i * start.antalrader + 1).size()); //Skriver ut hur många ord som har lagts tillööööööööööööööööööööööööööööööööööööö
+			//raknar ord i varje kategori
+			antalOrd += start.fkOrdlista.tempList.get(i * start.antalrader + 1).size(); //beraknar antal ord +1
+			//System.out.println("--------------" + start.fkOrdlista.tempList.get(i * start.antalrader + 1).size()); //Skriver ut hur manga ord som har lagts till
 		}
 		return antalOrd;
 	}
@@ -271,7 +271,7 @@ public class flashcardsGame extends JPanel {
 	public static void slumpaOrd()
 	{
 
-		boolean listanSlut = false;  //användaren har sett alla orden eller ej
+		boolean listanSlut = false;  //anvandaren har sett alla orden eller ej
 		
 		
 		System.out.println("mängd!!!: " + antalOrd() + " mängd2!! " + ordBanLista.size());//ööööööööööööööööööööööööööööööööö
@@ -289,13 +289,13 @@ public class flashcardsGame extends JPanel {
 			answerButton.setEnabled(false);
 			exampleButton.setEnabled(false);
 			listanSlut = true;
-			start.tabKnapparnaPå[1] = false;
+			start.tabKnapparnaPa[1] = false;
 			start.uppdaterarTabsen();
 			start.Byta(start.meny);
 		}
 		else
 		{
-			//slumpar först category     //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+			//slumpar forst category     //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 			switch (randomNumber.nextInt(4))
 			{
 			case 0:
@@ -311,16 +311,16 @@ public class flashcardsGame extends JPanel {
 				categoryNumber = 16;
 				break;
 			}
-			//System.out.println("NUK");öööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööö
+			//System.out.println("NUK");ooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 			//sedan word //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 			wordNumber = randomNumber.nextInt(start.fkOrdlista.tempList.get(categoryNumber).size());
-			for(int i = 0; i < ordBanLista.size(); i++)//loopa igenom alla ord i bannade ord listan och kolla om någon av dem är samma som den utslumpade orden
+			for(int i = 0; i < ordBanLista.size(); i++)//loopa igenom alla ord i bannade ord listan och kolla om nagon av dem ar samma som den utslumpade orden
 			{
-				//System.out.println("NU");ööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööö
+				//System.out.println("NU");ooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 				if(start.fkOrdlista.tempList.get(categoryNumber).get(wordNumber).equals(ordBanLista.get(i)))
 				{
-					//System.out.println("NUM");ööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööö
-					//System.out.print("?????????????");ööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööööö
+					//System.out.println("NUM");ooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+					//System.out.print("?????????????");ooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 					slumpaIgen = false;
 				}
 			}
@@ -330,12 +330,12 @@ public class flashcardsGame extends JPanel {
 		if (!listanSlut)
 		{
 			
-			//tänder knapparna
+			//tander knapparna
 			answerButton.setEnabled(true);
 			exampleButton.setEnabled(true);
 			
 			
-			//återställer utseende
+			//aterställer utseende
 			answerButton.setText("Show meaning");
 			exampleButton.setText("Show example");
 			exampleButton.setFont(new Font("comic sans ms", Font.BOLD, 30));
@@ -357,14 +357,14 @@ public class flashcardsGame extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{	
-			//lägger till 100 poäng till ordet
+			//lagger till 100 poang till ordet
 			stringToInt = Integer.parseInt(start.fkOrdlista.tempList.get(categoryNumber + 3).get(wordNumber)) + 100;
 			start.fkOrdlista.tempList.get(categoryNumber + 3).set(wordNumber, Integer.toString(stringToInt));
-			//lägger till 1+ till räknare
+			//lagger till 1+ till raknare
 			timesAnswered = Integer.parseInt(start.fkOrdlista.tempList.get(categoryNumber + 4).get(wordNumber)) + 1;
 			start.fkOrdlista.tempList.get(categoryNumber + 4).set(wordNumber, Integer.toString(timesAnswered));
 			
-			//antal poäng
+			//antal poang
 			System.out.println(start.fkOrdlista.tempList.get(categoryNumber + 3).get(wordNumber));
 			System.out.println(start.fkOrdlista.tempList.get(categoryNumber).get(wordNumber) + ": 100 extra poäng");
 			//antal svar

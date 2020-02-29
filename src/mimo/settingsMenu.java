@@ -194,7 +194,7 @@ public class settingsMenu extends JPanel {
 	
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 	}
 	
@@ -354,7 +354,7 @@ public class settingsMenu extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{	
-			start.fönster.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+			start.fonster.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		}
 	}
 
@@ -362,7 +362,7 @@ public class settingsMenu extends JPanel {
 	{
 		public void actionPerformed(ActionEvent e)
 		{	
-			start.fönster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			start.fonster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
 	}
 }

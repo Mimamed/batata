@@ -89,7 +89,7 @@ public class lessonTree extends JPanel
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 	}
 	
@@ -134,7 +134,7 @@ public class lessonTree extends JPanel
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionBestämdForm);
+			start.Byta(start.lektionBestamdForm);
 		}
 	}
 	

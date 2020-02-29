@@ -303,7 +303,7 @@ public class lDefiniteFormL1 extends JPanel {
 			lDefiniteFormL1Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 		else
 		{
@@ -322,7 +322,7 @@ public class lDefiniteFormL1 extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 	}
 	

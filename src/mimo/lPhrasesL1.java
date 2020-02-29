@@ -326,7 +326,7 @@ public class lPhrasesL1 extends JPanel {
 			lPhrasesL1Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 		else
 		{

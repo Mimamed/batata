@@ -320,7 +320,7 @@ public class lBasicsOneL2 extends JPanel {
 			lBasicsOneL2Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 		else
 		{
@@ -339,7 +339,7 @@ public class lBasicsOneL2 extends JPanel {
 		
 		public void actionPerformed(ActionEvent e)
 		{
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 	}
 	

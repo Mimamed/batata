@@ -128,7 +128,7 @@ public class lPhrasesL2 extends JPanel {
 	{
 		if (lPhrasesL2Done == false)
 		{
-			//DETTA KAN BLI MYCKET BÄTTRE
+			//DETTA KAN BLI MYCKET BATTRE
 			SentenceList sentenceInfo = new SentenceList("Välkommen", "Welcome", 0, 0, false);
 			lessonSentences.add(sentenceInfo);
 			sentenceInfo = new SentenceList("Godmorgon och välkommen", "Good morning and welcome", 0, 0, false);
@@ -148,7 +148,7 @@ public class lPhrasesL2 extends JPanel {
 		}
 		else
 		{
-			//FÖRSTA MENINGEN
+			//FORSTA MENINGEN
 			SentenceList sentenceInfo = new SentenceList("Välkommen", "Welcome", 0, 0, false);
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
@@ -200,7 +200,7 @@ public class lPhrasesL2 extends JPanel {
 	            }
 	        }
 			
-			//FJÄRDE MENINGEN
+			//FJARDE MENINGEN
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
 	            if (lessonSentences.get(i).getSentence().equals("Snälla"))
@@ -234,7 +234,7 @@ public class lPhrasesL2 extends JPanel {
 	            }
 	        }
 			
-			//SJÄTTE MENINGEN
+			//SJATTE MENINGEN
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
 	            if (lessonSentences.get(i).getSentence().equals("Goddag"))
@@ -268,7 +268,7 @@ public class lPhrasesL2 extends JPanel {
 	            }
 	        }
 			
-			//ÅTTONDE MENINGEN
+			//ATTONDE MENINGEN
 			for (int i = 0; i < lessonSentences.size(); i++)
 	        {
 	            if (lessonSentences.get(i).getSentence().equals("Godnatt"))
@@ -310,8 +310,8 @@ public class lPhrasesL2 extends JPanel {
 		if (sentencesLeft == 0)
 		{
 			/*
-			Meddelande som säger att man har gjort klart lektionen
-			Sparar informationen från dessa
+			Meddelande som sager att man har gjort klart lektionen
+			Sparar informationen fran dessa
 			 */
 			sentencesCorrect = 0;
 			answersFraction.setText(sentencesCorrect + "/8");
@@ -319,15 +319,15 @@ public class lPhrasesL2 extends JPanel {
 			lPhrasesL2Done = true;
 			System.out.println("TESTTEST");
 			setupSentences();
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 		else
 		{
 			//ny mening
 			sentenceNumber = randomNumber.nextInt(sentencesLeft);
-			//återställer
+			//aterställer
 			sentencesLeft = 0;
-			//sätter ny mening
+			//satter ny mening
 			System.out.println(lessonSentences.get(sentenceNumber).getSentence() + lessonSentences.get(sentenceNumber).getCorrectAnswer());
 			textArea.setText("Translate into English: " + lessonSentences.get(sentenceNumber).getSentence());
 		}

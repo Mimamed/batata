@@ -162,7 +162,7 @@ public class readingGame extends JPanel {
 		this.add(translate);
 		this.add(returnButton);
 		
-		//sätter upp knapparna
+		//satter upp knapparna
 		
 		lessonButton.setBounds((int) Math.round(127 * start.widthSize), (int) Math.round(12 * start.heightSize), (int) Math.round(371 * start.widthSize), (int) Math.round(76 * start.heightSize));
 		lessonButton.addActionListener(new lessonButton());
@@ -256,7 +256,7 @@ public class readingGame extends JPanel {
 		public void actionPerformed(ActionEvent e)
 		{
 			translateClicked = false;
-			start.Byta(start.lektionTräd);
+			start.Byta(start.lektionTrad);
 		}
 	}
 	
